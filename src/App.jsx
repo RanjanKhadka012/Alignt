@@ -20,7 +20,7 @@ export default function App(){
     render(){
       if(this.state.error) return (
         <div style={{padding:24,color:'var(--text)'}}>
-          <h2>Something went wrong rendering the app</h2>
+          <h2>Something went wrong while rendering the app</h2>
           <pre style={{whiteSpace:'pre-wrap',color:'#f88'}}>{this.state.error && this.state.error.toString()}</pre>
         </div>
       )
@@ -28,6 +28,7 @@ export default function App(){
     }
   }
 
+  // routes
   return (
     <div className="app-root">
       <Sidebar />

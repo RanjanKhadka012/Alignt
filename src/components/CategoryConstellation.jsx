@@ -63,9 +63,9 @@ export default function CategoryConstellation(){
       const sinHalf = Math.sin(angleDiff/2) || 0.001
       const rA = sizes[i], rB = sizes[j]
       const shared = sharedCount(i,j)
-      // overlapFactor: 0=no shared, >0 means shared employees exist relative to smaller category
+      // overlapFactor: 0 = no shared, > 0 means shared employees exist relative to smaller category
       const overlapFactor = shared > 0 ? Math.min(1, shared / Math.min(Math.max(1,catTotals[i]), Math.max(1,catTotals[j]))) : 0
-      // if overlapFactor>0 allow some overlap by reducing required separation up to 50%
+      // if overlapFactor > 0 allow some overlap by reducing required separation up to 50%
       const separation = (rA + rB + gap) * (1 - overlapFactor * 0.5)
       const radNeeded = separation / (2 * sinHalf)
       if(radNeeded > requiredRadius) requiredRadius = radNeeded

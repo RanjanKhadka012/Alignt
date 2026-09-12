@@ -2,6 +2,7 @@ import React from 'react'
 import { useDerivedData } from '../contexts/DerivedDataContext'
 import { useNavigate } from 'react-router-dom'
 
+// colors and labels for the risk levels
 function colorForRisk(risk){
   if(risk==='critical') return 'var(--critical)'
   if(risk==='watch') return 'var(--warning)'
