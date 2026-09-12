@@ -1,34 +1,42 @@
 [
   {
-    "id": "food_safety",
-    "label": "Food-Safety Certification",
+    "id": "haccp_recert",
+    "label": "HACCP Re‑certification (Site)",
     "targetDate": "2026-12-31",
     "timeframe": "This year",
-    "relevantRoles": ["Quality Technician", "Quality Inspector", "EHS Manager", "Production Supervisor"],
-    "qualifyingSkills": ["Food safety recertification (HACCP)", "Allergen control auditing", "USDA regulatory compliance", "Statistical process control"]
+    "relevantRoles": ["Quality Technician", "Quality Inspector", "Production Supervisor", "EHS Manager"],
+    "qualifyingSkills": ["Food safety recertification (HACCP)", "Sanitation compliance", "Allergen control auditing", "Metal detection calibration"]
   },
   {
-    "id": "cold_chain_automation",
-    "label": "Cold-Chain Automation",
-    "targetDate": "2026-09-30",
+    "id": "packaging_modernization",
+    "label": "Packaging Line Modernization",
+    "targetDate": "2027-06-30",
+    "timeframe": "6-12 months",
+    "relevantRoles": ["Maintenance Technician", "Maintenance Technician (Lead)", "Maintenance Supervisor", "Production Supervisor"],
+    "qualifyingSkills": ["PLC diagnostics", "Legacy line-equipment troubleshooting", "Conveyor belt alignment", "Preventive maintenance scheduling"]
+  },
+  {
+    "id": "cold_chain_efficiency",
+    "label": "Cold‑Chain & Logistics Efficiency",
+    "targetDate": "2026-11-30",
     "timeframe": "This year",
-    "relevantRoles": ["Forklift Operator", "Inventory Control Specialist", "Maintenance Technician", "Maintenance Technician (Lead)", "Maintenance Supervisor", "Refrigeration Mechanic"],
-    "qualifyingSkills": ["Cold-chain logistics", "PLC diagnostics", "Warehouse management systems (WMS)", "Hydraulic systems repair"]
+    "relevantRoles": ["Forklift Operator", "Inventory Control Specialist", "Warehouse & Logistics", "Refrigeration Mechanic"],
+    "qualifyingSkills": ["Cold-chain logistics", "Warehouse management systems (WMS)", "Forklift operation", "Inventory reconciliation"]
   },
   {
-    "id": "zero_safety_incidents",
-    "label": "Zero-Safety-Incidents",
-    "targetDate": "2029-12-31",
-    "timeframe": "1-3 years",
-    "relevantRoles": ["EHS Manager"],
-    "qualifyingSkills": ["Allergen control auditing", "Statistical process control", "USDA regulatory compliance", "Metal detection calibration"]
+    "id": "quality_analytics",
+    "label": "Quality Analytics / SPC Expansion",
+    "targetDate": "2027-03-31",
+    "timeframe": "6-12 months",
+    "relevantRoles": ["Quality Technician", "Quality Inspector", "Production Supervisor", "Data Analyst"],
+    "qualifyingSkills": ["Statistical process control", "USDA regulatory compliance", "Allergen control auditing"]
   },
   {
-    "id": "digital_supply_chain",
-    "label": "Digital Supply Chain / AI-Automation",
-    "targetDate": "2028-12-31",
-    "timeframe": "1-3 years",
-    "relevantRoles": ["Systems Analyst", "IT Support Specialist", "Data Analyst", "Maintenance Supervisor", "Maintenance Technician"],
-    "qualifyingSkills": ["Business intelligence tooling", "SCADA systems support", "ERP administration (SAP)", "Network security", "PLC diagnostics"]
+    "id": "workforce_resilience",
+    "label": "Workforce Resilience & Succession",
+    "targetDate": "2027-12-31",
+    "timeframe": "1 year",
+    "relevantRoles": ["Maintenance Technician", "Production Supervisor", "Maintenance Technician (Lead)"],
+    "qualifyingSkills": ["Legacy line-equipment troubleshooting", "PLC diagnostics", "Welding to food-safe standards"]
   }
 ]
