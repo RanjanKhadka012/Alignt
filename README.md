@@ -214,6 +214,33 @@ The React frontend now uses a shared Node API in development, standalone hosting
 
 ### Backend setup
 
+#### Local SQL workforce database
+
+Requires Node.js 22.13 or later. `server/schema.sql` defines departments, roles,
+employees, skills, and employee skill holdings with foreign keys and rating checks.
+Set `DATABASE_PATH=.local/workforce.sqlite` in `.env.local` to read workforce
+data from SQLite. If unset, the original demo seed is used. A configured database
+failure returns an error instead of silently replacing records with demo data.
+
+The supplied workbook was imported locally: 167 records, including 148 marked
+fictional by the `404` prefix. The prefix is removed from display names and stored
+as `isFictional`. Unmarked records are not independently verified as real people.
+Rows 2–18 use the leadership layout; rows 19–168 use department/category/role and
+rated skills. Required certifications are stored separately from skill holdings.
+Unknown ratings, tenure, and retirement eligibility remain SQL NULL.
+
+The database and extracted source rows are ignored by Git. Recreate a database
+from the local extracted rows with
+`node scripts/import-workforce.mjs .local/workforce-rows.json .local/new-workforce.sqlite`.
+The importer refuses to overwrite populated employee tables and imports in one
+transaction. Source row numbers preserve identity even when names repeat.
+
+SQLite is persistent on this computer. It is not a hosted database and this file
+has not been uploaded to Vercel. Vercel needs a hosted SQL database for persistent
+writes across deployments. Existing API routes expose reads only; authentication,
+strategy persistence, and employee editing remain future work. Skills imported
+without a category use `uncategorized`; no strategic weights are inferred.
+
 Run `npm install`, copy `.env.example` to `.env.local`, and configure the two
 Ollama variables. `npm run dev` serves both the UI and API. For a standalone
 API, run `npm run start:api` (default `127.0.0.1:3001`; configure `HOST` and `PORT`
