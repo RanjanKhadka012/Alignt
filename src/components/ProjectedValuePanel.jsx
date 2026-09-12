@@ -1,0 +1,5 @@
+import React from 'react'
+import { formatMoney } from './FinancialComparisonCard'
+export default function ProjectedValuePanel({ value, assumptions, investment }) {
+  return <section className="matching-panel projected-value"><h2>Projected business value <span>(illustrative — replace with your plant's actual downtime cost)</span></h2><div className="projected-stats"><div><span>Illustrative annual savings</span><strong>{formatMoney(value.annualSavings)}</strong></div><div><span>Annual savings / blended investment</span><strong>{investment > 0 ? `${value.roiMultiple}×` : 'N/A'}</strong></div></div><p className="matching-muted">Assumes <span className="matching-data">{assumptions.assumedAnnualDowntimeHours}</span> downtime hours/year × <span className="matching-data">{assumptions.targetReductionPct * 100}%</span> reduction × <span className="matching-data">{formatMoney(assumptions.downtimeCostPerHour)}</span>/hour. This hypothetical downtime scenario is not inferred from the goal or workforce analysis.</p><span className="projected-warning">⚠ Replace with actual plant downtime data before presenting as fact.</span></section>
+}

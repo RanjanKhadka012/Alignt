@@ -3,32 +3,14 @@ import assert from 'node:assert/strict'
 import { parseMatchResult, matchTeamToGoal } from '../src/services/matching.mjs'
 import { matchingHandler } from '../server/matching.mjs'
 import { Readable } from 'node:stream'
-const workforce = { employees: [{ id: 'e1', skills: [{ skillId: 'plc', proficiency: 5 }] }], skills: [{ id: 'plc', name: 'PLC Programming' }] }
-const option = { description: 'Course and supervised practice', duration: '3 months', costMin: 1000, costMax: 3000, assumptions: 'US planning estimate including paid learning time' }
-const aiResult = { requiredSkills: ['PLC Programming', 'Carbon accounting'], gapPlans: [{ skill: 'Carbon accounting', training: { ...option, employeeId: 'e1' }, internship: { ...option, costMin: 8000, costMax: 12000 } }] }
-const result = { requiredSkills: aiResult.requiredSkills, suggestedTeam: [{ employeeId: 'e1', matchedSkill: 'PLC Programming', stretched: false }], gaps: ['Carbon accounting'], gapPlans: aiResult.gapPlans }
-test('parses fenced requirements, matches actual holders and preserves gap costs', () => {
+const workforce = { employees: [{ id: 'e1', role: 'Operator', skills: [{ skillId: 'plc', proficiency: 5 }] }], skills: [{ id: 'plc', name: 'PLC Programming' }] }
+const aiResult = { requiredSkills: ['PLC Programming', 'Carbon accounting'], relevantRoles: ['Operator'] }
+const result = aiResult
+test('validates AI capabilities and exact relevant roles', () => {
   assert.deepEqual(parseMatchResult('```json\n' + JSON.stringify(aiResult) + '\n```', workforce), result)
-})
-test('rejects invalid estimates, invented training candidates and missing gap plans', () => {
-  const variants = [
-    { ...aiResult, gapPlans: [] },
-    { ...aiResult, requiredSkills: ['PLC Programming', 'plc programming'] },
-    ...[{ costMin: -1 }, { costMax: 100 }, { employeeId: 'unknown' }, { assumptions: '' }].map(change => ({ ...aiResult, gapPlans: [{ ...aiResult.gapPlans[0], training: { ...aiResult.gapPlans[0].training, ...change } }] })),
-  ]
-  for (const invalid of variants) assert.throws(() => parseMatchResult(JSON.stringify(invalid), workforce))
-})
-test('team selection uses proficiency and explicit commitment, never AI employee claims', () => {
-  const data = { ...workforce, employees: [
-    { id: 'busy', allocationPercent: 100, skills: [{ skillId: 'plc', proficiency: 5 }] },
-    { id: 'junior', skills: [{ skillId: 'plc', proficiency: 2 }] },
-    { id: 'available', skills: [{ skillId: 'plc', proficiency: 4 }] },
-  ] }
-  const response = { requiredSkills: ['PLC Programming'], suggestedTeam: [{ employeeId: 'invented' }], gapPlans: [] }
-  assert.equal(parseMatchResult(JSON.stringify(response), data).suggestedTeam[0].employeeId, 'available')
-  const busyOnly = { ...data, employees: [data.employees[0]] }
-  assert.equal(parseMatchResult(JSON.stringify(response), busyOnly).suggestedTeam[0].stretched, true)
-  assert.deepEqual(parseMatchResult(JSON.stringify(response), data).gaps, [])
+  assert.throws(() => parseMatchResult(JSON.stringify({ ...aiResult, relevantRoles: ['Invented role'] }), workforce))
+  assert.throws(() => parseMatchResult(JSON.stringify({ requiredSkills: [] }), workforce))
+  assert.deepEqual(parseMatchResult(JSON.stringify({ ...aiResult, relevantRoles: [] }), workforce).relevantRoles, [])
 })
 test('client sends goal, timeline and workforce and surfaces API errors', async () => {
   const original = globalThis.fetch

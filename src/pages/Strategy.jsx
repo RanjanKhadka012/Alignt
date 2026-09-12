@@ -17,9 +17,13 @@ function GoalForm({ goal = {}, onSave, onCancel }) {
   const [text, setText] = useState(goal.text || '')
   const [date, setDate] = useState(/^\d{4}-\d{2}-\d{2}$/.test(goal.targetDate || '') ? goal.targetDate : '')
   const [priority, setPriority] = useState(goal.priority || 1)
-  return <form className="strategy-form" onSubmit={event => { event.preventDefault(); if (text.trim()) onSave({ ...goal, text: text.trim(), targetDate: date, priority: Number(priority) }) }}>
+  const [roles, setRoles] = useState((goal.relevantRoles || []).join('\n'))
+  const [skills, setSkills] = useState((goal.qualifyingSkills || []).join('\n'))
+  const lines = value => [...new Set(value.split('\n').map(item => item.trim()).filter(Boolean))]
+  return <form className="strategy-form" onSubmit={event => { event.preventDefault(); if (text.trim()) onSave({ ...goal, id: goal.id || crypto.randomUUID(), text: text.trim(), targetDate: date, priority: Number(priority), relevantRoles: lines(roles), qualifyingSkills: lines(skills) }) }}>
     <label>What do you want to achieve?<textarea autoFocus required maxLength={1000} rows={3} value={text} onChange={event => setText(event.target.value)} placeholder="e.g. Certify every production line for food safety" /></label>
     <div className="strategy-form-fields"><label>Target date <span>optional</span><input type="date" value={date} onChange={event => setDate(event.target.value)} /></label><label>Priority<select value={priority} onChange={event => setPriority(event.target.value)}>{Object.entries(priorities).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label></div>
+    <fieldset className="strategy-readiness-fields"><legend>Workforce readiness criteria</legend><p>Overview measures employees in these roles who have at least one of these skills. Use exact names from your workforce records, one per line.</p><label>Relevant roles<textarea rows={3} value={roles} onChange={event => setRoles(event.target.value)} placeholder="Quality Technician" /></label><label>Qualifying skills<textarea rows={3} value={skills} onChange={event => setSkills(event.target.value)} placeholder="HACCP Food Safety" /></label></fieldset>
     <div className="strategy-actions"><button type="submit" className="strategy-primary" disabled={!text.trim()}>Save goal</button><button type="button" onClick={onCancel}>Cancel</button></div>
   </form>
 }
@@ -29,7 +33,7 @@ function GoalCard({ goal, onSave, onRemove }) {
   return <article className="strategy-goal">
     {editing ? <GoalForm goal={goal} onSave={updated => { onSave(updated); setEditing(false) }} onCancel={() => setEditing(false)} /> : <>
       <div className="strategy-goal-meta"><span className={`strategy-priority p${goal.priority || 1}`}>{priorities[goal.priority] || 'Standard'} priority</span><span className={`strategy-deadline ${due.tone}`}>{due.label}</span></div>
-      <h3>{goal.text}</h3>
+      <h3>{goal.text}</h3><p className="strategy-criteria-note">{goal.relevantRoles?.length && goal.qualifyingSkills?.length ? `${goal.relevantRoles.length} roles · ${goal.qualifyingSkills.length} qualifying skills linked to Overview` : 'Add roles and skills to measure readiness in Overview'}</p>
       <footer><span className="strategy-mono">{goal.targetDate && goal.targetDate !== 'TBD' ? new Date(`${goal.targetDate}T00:00:00`).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : 'Add a date to track urgency'}</span><div><button onClick={() => setEditing(true)} aria-label={`Edit goal: ${goal.text}`}>Edit</button><button className="strategy-remove" onClick={onRemove} aria-label={`Remove goal: ${goal.text}`}>Remove</button></div></footer>
     </>}
   </article>
@@ -62,9 +66,9 @@ export default function Strategy() {
     setNotice(message)
   }
   return <div className="strategy-page">
-    <header className="strategy-header"><div><span className="strategy-eyebrow">BUSINESS DIRECTION</span><h1>Set the direction.<br/><span>Align your people.</span></h1><p>Turn business ambitions into clear priorities for your workforce.</p></div><Link to="/matching" className="strategy-next">Find a team for your goals <span>↗</span></Link></header>
+    <header className="strategy-header"><div><span className="strategy-eyebrow">BUSINESS DIRECTION</span><h1>Set the direction.<br/><span>Align your people.</span></h1><p>Turn business ambitions into clear priorities for your workforce.</p></div><Link to="/overview" className="strategy-next">View strategy readiness <span>↗</span></Link></header>
     <div className="strategy-stats"><div><span className="strategy-mono">STRATEGIC GOALS</span><strong>{goals.length.toString().padStart(2, '0')}</strong><p>Across both planning horizons</p></div><div><span className="strategy-mono">ACTIVE INITIATIVES</span><strong>{initiatives.length.toString().padStart(2, '0')}</strong><p>Turning strategy into action</p></div><div><span className="strategy-mono">NEEDS ATTENTION</span><strong className={dueSoon ? 'strategy-attention' : ''}>{dueSoon.toString().padStart(2, '0')}</strong><p>Overdue or due within 30 days</p></div></div>
-    <div className="strategy-workspace-heading"><h2>Your planning horizons</h2><span>Changes apply immediately · This session only</span></div>
+    <div className="strategy-workspace-heading"><h2>Manage your strategy</h2><span>Changes apply immediately · This session only</span></div>
     <div className="strategy-notice" role="status">{notice && <><span>✓ {notice}</span>{undo && <button onClick={() => { setStrategy(previous => ({ ...previous, [undo.key]: undo.values })); setNotice('Change undone'); setUndo(null) }}>Undo</button>}</>}</div>
     <div className="strategy-horizons"><GoalSection number="01" title="This year" subtitle="Near-term outcomes that need focus now." goals={short} onChange={(values, message) => change('shortTermGoals', values, message)} /><GoalSection number="02" title="1–3 years" subtitle="Long-term ambitions to build toward." goals={long} onChange={(values, message) => change('longTermGoals', values, message)} /></div>
     <section className="strategy-section strategy-initiatives"><header className="strategy-section-heading"><div className="strategy-section-icon">↗</div><div><h2>Strategic initiatives <span>{initiatives.length}</span></h2><p>The concrete programs that help your goals become reality.</p></div></header>

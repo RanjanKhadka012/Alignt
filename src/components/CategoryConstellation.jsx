@@ -4,12 +4,6 @@ import Tooltip from './Tooltip'
 import { useWorkforce } from '../contexts/WorkforceContext'
 import { useNavigate } from 'react-router-dom'
 
-const CATEGORY_MAP = {
-  'Corporate': ['it','people'],
-  'Commercial': ['supply-chain'],
-  'Plant-floor': ['manufacturing','maintenance','facilities','automation','engineering']
-}
-
 function colorForRisk(risk){
   if(risk==='critical') return 'var(--critical)'
   if(risk==='watch') return 'var(--warning)'
@@ -21,8 +15,9 @@ export default function CategoryConstellation(){
   const navigate = useNavigate()
   const [hover, setHover] = useState(null)
 
-  const categories = Object.keys(CATEGORY_MAP)
   const { employees } = useWorkforce()
+  const categories = [...new Set(employees.map(employee => employee.category).filter(Boolean))]
+  const CATEGORY_MAP = Object.fromEntries(categories.map(category => [category, [...new Set(employees.filter(employee => employee.category === category).map(employee => employee.departmentId))]]))
 
   // compute headcount and aggregated risk per category
   const catData = categories.map(cat => {
