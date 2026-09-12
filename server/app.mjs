@@ -1,8 +1,8 @@
-import { readFileSync } from 'node:fs'
+import { workforce } from './workforceData.mjs'
 import { matchingHandler } from './matching.mjs'
 import { recommendationsHandler } from './recommendations.mjs'
 
-const workforce = JSON.parse(readFileSync(new URL('../src/data/seed.json', import.meta.url), 'utf8'))
+
 
 export function createApiHandler(env = process.env) {
   const matching = matchingHandler(env)
@@ -17,7 +17,7 @@ export function createApiHandler(env = process.env) {
     try {
       if (path === '/api/health' || path === '/api/workforce') {
         if (req.method !== 'GET') { res.setHeader('Allow', 'GET'); return send(405, { error: 'Use GET for this endpoint.' }) }
-        return send(200, path === '/api/health' ? { status: 'ok', dataSource: 'seed', aiConfigured: Boolean(env.OLLAMA_API_KEY && env.OLLAMA_MODEL) } : workforce)
+        return send(200, path === '/api/health' ? { status: 'ok', dataSource: workforce.dataSource, aiConfigured: Boolean(env.OLLAMA_API_KEY && env.OLLAMA_MODEL) } : workforce)
       }
       await recommendations(req, res, () => matching(req, res, () => send(404, { error: 'API endpoint not found.' })))
     } catch (error) {

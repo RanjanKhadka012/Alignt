@@ -2,102 +2,58 @@ import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useStrategy } from '../contexts/StrategyContext'
 import { useWorkforce } from '../contexts/WorkforceContext'
-import MatchedTeamNetwork from '../components/MatchedTeamNetwork'
 import { matchTeamToGoal } from '../services/matching.mjs'
+import { analyzeGoalReadiness, calculateFinancials, proficiencyLabel } from '../utils/goalRisk'
+import { FINANCIAL_ASSUMPTIONS as assumptions } from '../config/financialAssumptions'
+import PipelineFunnel from '../components/PipelineFunnel'
+import ConcentrationTable from '../components/ConcentrationTable'
+import FinancialComparisonCard, { formatMoney } from '../components/FinancialComparisonCard'
+import ProjectedValuePanel from '../components/ProjectedValuePanel'
 import './Matching.css'
 
-const money = value => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
-const costRange = option => `${money(option.costMin)} – ${money(option.costMax)}`
-
-function GapOption({ title, option, employees, training = false }) {
-  const employee = employees.find(employee => employee.id === option.employeeId)
-  return <div className="matching-gap-option">
-    <h3>{title}</h3>
-    {training && <div className="matching-data">{employee ? `CANDIDATE · ${employee.name}` : 'CANDIDATE · To be identified'}</div>}
-    <p>{option.description}</p>
-    <div className="matching-option-cost"><strong>{costRange(option)}</strong><span>{option.duration}</span></div>
-    <p className="matching-muted matching-footnote">{option.assumptions}</p>
-  </div>
-}
-
 export default function Matching() {
-  const { employees, skills, roles, departments } = useWorkforce()
+  const workforce = useWorkforce()
+  const { employees, skills, roles, departments } = workforce
   const { strategy } = useStrategy()
-  const strategyGoals = [
-    ...(strategy.shortTermGoals || []).map(goal => ({ ...goal, horizon: 'This year' })),
-    ...(strategy.longTermGoals || []).map(goal => ({ ...goal, horizon: '1–3 years' })),
-  ].filter(goal => goal.text?.trim())
-  const [goal, setGoal] = useState('')
-  const [timeline, setTimeline] = useState('')
-  const [result, setResult] = useState(null)
-  const [status, setStatus] = useState('idle')
-  const [error, setError] = useState('')
-  const [submitted, setSubmitted] = useState(null)
-  const request = useRef(0)
-  const busy = status === 'loading'
+  const [goal, setGoal] = useState(''), [timeline, setTimeline] = useState('')
+  const [result, setResult] = useState(null), [error, setError] = useState(''), [busy, setBusy] = useState(false)
+  const request = useRef(0), lock = useRef(false)
+  const strategyGoals = [...(strategy.shortTermGoals || []), ...(strategy.longTermGoals || [])]
   async function submit(nextGoal = goal, nextTimeline = timeline) {
-    if (!nextGoal.trim() || !nextTimeline.trim() || !employees.length || busy) return
+    if (lock.current || !nextGoal.trim() || !nextTimeline.trim()) return
+    lock.current = true; setBusy(true); setError(''); setResult(null)
     const id = ++request.current
-    setSubmitted({ goal: nextGoal.trim(), timeline: nextTimeline.trim() })
-    setResult(null); setError(''); setStatus('loading')
     try {
-      const match = await matchTeamToGoal(nextGoal.trim(), nextTimeline.trim(), { employees, skills, roles, departments })
-      if (id === request.current) { setResult(match); setStatus('success') }
-    } catch (err) { if (id === request.current) { setError(err.message); setStatus('error') } }
+      const requirements = await matchTeamToGoal(nextGoal.trim(), nextTimeline.trim(), { employees, skills, roles, departments })
+      const named = employees.map(employee => ({ ...employee, skills: (employee.skills || []).map(skill => ({ ...skill, skill: skill.skill || skills.find(entry => entry.id === skill.skillId)?.name })) }))
+      const analysis = analyzeGoalReadiness(nextGoal.trim(), requirements.requiredSkills, requirements.relevantRoles, named)
+      setResult({ id, goal: nextGoal.trim(), timeline: nextTimeline.trim(), requirements, analysis, finances: calculateFinancials(analysis.trainable.length, analysis.gapped.length) })
+    } catch (err) { setError(err.message) } finally { lock.current = false; setBusy(false) }
   }
-  const team = result ? [...new Set(result.suggestedTeam.map(match => match.employeeId))].map(id => ({
-    employee: employees.find(employee => employee.id === id),
-    matches: result.suggestedTeam.filter(match => match.employeeId === id),
-  })) : []
+  const analysis = result?.analysis, finances = result?.finances
+  const worst = analysis && [...analysis.concentration].sort((a, b) => a.holders.length - b.holders.length)[0]
+  const candidate = worst && analysis.trainable.find(employee => employee.skills.some(skill => skill.skill === worst.capability && !['Intermediate', 'Advanced', 'Expert'].includes(proficiencyLabel(skill.proficiency))))
+  const segments = analysis ? [ { label: 'Fully qualified', count: analysis.fullyQualified.length, tone: 'teal' }, { label: 'Trainable', count: analysis.trainable.length, tone: 'amber' }, { label: 'Skill-gapped', count: analysis.gapped.length, tone: 'red' } ] : []
   return <div className="matching-page">
-    <header><div className="matching-data matching-eyebrow">WORKFORCE INTELLIGENCE</div><h1>Goal → Project Matching</h1><p>Describe the goal. Discover the skills and people to deliver it.</p></header>
-    <section className="matching-panel matching-input" aria-label="Project goal">
-      <form onSubmit={event => { event.preventDefault(); submit() }}>
-        <label className="matching-goal">Goal / project description<input required maxLength="2000" value={goal} onChange={event => setGoal(event.target.value)} placeholder="Roll out automation on Line 4" /></label>
-        <label>Target timeline<input required maxLength="100" value={timeline} onChange={event => setTimeline(event.target.value)} placeholder="6 months" /></label>
-        <button className="matching-submit" disabled={busy || !employees.length || !goal.trim() || !timeline.trim()} type="submit">{busy ? 'Finding team…' : 'Find team'}</button>
-      </form>
-      <div className="matching-examples matching-strategy-goals">
-        <div className="matching-strategy-heading"><span className="matching-data">TRY A GOAL · FROM YOUR STRATEGY</span><Link to="/strategy">Manage goals ↗</Link></div>
-        {strategyGoals.length ? strategyGoals.map((strategyGoal, index) => {
-          const hasDate = /^\d{4}-\d{2}-\d{2}$/.test(strategyGoal.targetDate || '') && !Number.isNaN(Date.parse(strategyGoal.targetDate))
-          const target = hasDate ? `By ${strategyGoal.targetDate}` : 'No target date specified'
-          return <button key={`${strategyGoal.horizon}-${index}`} disabled={busy || !employees.length} onClick={() => { setGoal(strategyGoal.text); setTimeline(target); submit(strategyGoal.text, target) }}>
-            <span>{strategyGoal.text} ↗</span>
-            <span className="matching-data">{strategyGoal.horizon} · {hasDate ? strategyGoal.targetDate : 'No deadline set'}</span>
-          </button>
-        }) : <p className="matching-muted matching-footnote">Add a goal on the <Link to="/strategy">Strategy page</Link> to try it here, or describe a project above.</p>}
-      </div>
+    <header><div className="matching-data matching-eyebrow">GOAL → SKILLS → PEOPLE → RISK</div><h1>Is your workforce ready to execute?</h1><p>Tell us your strategy. We'll show you the capability, risk, and investment needed to deliver it.</p></header>
+    <section className="matching-panel matching-input"><form onSubmit={event => { event.preventDefault(); submit() }}><label className="matching-goal">Business goal / objective<input required maxLength={2000} value={goal} onChange={event => setGoal(event.target.value)} placeholder="Roll out automation on Line 4" /></label><label>Target timeline<input required maxLength={100} value={timeline} onChange={event => setTimeline(event.target.value)} placeholder="6 months" /></label><button type="submit" className="matching-submit" disabled={busy || !goal.trim() || !timeline.trim()}> {busy ? 'Analyzing…' : 'Analyze readiness'}</button></form>
+      <div className="matching-examples matching-strategy-goals"><div className="matching-strategy-heading"><span className="matching-data">TRY A GOAL · FROM YOUR STRATEGY</span><Link to="/strategy">Manage goals ↗</Link></div>{strategyGoals.map((item, index) => <button key={item.id || index} disabled={busy} onClick={() => { const target = item.targetDate && item.targetDate !== 'TBD' ? `By ${item.targetDate}` : 'No target date specified'; setGoal(item.text); setTimeline(target); submit(item.text, target) }}><span>{item.text} ↗</span><span className="matching-data">{item.targetDate || 'No deadline set'}</span></button>)}{!strategyGoals.length && <p>Add a goal in Strategy, or enter an objective above.</p>}</div>
     </section>
-    {status !== 'idle' && <section aria-label="Matching results" aria-busy={busy}>
-      <div className="matching-query"><span>{submitted.goal}</span><span className="matching-data">TARGET · {submitted.timeline}</span></div>
-      <div className="matching-results">
-        <section className="matching-panel"><div className="matching-panel-heading"><h2>Matched network</h2><span className="matching-data">{team.length} / {employees.length} PEOPLE</span></div>
-          <p className="matching-muted" role="status">{busy ? 'Identifying required skills and evaluating internal holders…' : result ? `${team.length} people cover ${result.requiredSkills.length - result.gaps.length} of ${result.requiredSkills.length} required skills.` : 'No team could be assembled. Retry to evaluate this goal.'}</p>
-          <MatchedTeamNetwork key={`${request.current}-${status}`} employees={employees} suggestedTeam={result?.suggestedTeam} hasResult={!!result} />
-        </section>
-        <div className="matching-details">
-          {error && <section className="matching-panel matching-risk" role="alert"><h2>Matching unavailable</h2><p>{error}</p><button onClick={() => submit(submitted.goal, submitted.timeline)}>Try again</button></section>}
-          {busy && <section className="matching-panel"><h2>Building your team</h2><p className="matching-muted">Checking skills, proficiency, and any recorded commitments against your goal and timeline.</p></section>}
-          {result && <>
-            <section className="matching-panel"><h2>Required skills</h2><ul className="matching-skills">{result.requiredSkills.map(skill => { const gap = result.gaps.some(g => g.trim().toLowerCase() === skill.trim().toLowerCase()); return <li key={skill} className={gap ? 'matching-missing-skill' : 'matching-covered-skill'}><span>{skill}</span><span className={`matching-tag matching-data ${gap ? 'gap' : ''}`}>{gap ? 'MISSING' : 'COVERED'}</span></li> })}</ul></section>
-            <section className="matching-panel"><h2>Suggested team</h2>{!team.length && <p className="matching-muted">No internal holders were found for the required skills.</p>}<ul className="matching-team">{team.map(({ employee, matches }) => <li key={employee.id}><strong>{employee.name}{matches.some(m => m.stretched) && <span className="matching-amber"> *</span>}</strong><div className="matching-muted">{employee.role} · {departments.find(d => d.id === employee.departmentId)?.name || employee.departmentId}</div><div className="matching-coverage">{matches.map(m => m.matchedSkill).join(' · ')}</div></li>)}</ul>{team.some(t => t.matches.some(m => m.stretched)) && <p className="matching-amber">* Stretched: recorded commitments may limit availability. Confirm capacity before staffing.</p>}<p className="matching-muted matching-footnote">Availability is assessed only where commitment data is provided. Confirm capacity with team leads.</p></section>
-            {result.gaps.length > 0 && <section className="matching-panel matching-gap-panel">
-              <h2>Close the skill gaps</h2>
-              <p className="matching-muted">Compare two paths for each missing skill. Costs are AI planning estimates in USD, not quotes, and include the assumptions below.</p>
-              {result.gapPlans.map(plan => <article className="matching-gap" key={plan.skill}>
-                <h3>{plan.skill} <span className="matching-tag gap matching-data">MISSING</span></h3>
-                <GapOption title="Train a current employee" option={plan.training} employees={employees} training />
-                <GapOption title="Hire an intern with this skill" option={plan.internship} employees={employees} />
-              </article>)}
-              <div className="matching-budget"><h3>Estimated company investment</h3>
-                {['training', 'internship'].map(path => <div className="matching-budget-row" key={path}><span>{path === 'training' ? 'Training every gap' : 'Intern hiring for every gap'}</span><strong>{costRange({ costMin: result.gapPlans.reduce((sum, plan) => sum + plan[path].costMin, 0), costMax: result.gapPlans.reduce((sum, plan) => sum + plan[path].costMax, 0) })}</strong></div>)}
-                <p className="matching-muted matching-footnote">Alternative scenarios, not additive. Each assumes one trainee or intern per gap. Shared training or a person covering multiple gaps may reduce totals. Check each option’s suitability and timeline before budgeting; these costs exclude the existing project team and other project expenses.</p>
-              </div>
-            </section>}
-          </>}
-        </div>
-      </div>
-    </section>}
+    {busy && <section className="matching-panel" role="status"><h2>Identifying capabilities and relevant roles…</h2><p className="matching-muted">Then we’ll assess employee proficiency, concentration risk, and costs from the workforce records.</p></section>}
+    {error && <section className="matching-panel matching-risk" role="alert"><h2>Analysis unavailable</h2><p>{error}</p><button onClick={() => submit()}>Try again</button></section>}
+    {result && <div className="goal-risk-results" key={result.id}>
+      <div className="matching-query"><strong>{result.goal}</strong><span className="matching-data">TARGET · {result.timeline}</span></div>
+      <p className="matching-muted matching-footnote">Relevant roles: {result.requirements.relevantRoles.join(' · ') || 'No relevant roles found in current records'}. Qualification reflects recorded skills, not confirmed availability or certification status.</p>
+      <PipelineFunnel analysis={analysis}/>
+      <section className="matching-panel"><h2>Workforce readiness breakdown</h2>{!analysis.pool.length ? <p className="matching-muted">No employees in the identified roles. Review role coverage before making a staffing estimate.</p> : <><div className="readiness-segments" role="img" aria-label={segments.map(segment => `${segment.label}: ${segment.count}`).join(', ')}>{segments.map(segment => <span className={segment.tone} key={segment.label} style={{ width: `${100 * segment.count / analysis.pool.length}%` }} />)}</div><div className="segment-legend">{segments.map(segment => <span key={segment.label}><i className={segment.tone}/>{segment.label} <strong className="matching-data">{Math.round(100 * segment.count / analysis.pool.length)}% · {segment.count}</strong></span>)}</div></>}
+        <details className="pipeline-people"><summary>Inspect employee classification</summary>{[['Fully qualified', analysis.fullyQualified], ['Trainable', analysis.trainable], ['Skill-gapped', analysis.gapped]].map(([label, people]) => <div key={label}><h3>{label}</h3>{people.length ? people.map(employee => <p key={employee.id}><Link to={`/employees/${employee.id}`}>{employee.name}</Link> · {employee.role}</p>) : <p>None</p>}</div>)}</details>
+      </section>
+      <section className="matching-panel"><h2>Capability concentration check</h2><p className="matching-muted">Intermediate+ holders across the entire company. Critical: ≤2 · Watch: ≤4 · OK: 5+.</p><ConcentrationTable concentration={analysis.concentration}/></section>
+      {worst && <section className={`matching-panel concentration-callout ${worst.flag}`}><span className="matching-data">{worst.flag === 'ok' ? 'LOWEST CAPABILITY COVERAGE' : 'PRIORITY CAPABILITY RISK'}</span><h2>{worst.capability}</h2><p>{worst.holders.length ? worst.holders.map(employee => `${employee.name} (${proficiencyLabel(employee.skills.find(skill => skill.skill === worst.capability)?.proficiency)})`).join(' · ') : 'No Intermediate+ holders recorded company-wide.'}</p><p className="matching-muted">{worst.flag === 'ok' ? 'Coverage is above the concentration-risk threshold. Maintain backup capacity and keep procedures current.' : worst.holders.length ? 'If these employees are unavailable, this capability loses its recorded qualified coverage and may delay delivery.' : 'The project currently has no recorded qualified internal coverage for this capability. Build or recruit expertise before relying on it.'}</p><div className="matching-examples">{candidate && <Link to={`/employees/${candidate.id}`}>Fast-track {candidate.name}'s training ↗</Link>}{analysis.trainable.length > 0 && <Link to="/recommendations">Cross-train {Math.min(analysis.trainable.length, Math.max(1, 5 - worst.holders.length))} additional people ↗</Link>}<span className="matching-action-note">Document procedures before any transition</span></div></section>}
+      <section className="matching-panel"><h2>Financial impact</h2><p className="matching-muted">Computed from workforce counts using placeholder costs: {formatMoney(assumptions.avgSpecialistSalary)} annual salary + {assumptions.recruitingOverheadPct * 100}% recruiting overhead per hire. Not actual company compensation.</p>
+      {!analysis.pool.length ? <p>No relevant workforce pool; staffing costs cannot be meaningfully estimated.</p> : <><div className="financial-grid"><FinancialComparisonCard title="Recruit for every skill-gapped position" total={finances.optionA}><p>{analysis.gapped.length} hires × {formatMoney(assumptions.avgSpecialistSalary * (1 + assumptions.recruitingOverheadPct))}</p><small>First-year salary + recruiting overhead. Does not include training the trainable group.</small></FinancialComparisonCard><FinancialComparisonCard recommended title="Develop internally. Recruit selectively." total={finances.recommended.total}><ul><li>{analysis.trainable.length} trainable × {formatMoney(assumptions.trainableCoursePerPerson)} · ~6 weeks</li><li>{finances.recommended.upskillGappedCount} skill-gapped × {formatMoney(assumptions.gappedCoursePerPerson)} · ~10 weeks</li><li>{finances.recommended.recruitCount} safety-margin recruits × {formatMoney(assumptions.avgSpecialistSalary * (1 + assumptions.recruitingOverheadPct))}</li></ul><strong className="financial-savings">{formatMoney(Math.abs(finances.recommended.savingsVsOptionA))} {finances.recommended.savingsVsOptionA >= 0 ? 'savings' : 'additional investment'} vs. Option A</strong></FinancialComparisonCard></div><p className="matching-muted matching-footnote">Scenarios cover different populations: blended includes training the trainable group. Courses are assumptions, not proof of qualification. Safety-margin hires require appropriate skills; these counts do not guarantee every capability gap is closed. Training excludes paid learning time and backfill.</p></>}
+      </section>
+      <ProjectedValuePanel value={finances.projectedValue} assumptions={assumptions} investment={analysis.pool.length ? finances.recommended.total : 0}/>
+    </div>}
   </div>
 }

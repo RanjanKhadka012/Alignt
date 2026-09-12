@@ -1,0 +1,132 @@
+[
+  {
+    "id": "r_prod_supervisor",
+    "title": "Production Supervisor",
+    "location": "Plant \u2014 Marshall, MN",
+    "summary": "Runs the daily production floor, ensuring food is made safely, on schedule, and to standard.",
+    "idealSkillProfile": [
+      {
+        "skill": "Standard line changeover",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Staff scheduling & performance management",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Food safety recertification (HACCP)",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "USDA regulatory compliance",
+        "targetProficiency": "Intermediate"
+      },
+      {
+        "skill": "Batch mixing procedures",
+        "targetProficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "r_ehs_manager",
+    "title": "EHS Manager",
+    "location": "Plant \u2014 Marshall, MN",
+    "summary": "Ensures the plant is safe and compliant with government safety/environmental rules; investigates accidents and trains staff.",
+    "idealSkillProfile": [
+      {
+        "skill": "Allergen control auditing",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Statistical process control",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "USDA regulatory compliance",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "OSHA/EPA audit readiness",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Metal detection calibration",
+        "targetProficiency": "Intermediate"
+      },
+      {
+        "skill": "Incident investigation & corrective action documentation",
+        "targetProficiency": "Expert"
+      }
+    ]
+  },
+  {
+    "id": "r_shipping_inventory_mgr",
+    "title": "Shipping Receiving Inventory Manager",
+    "location": "Plant \u2014 Marshall, MN, Distribution Center",
+    "jobId": "26-2881",
+    "summary": "Keeps track of everything coming into/out of the warehouse; plans daily loading/unloading; troubleshoots inventory issues.",
+    "idealSkillProfile": [
+      {
+        "skill": "Warehouse management systems (WMS)",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Forklift operation",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Inventory reconciliation",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Cold-chain logistics",
+        "targetProficiency": "Intermediate"
+      },
+      {
+        "skill": "Vendor/customer order coordination",
+        "targetProficiency": "Intermediate"
+      }
+    ]
+  },
+  {
+    "id": "r_maintenance_supervisor",
+    "title": "Maintenance Supervisor",
+    "location": "Plant \u2014 Marshall, MN",
+    "jobId": "26-1891",
+    "summary": "Runs maintenance day to day; ensures equipment reliability and repairs stay on schedule; manages team and budget.",
+    "idealSkillProfile": [
+      {
+        "skill": "PLC diagnostics",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Hydraulic systems repair",
+        "targetProficiency": "Expert"
+      },
+      {
+        "skill": "Conveyor belt alignment",
+        "targetProficiency": "Intermediate"
+      },
+      {
+        "skill": "Welding to food-safe standards",
+        "targetProficiency": "Intermediate"
+      },
+      {
+        "skill": "Legacy line-equipment troubleshooting",
+        "targetProficiency": "Intermediate"
+      },
+      {
+        "skill": "Contractor/vendor & outage management",
+        "targetProficiency": "Expert"
+      }
+    ]
+  }
+]

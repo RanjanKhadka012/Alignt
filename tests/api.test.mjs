@@ -10,10 +10,10 @@ test('HTTP API serves workforce, health, method errors and JSON 404s', async t =
   t.after(() => new Promise(resolve => server.close(resolve)))
   const base = `http://127.0.0.1:${server.address().port}`
   const health = await fetch(base + '/api/health')
-  assert.deepEqual(await health.json(), { status: 'ok', dataSource: 'seed', aiConfigured: false })
+  assert.deepEqual(await health.json(), { status: 'ok', dataSource: 'real-seed', aiConfigured: false })
   const workforce = await (await fetch(base + '/api/workforce')).json()
   for (const key of ['employees', 'skills', 'roles', 'departments']) assert.ok(Array.isArray(workforce[key]))
-  assert.ok(workforce.employees.length > 0)
+  assert.equal(workforce.employees.length, 150)
   const invalid = await fetch(base + '/api/workforce', { method: 'POST' })
   assert.equal(invalid.status, 405)
   assert.equal(invalid.headers.get('allow'), 'GET')

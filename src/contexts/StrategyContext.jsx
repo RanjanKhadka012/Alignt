@@ -1,18 +1,14 @@
 import React, { createContext, useState, useContext } from 'react'
 
+import objectiveSeeds from '../data/initiatives.json'
+
 const StrategyContext = createContext()
 
+const goals = objectiveSeeds.map(objective => ({ ...objective, text: objective.label, priority: objective.priority || 1 }))
 const initialStrategy = {
-  shortTermGoals: [
-    { text: 'Improve plant food-safety certification', targetDate: '2026-12-31', priority: 3 },
-    { text: 'Automate cold-chain logistics', targetDate: '2026-09-30', priority: 2 }
-  ],
-  longTermGoals: [
-    { text: 'Achieve zero-safety incidents across plants', targetDate: '2029-12-31', priority: 3 }
-  ],
-  initiatives: [
-    { text: 'Cross-train operators on HACCP and equipment maintenance' }
-  ]
+  shortTermGoals: goals.filter(goal => goal.timeframe === 'This year'),
+  longTermGoals: goals.filter(goal => goal.timeframe !== 'This year'),
+  initiatives: [],
 }
 
 export function StrategyProvider({ children }){

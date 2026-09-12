@@ -3,20 +3,13 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useWorkforce } from '../contexts/WorkforceContext'
 import { useDerivedData } from '../contexts/DerivedDataContext'
 
-const CATEGORY_MAP = {
-  'corporate': ['it','people'],
-  'commercial': ['supply-chain'],
-  'plant-floor': ['manufacturing','maintenance','facilities','automation','engineering']
-}
-
 export default function CategoryDetail(){
   const { categoryId } = useParams()
   const navigate = useNavigate()
   const { employees, skills } = useWorkforce()
   const { skillsWithRisk } = useDerivedData()
 
-  const deptIds = CATEGORY_MAP[categoryId] || []
-  const catsEmployees = (employees || []).filter(e=> deptIds.includes(e.departmentId))
+  const catsEmployees = employees.filter(employee => employee.category?.toLowerCase().replace(/\s+/g, '-') === categoryId)
 
   function skillIsCritical(skillId){
     const s = (skillsWithRisk||[]).find(x=>x.skill.id===skillId)
