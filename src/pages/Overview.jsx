@@ -1,6 +1,7 @@
 import React from 'react'
 import StrategyBanner from '../components/StrategyBanner'
 import CategoryConstellation from '../components/CategoryConstellation'
+import TopCapabilityRisks from '../components/TopCapabilityRisks'
 import { useWorkforce } from '../contexts/WorkforceContext'
 import { useDerivedData } from '../contexts/DerivedDataContext'
 
@@ -12,6 +13,8 @@ export default function Overview(){
     <div>
       <h1 style={{fontFamily:'Space Grotesk',marginTop:0}}>Overview — Command Center</h1>
       <StrategyBanner />
+
+      <TopCapabilityRisks />
 
       <div style={{marginTop:8}}>
         <h2 style={{fontFamily:'Space Grotesk'}}>Organization</h2>
