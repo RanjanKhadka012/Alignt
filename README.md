@@ -257,6 +257,10 @@ environment variables precedence. It serves the API only; serve `dist` separatel
 
 Unknown API routes return JSON 404 responses. Workforce loading shows a loading
 state and a retry action on failure. No database writes are exposed yet.
+The frontend loads employees, departments, roles, skills, and initiatives through
+`/api/workforce`; browser-side JSON files never override the response. Initiatives
+are currently served from the backend's configured JSON file. Restart the local
+server after changing `DATABASE_PATH`. Strategy edits still remain session-only.
 Run `npm test` for HTTP routing, deployment adapter, and AI service contract tests.
 
 ### Vercel

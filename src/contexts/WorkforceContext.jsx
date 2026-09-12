@@ -1,13 +1,8 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
-import initiativeSeed from '../data/initiatives.json'
 
-// Optional supplied datasets take precedence over the existing demo seed.
-const supplied = import.meta.glob('../data/{employees,roles}.json', { eager: true, import: 'default' })
-const employeeSeed = supplied['../data/employees.json']
-const roleSeed = supplied['../data/roles.json']
 function normalizeWorkforce(data) {
-const sourceEmployees = employeeSeed?.employees || employeeSeed || data.employees
-const sourceRoles = roleSeed?.roles || roleSeed || data.roles
+const sourceEmployees = data.employees
+const sourceRoles = data.roles
 const catalog = [...data.skills]
 const normalizedEmployees = sourceEmployees.map(employee => ({ ...employee,
   departmentId: employee.departmentId || employee.department,
@@ -25,7 +20,8 @@ return { employees: normalizedEmployees, skills: catalog, roles: sourceRoles }
 const WorkforceContext = createContext()
 
 export function WorkforceProvider({ children }){
-  const [initiatives, setInitiatives] = useState(initiativeSeed)
+  const [initiatives, setInitiatives] = useState([])
+  const [readinessDataComplete, setReadinessDataComplete] = useState(false)
   const [employees, setEmployees] = useState([])
   const [skills, setSkills] = useState([])
   const [roles, setRoles] = useState([])
@@ -43,10 +39,12 @@ export function WorkforceProvider({ children }){
     fetch('/api/workforce', { signal: controller.signal }).then(async response => {
       if (!response.ok) throw new Error('Could not load workforce data. Please reload to retry.')
       const data = await response.json()
-      if (!['employees', 'skills', 'roles', 'departments'].every(key => Array.isArray(data[key]))) throw new Error('The workforce service returned invalid data.')
+      if (!['employees', 'skills', 'roles', 'departments', 'initiatives'].every(key => Array.isArray(data[key]))) throw new Error('The workforce service returned invalid data.')
       if (controller.signal.aborted) return
       const normalized = normalizeWorkforce(data)
       setEmployees(normalized.employees); setSkills(normalized.skills); setRoles(normalized.roles); setDepartments(data.departments)
+      setInitiatives(data.initiatives)
+      setReadinessDataComplete(data.readinessDataComplete === true)
       setLoading(false)
     }).catch(error => {
       if (!controller.signal.aborted) { setError(error.message); setLoading(false) }
@@ -58,7 +56,7 @@ export function WorkforceProvider({ children }){
   if (error) return <div role="alert" style={{padding: 24}}>{error} <button onClick={() => window.location.reload()}>Retry</button></div>
 
   return (
-    <WorkforceContext.Provider value={{initiatives, setInitiatives, readinessDataComplete: !!employeeSeed && !!roleSeed, employees, skills, roles, departments, setEmployees, setSkills, setRoles, setDepartments}}>
+    <WorkforceContext.Provider value={{initiatives, setInitiatives, readinessDataComplete, employees, skills, roles, departments, setEmployees, setSkills, setRoles, setDepartments}}>
       {children}
     </WorkforceContext.Provider>
   )
