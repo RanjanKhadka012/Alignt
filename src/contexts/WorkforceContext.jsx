@@ -1,14 +1,14 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
-import seed from '../data/seed.json'
 import initiativeSeed from '../data/initiatives.json'
 
 // Optional supplied datasets take precedence over the existing demo seed.
 const supplied = import.meta.glob('../data/{employees,roles}.json', { eager: true, import: 'default' })
 const employeeSeed = supplied['../data/employees.json']
 const roleSeed = supplied['../data/roles.json']
-const sourceEmployees = employeeSeed?.employees || employeeSeed || seed.employees
-const sourceRoles = roleSeed?.roles || roleSeed || seed.roles
-const catalog = [...seed.skills]
+function normalizeWorkforce(data) {
+const sourceEmployees = employeeSeed?.employees || employeeSeed || data.employees
+const sourceRoles = roleSeed?.roles || roleSeed || data.roles
+const catalog = [...data.skills]
 const normalizedEmployees = sourceEmployees.map(employee => ({ ...employee,
   departmentId: employee.departmentId || employee.department,
   skills: (employee.skills || []).map(skill => {
@@ -19,6 +19,9 @@ const normalizedEmployees = sourceEmployees.map(employee => ({ ...employee,
   }),
 }))
 
+return { employees: normalizedEmployees, skills: catalog, roles: sourceRoles }
+}
+
 const WorkforceContext = createContext()
 
 export function WorkforceProvider({ children }){
@@ -27,14 +30,32 @@ export function WorkforceProvider({ children }){
   const [skills, setSkills] = useState([])
   const [roles, setRoles] = useState([])
   const [departments, setDepartments] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(()=>{
-    // load seed data
-    setEmployees(normalizedEmployees)
-    setSkills(catalog)
-    setRoles(sourceRoles)
-    setDepartments(seed.departments || [])
+    const controller = new AbortController()
+    const timeout = setTimeout(() => {
+      controller.abort()
+      setError('Loading workforce data timed out. Please retry.')
+      setLoading(false)
+    }, 15000)
+    fetch('/api/workforce', { signal: controller.signal }).then(async response => {
+      if (!response.ok) throw new Error('Could not load workforce data. Please reload to retry.')
+      const data = await response.json()
+      if (!['employees', 'skills', 'roles', 'departments'].every(key => Array.isArray(data[key]))) throw new Error('The workforce service returned invalid data.')
+      if (controller.signal.aborted) return
+      const normalized = normalizeWorkforce(data)
+      setEmployees(normalized.employees); setSkills(normalized.skills); setRoles(normalized.roles); setDepartments(data.departments)
+      setLoading(false)
+    }).catch(error => {
+      if (!controller.signal.aborted) { setError(error.message); setLoading(false) }
+    }).finally(() => clearTimeout(timeout))
+    return () => { clearTimeout(timeout); controller.abort() }
   },[])
+
+  if (loading) return <div role="status" style={{padding: 24}}>Loading workforce…</div>
+  if (error) return <div role="alert" style={{padding: 24}}>{error} <button onClick={() => window.location.reload()}>Retry</button></div>
 
   return (
     <WorkforceContext.Provider value={{initiatives, setInitiatives, readinessDataComplete: !!employeeSeed && !!roleSeed, employees, skills, roles, departments, setEmployees, setSkills, setRoles, setDepartments}}>
