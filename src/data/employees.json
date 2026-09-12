@@ -22,7 +22,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e002",
@@ -42,7 +49,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e003",
@@ -55,9 +69,21 @@
         "skill": "Statistical process control",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e004",
@@ -66,12 +92,28 @@
     "category": "Plant Based",
     "role": "Production Supervisor",
     "skills": [
-      { "skill": "Sanitation compliance", "rating": 4, "proficiency": "Advanced" },
-      { "skill": "Preventive maintenance scheduling", "rating": 3, "proficiency": "Intermediate" },
-      { "skill": "Statistical process control", "rating": 2, "proficiency": "Developing" }
+      {
+        "skill": "Sanitation compliance",
+        "rating": 4,
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Statistical process control",
+        "rating": 2,
+        "proficiency": "Developing"
+      }
     ],
     "certifications": [
-      { "name": "Supervisor HACCP awareness", "issued": "2024-09-01", "expires": "2027-09-01" }
+      {
+        "name": "Supervisor HACCP awareness",
+        "issued": "2024-09-01",
+        "expires": "2027-09-01"
+      }
     ],
     "noCertsRecorded": false
   },
@@ -82,12 +124,28 @@
     "category": "Plant Based",
     "role": "Forklift Operator",
     "skills": [
-      { "skill": "Warehouse management systems (WMS)", "rating": 3, "proficiency": "Intermediate" },
-      { "skill": "Forklift operation", "rating": 4, "proficiency": "Expert" },
-      { "skill": "Inventory reconciliation", "rating": 3, "proficiency": "Intermediate" }
+      {
+        "skill": "Warehouse management systems (WMS)",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Forklift operation",
+        "rating": 4,
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Inventory reconciliation",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
     ],
     "certifications": [
-      { "name": "Forklift Operator (OSHA)", "issued": "2025-02-15", "expires": "2028-02-15" }
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2025-02-15",
+        "expires": "2028-02-15"
+      }
     ],
     "noCertsRecorded": false
   },
@@ -98,10 +156,24 @@
     "category": "Plant Based",
     "role": "Quality Inspector",
     "skills": [
-      { "skill": "Sanitation compliance", "rating": 2, "proficiency": "Developing" },
-      { "skill": "Statistical process control", "rating": 2, "proficiency": "Developing" }
+      {
+        "skill": "Sanitation compliance",
+        "rating": 2,
+        "proficiency": "Developing"
+      },
+      {
+        "skill": "Statistical process control",
+        "rating": 2,
+        "proficiency": "Developing"
+      }
     ],
-    "certifications": [],
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ],
     "noCertsRecorded": false
   },
   {
@@ -111,12 +183,28 @@
     "category": "Plant Based",
     "role": "Quality Technician",
     "skills": [
-      { "skill": "Food safety recertification (HACCP)", "rating": 4, "proficiency": "Expert" },
-      { "skill": "Allergen control auditing", "rating": 4, "proficiency": "Advanced" },
-      { "skill": "Metal detection calibration", "rating": 3, "proficiency": "Intermediate" }
+      {
+        "skill": "Food safety recertification (HACCP)",
+        "rating": 4,
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Allergen control auditing",
+        "rating": 4,
+        "proficiency": "Advanced"
+      },
+      {
+        "skill": "Metal detection calibration",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
     ],
     "certifications": [
-      { "name": "HACCP Level II", "issued": "2023-08-01", "expires": "2026-08-01" }
+      {
+        "name": "HACCP Level II",
+        "issued": "2023-08-01",
+        "expires": "2026-08-01"
+      }
     ],
     "noCertsRecorded": false
   },
@@ -127,10 +215,24 @@
     "category": "Plant Based",
     "role": "Shipping/Receiving Associate",
     "skills": [
-      { "skill": "Forklift operation", "rating": 3, "proficiency": "Intermediate" },
-      { "skill": "Pallet automation handling", "rating": 3, "proficiency": "Intermediate" }
+      {
+        "skill": "Forklift operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Pallet automation handling",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
     ],
-    "certifications": [],
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ],
     "noCertsRecorded": false
   },
   {
@@ -140,10 +242,24 @@
     "category": "Plant Based",
     "role": "Maintenance Technician",
     "skills": [
-      { "skill": "Conveyor belt alignment", "rating": 3, "proficiency": "Intermediate" },
-      { "skill": "Hydraulic systems repair", "rating": 2, "proficiency": "Developing" }
+      {
+        "skill": "Conveyor belt alignment",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Hydraulic systems repair",
+        "rating": 2,
+        "proficiency": "Developing"
+      }
     ],
-    "certifications": [],
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ],
     "noCertsRecorded": false
   },
   {
@@ -153,11 +269,23 @@
     "category": "Plant Based",
     "role": "Quality Inspector",
     "skills": [
-      { "skill": "Statistical process control", "rating": 5, "proficiency": "Expert" },
-      { "skill": "Sanitation compliance", "rating": 4, "proficiency": "Advanced" }
+      {
+        "skill": "Statistical process control",
+        "rating": 5,
+        "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 4,
+        "proficiency": "Advanced"
+      }
     ],
     "certifications": [
-      { "name": "Food Safety Auditor", "issued": "2022-05-10", "expires": "2025-05-10" }
+      {
+        "name": "Food Safety Auditor",
+        "issued": "2022-05-10",
+        "expires": "2025-05-10"
+      }
     ],
     "noCertsRecorded": false
   },
@@ -172,9 +300,21 @@
         "skill": "Welding to food-safe standards",
         "rating": 3,
         "proficiency": "Intermediate"
+      },
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e012",
@@ -182,8 +322,26 @@
     "team": "Production",
     "category": "Plant Based",
     "role": "Production Associate",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Batch mixing procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e013",
@@ -196,9 +354,21 @@
         "skill": "Sanitation compliance",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e014",
@@ -211,9 +381,21 @@
         "skill": "Allergen control auditing",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e015",
@@ -226,9 +408,21 @@
         "skill": "PLC diagnostics",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e016",
@@ -241,9 +435,21 @@
         "skill": "Allergen control auditing",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e017",
@@ -263,7 +469,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e018",
@@ -276,9 +489,21 @@
         "skill": "Pallet automation handling",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e019",
@@ -298,7 +523,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e020",
@@ -306,8 +538,26 @@
     "team": "Warehouse & Logistics",
     "category": "Plant Based",
     "role": "Shipping/Receiving Associate",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Forklift operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Warehouse management systems (WMS)",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e021",
@@ -327,7 +577,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e022",
@@ -340,9 +597,21 @@
         "skill": "Metal detection calibration",
         "rating": 3,
         "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e023",
@@ -362,7 +631,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e024",
@@ -370,8 +646,26 @@
     "team": "Maintenance",
     "category": "Plant Based",
     "role": "Maintenance Supervisor",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e025",
@@ -384,9 +678,21 @@
         "skill": "PLC diagnostics",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e026",
@@ -399,9 +705,21 @@
         "skill": "Statistical process control",
         "rating": 3,
         "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e027",
@@ -414,9 +732,21 @@
         "skill": "Sanitation compliance",
         "rating": 3,
         "proficiency": "Intermediate"
+      },
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e028",
@@ -429,9 +759,21 @@
         "skill": "Inventory reconciliation",
         "rating": 3,
         "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Forklift operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e029",
@@ -456,7 +798,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e030",
@@ -464,8 +813,26 @@
     "team": "Maintenance",
     "category": "Plant Based",
     "role": "Maintenance Technician",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e031",
@@ -473,8 +840,26 @@
     "team": "Maintenance",
     "category": "Plant Based",
     "role": "Refrigeration Mechanic",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e032",
@@ -494,7 +879,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e033",
@@ -507,9 +899,21 @@
         "skill": "Allergen control auditing",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e034",
@@ -517,8 +921,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "Quality Technician",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e035",
@@ -526,8 +948,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "EHS Manager",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e036",
@@ -535,8 +975,26 @@
     "team": "Maintenance",
     "category": "Plant Based",
     "role": "Maintenance Technician",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e037",
@@ -556,7 +1014,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e038",
@@ -569,9 +1034,21 @@
         "skill": "Metal detection calibration",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e039",
@@ -584,9 +1061,21 @@
         "skill": "Welding to food-safe standards",
         "rating": 3,
         "proficiency": "Intermediate"
+      },
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e040",
@@ -611,7 +1100,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e041",
@@ -624,9 +1120,21 @@
         "skill": "Allergen control auditing",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e042",
@@ -639,9 +1147,21 @@
         "skill": "Hydraulic systems repair",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e043",
@@ -661,7 +1181,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e044",
@@ -681,7 +1208,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e045",
@@ -701,7 +1235,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e046",
@@ -721,7 +1262,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e047",
@@ -729,8 +1277,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "EHS Manager",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e048",
@@ -755,7 +1321,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e049",
@@ -775,7 +1348,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e050",
@@ -788,9 +1368,21 @@
         "skill": "Warehouse management systems (WMS)",
         "rating": 3,
         "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Forklift operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e051",
@@ -810,7 +1402,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e052",
@@ -823,9 +1422,21 @@
         "skill": "Warehouse management systems (WMS)",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Forklift operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e053",
@@ -838,9 +1449,21 @@
         "skill": "Cold-chain logistics",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Forklift operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e054",
@@ -860,7 +1483,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e055",
@@ -885,7 +1515,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e056",
@@ -905,7 +1542,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e057",
@@ -918,9 +1562,21 @@
         "skill": "Statistical process control",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e058",
@@ -928,8 +1584,26 @@
     "team": "Maintenance",
     "category": "Plant Based",
     "role": "Refrigeration Mechanic",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e059",
@@ -942,9 +1616,21 @@
         "skill": "Sanitation compliance",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e060",
@@ -957,9 +1643,21 @@
         "skill": "Statistical process control",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e061",
@@ -972,9 +1670,21 @@
         "skill": "Pallet automation handling",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e062",
@@ -999,7 +1709,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e063",
@@ -1007,8 +1724,26 @@
     "team": "Maintenance",
     "category": "Plant Based",
     "role": "Maintenance Technician",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e064",
@@ -1016,8 +1751,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "Quality Technician",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e065",
@@ -1042,7 +1795,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e066",
@@ -1062,7 +1822,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e067",
@@ -1075,9 +1842,21 @@
         "skill": "Sanitation compliance",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e068",
@@ -1097,7 +1876,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e069",
@@ -1110,9 +1896,21 @@
         "skill": "Cold-chain logistics",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Forklift operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e070",
@@ -1125,9 +1923,21 @@
         "skill": "Metal detection calibration",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e071",
@@ -1140,9 +1950,21 @@
         "skill": "Pallet automation handling",
         "rating": 3,
         "proficiency": "Intermediate"
+      },
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e072",
@@ -1155,9 +1977,21 @@
         "skill": "Metal detection calibration",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e073",
@@ -1177,7 +2011,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e074",
@@ -1190,9 +2031,21 @@
         "skill": "Standard line changeover",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e075",
@@ -1200,8 +2053,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "EHS Manager",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e076",
@@ -1209,8 +2080,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "EHS Manager",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e077",
@@ -1230,7 +2119,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e078",
@@ -1243,9 +2139,21 @@
         "skill": "Warehouse management systems (WMS)",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Forklift operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e079",
@@ -1253,8 +2161,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "EHS Manager",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e080",
@@ -1262,8 +2188,26 @@
     "team": "Maintenance",
     "category": "Plant Based",
     "role": "Refrigeration Mechanic",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "PLC diagnostics",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e081",
@@ -1271,8 +2215,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "EHS Manager",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e082",
@@ -1297,7 +2259,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e083",
@@ -1317,7 +2286,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e084",
@@ -1337,7 +2313,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e085",
@@ -1350,9 +2333,21 @@
         "skill": "PLC diagnostics",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e086",
@@ -1377,7 +2372,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e087",
@@ -1385,8 +2387,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "Quality Technician",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e088",
@@ -1411,7 +2431,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e089",
@@ -1424,9 +2451,21 @@
         "skill": "Forklift operation",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Warehouse management systems (WMS)",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e090",
@@ -1446,7 +2485,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e091",
@@ -1454,8 +2500,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "EHS Manager",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e092",
@@ -1475,7 +2539,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e093",
@@ -1488,9 +2559,21 @@
         "skill": "PLC diagnostics",
         "rating": 3,
         "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Preventive maintenance scheduling",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e094",
@@ -1510,7 +2593,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e095",
@@ -1530,7 +2620,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e096",
@@ -1543,9 +2640,21 @@
         "skill": "Standard line changeover",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e097",
@@ -1570,7 +2679,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Forklift Operator (OSHA)",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e098",
@@ -1578,8 +2694,26 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "Quality Inspector",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "Sanitation compliance",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "HACCP procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Level II",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e099",
@@ -1599,7 +2733,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "PLC Technician Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e100",
@@ -1607,8 +2748,26 @@
     "team": "Production",
     "category": "Plant Based",
     "role": "Production Associate",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      {
+        "skill": "High-speed wrapper operation",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      },
+      {
+        "skill": "Batch mixing procedures",
+        "rating": 3,
+        "proficiency": "Intermediate"
+      }
+    ],
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HACCP Awareness",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e101",
@@ -1638,7 +2797,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Food Tech Certification",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e102",
@@ -1668,7 +2834,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HR Professional Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e103",
@@ -1698,7 +2871,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Financial Controls Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e104",
@@ -1723,7 +2903,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Compliance Fundamentals",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e105",
@@ -1743,7 +2930,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Food Tech Certification",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e106",
@@ -1773,7 +2967,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Financial Controls Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e107",
@@ -1798,7 +2999,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Compliance Fundamentals",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e108",
@@ -1823,7 +3031,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HR Professional Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e109",
@@ -1848,7 +3063,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HR Professional Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e110",
@@ -1878,7 +3100,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "IT Security Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e111",
@@ -1903,7 +3132,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HR Professional Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e112",
@@ -1933,7 +3169,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Financial Controls Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e113",
@@ -1958,7 +3201,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "IT Security Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e114",
@@ -1983,7 +3233,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Food Tech Certification",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e115",
@@ -2008,7 +3265,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "IT Security Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e116",
@@ -2038,7 +3302,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Food Tech Certification",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e117",
@@ -2058,7 +3329,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "IT Security Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e118",
@@ -2071,9 +3349,21 @@
         "skill": "Business intelligence tooling",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "ERP administration (SAP)",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "IT Security Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e119",
@@ -2098,7 +3388,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HR Professional Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e120",
@@ -2123,7 +3420,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Compliance Fundamentals",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e121",
@@ -2153,7 +3457,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HR Professional Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e122",
@@ -2178,7 +3489,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "IT Security Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e123",
@@ -2191,9 +3509,21 @@
         "skill": "Business intelligence tooling",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "ERP administration (SAP)",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "IT Security Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e124",
@@ -2223,7 +3553,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "HR Professional Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e125",
@@ -2243,7 +3580,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "IT Security Certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e126",
@@ -2273,7 +3617,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Food Tech Certification",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e127",
@@ -2286,9 +3637,21 @@
         "skill": "Packaging engineering",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Product formulation",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Food Tech Certification",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e128",
@@ -2313,7 +3676,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Food Tech Certification",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e129",
@@ -2338,7 +3708,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Compliance Fundamentals",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e130",
@@ -2363,7 +3740,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Compliance Fundamentals",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e131",
@@ -2383,7 +3767,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e132",
@@ -2396,9 +3787,21 @@
         "skill": "Digital marketing analytics",
         "rating": 5,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Category marketing strategy",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e133",
@@ -2423,7 +3826,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e134",
@@ -2448,7 +3858,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Foodservice Sales Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e135",
@@ -2473,7 +3890,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Foodservice Sales Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e136",
@@ -2486,9 +3910,21 @@
         "skill": "Digital marketing analytics",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Category marketing strategy",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e137",
@@ -2508,7 +3944,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e138",
@@ -2528,7 +3971,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e139",
@@ -2553,7 +4003,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "General skills certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e140",
@@ -2578,7 +4035,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "General skills certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e141",
@@ -2598,7 +4062,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e142",
@@ -2618,7 +4089,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e143",
@@ -2643,7 +4121,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e144",
@@ -2656,9 +4141,21 @@
         "skill": "Category marketing strategy",
         "rating": 4,
         "proficiency": "Expert"
+      },
+      {
+        "skill": "Digital marketing analytics",
+        "rating": 3,
+        "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e145",
@@ -2678,7 +4175,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Digital Marketing Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e146",
@@ -2703,7 +4207,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Foodservice Sales Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e147",
@@ -2733,7 +4244,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Demand Planning Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e148",
@@ -2758,7 +4276,14 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "General skills certificate",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e149",
@@ -2788,7 +4313,14 @@
         "proficiency": "Expert"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Demand Planning Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   },
   {
     "id": "e150",
@@ -2818,6 +4350,13 @@
         "proficiency": "Intermediate"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "certifications": [
+      {
+        "name": "Demand Planning Cert",
+        "issued": "2024-01-01",
+        "expires": "2027-01-01"
+      }
+    ]
   }
 ]
