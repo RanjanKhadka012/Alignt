@@ -1,4 +1,5 @@
-import { openaiResponse, searchSources } from './openai.mjs'
+import { aiResponse } from './ai.mjs'
+import { searchSources } from './openai.mjs'
 import { validTrainingEstimate } from '../src/services/trainingPlan.mjs'
 const text = value => typeof value === 'string' && value.trim().length > 0
 const safeUrl = value => { try { return ['https:', 'http:'].includes(new URL(value).protocol) } catch { return false } }
@@ -26,7 +27,7 @@ export function validateComparison(data, benchmark) {
 
 export function recommendationsHandler(env = process.env) {
   async function reason(system, input) {
-    const response = await openaiResponse(env, { instructions: system, input: JSON.stringify(input), text: { format: { type: 'json_object' } } })
+    const response = await aiResponse(env, { instructions: system, input: JSON.stringify(input), text: { format: { type: 'json_object' } } })
     try { return parse(response.text) } catch { throw new Error('OpenAI returned invalid JSON. Please retry.') }
   }
   return async (req, res, next) => {
