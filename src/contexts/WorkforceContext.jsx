@@ -8,6 +8,7 @@ export function WorkforceProvider({ children }){
   const [roles, setRoles] = useState([])
   const [departments, setDepartments] = useState([])
   const [loading, setLoading] = useState(true)
+  const [readinessDataComplete, setReadinessDataComplete] = useState(false)
   const [error, setError] = useState(null)
 
   useEffect(()=>{
@@ -24,6 +25,7 @@ export function WorkforceProvider({ children }){
       if (controller.signal.aborted) return
       const normalized = data
       setEmployees(normalized.employees.map(employee => ({ ...employee, name: employee.name.replace(/^\s*\d+\s+/, '') }))); setSkills(normalized.skills); setRoles(normalized.roles); setDepartments(data.departments)
+      setReadinessDataComplete(data.readinessDataComplete === true)
       setLoading(false)
     }).catch(error => {
       if (!controller.signal.aborted) { setError(error.message); setLoading(false) }
@@ -35,7 +37,7 @@ export function WorkforceProvider({ children }){
   if (error) return <div role="alert" style={{padding: 24}}>{error} <button onClick={() => window.location.reload()}>Retry</button></div>
 
   return (
-    <WorkforceContext.Provider value={{ readinessDataComplete: true, employees, skills, roles, departments, setEmployees, setSkills, setRoles, setDepartments}}>
+    <WorkforceContext.Provider value={{ readinessDataComplete, employees, skills, roles, departments, setEmployees, setSkills, setRoles, setDepartments}}>
       {children}
     </WorkforceContext.Provider>
   )
