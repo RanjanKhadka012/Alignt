@@ -209,3 +209,35 @@ If time runs short, cut the Employee Profile view or polish depth first. Preserv
 ## Status
 
 This repository currently contains the product README and concept brief for Alignt. Implementation details, setup instructions, and deployment notes should be added once the application stack is introduced.
+
+## Running goal-to-project matching
+
+Use Node.js 20+ and run `npm install`, then `npm run dev`. Open `/matching`.
+Copy `.env.example` to `.env.local` and set `OLLAMA_API_KEY` and
+`OLLAMA_MODEL` to a model available to your Ollama Cloud account, then restart
+Vite. These values are read only by the server; do not use a `VITE_` prefix.
+The integration uses the [Ollama Cloud API](https://docs.ollama.com/cloud) at `https://ollama.com/api/chat` with server-side Bearer authentication.
+
+Vite serves `/api/matching` in development and preview. For deployment, build
+with `npm run build`, serve `dist`, and run `node server/matching.mjs` with the
+two environment variables set in your server environment. Reverse-proxy
+`/api/matching` to `127.0.0.1:3001` (override with `MATCHING_PORT`) and configure
+SPA routing for `/matching`. Put this endpoint behind your deployment's
+employee authentication and rate limiting. Static hosting alone does not run
+the API. The submitted workforce data is sent to the configured AI provider.
+
+The page displays explicit service errors; it never substitutes mock matches.
+Seed employees have no allocation/commitment data, so their availability is
+unknown. Provide explicit commitment fields in workforce records to support
+stretched recommendations. AI identifies required skills and suggests gap-closing plans. The app independently
+matches exact catalog skill names against positive employee proficiencies, preferring
+employees without explicit over-commitment and then highest proficiency. Supported
+commitment fields are `stretched`, `overCommitted`, and `allocationPercent` (100 or
+more indicates stretched). Availability remains unknown when these are absent.
+Covered skills are green/teal; missing skills are yellow/amber. Each gap compares
+training a named current employee with hiring a skilled paid intern, with estimated
+USD cost ranges, duration, and assumptions. Costs are AI planning estimates, not
+live market quotes. Alternative totals assume one person per gap and may double-count
+shared people or training. The current workforce source is seed-backed WorkforceContext,
+not a persistent database. Training candidate IDs and cost ranges are validated. Run `node --test tests/matching.test.mjs`
+for API contract, validation, and failure-path checks.
