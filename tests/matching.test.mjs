@@ -37,15 +37,15 @@ test('server keeps credentials upstream and reports configuration and provider f
   const data = { goalText: 'Automate', timeline: '6 months', workforceData: workforce }
   assert.equal((await invoke({}, data)).status, 503)
   const original = globalThis.fetch
-  const env = { OLLAMA_API_KEY: 'test-secret', OLLAMA_MODEL: 'test-model' }
+  const env = { OPENAI_API_KEY: 'test-secret', OPENAI_MODEL: 'test-model' }
   try {
     globalThis.fetch = async (url, options) => {
-      assert.equal(url, 'https://ollama.com/api/chat')
+      assert.equal(url, 'https://api.openai.com/v1/responses')
       assert.equal(options.headers.Authorization, 'Bearer test-secret')
       assert.equal(JSON.parse(options.body).model, 'test-model')
-      assert.equal(JSON.parse(options.body).stream, false)
-      assert.deepEqual(JSON.parse(options.body).messages.map(m => m.role), ['system', 'user'])
-      return { ok: true, json: async () => ({ done: true, message: { content: JSON.stringify(aiResult) } }) }
+      assert.equal(JSON.parse(options.body).store, false)
+      assert.deepEqual(JSON.parse(options.body).input.map(m => m.role), ['system', 'user'])
+      return { ok: true, json: async () => ({ status: 'completed', output: [{ type: 'message', content: [{ type: 'output_text', text: JSON.stringify(aiResult) }] }] }) }
     }
     const response = await invoke(env, data)
     assert.equal(response.status, 200)
