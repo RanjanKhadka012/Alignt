@@ -241,3 +241,28 @@ live market quotes. Alternative totals assume one person per gap and may double-
 shared people or training. The current workforce source is seed-backed WorkforceContext,
 not a persistent database. Training candidate IDs and cost ranges are validated. Run `node --test tests/matching.test.mjs`
 for API contract, validation, and failure-path checks.
+
+## Live role recommendations
+
+`/recommendations` uses the same server-only Ollama configuration as matching.
+Role benchmarking first calls Ollama's actual `web_search` API, then asks the
+model to synthesize 5–8 requirements with links to the returned evidence. If
+search fails or returns no usable sources, the page reports an error rather
+than substituting model memory. See [Ollama web search](https://docs.ollama.com/capabilities/web-search).
+
+`RoleBenchmarkContext` caches successful benchmarks in memory for seven days,
+keyed by normalized role title and industry. Concurrent requests share one
+promise. The cache survives page navigation and resets on reload. A separate
+chat call compares each employee's named skill records and strategy with the
+benchmark; no web search runs in that comparison. Employee results are cached
+against the profile and strategy and expire with their benchmark.
+
+The employee list gradually reviews profiles in the background to populate real
+severity badges; it shows “not checked” until reviewed. Background processing
+stops on a service error, and the selected employee can be retried. Prices are
+clearly marked as estimated USD course/certification/exam fees. Expand the role
+benchmark section to inspect its requirements and source links.
+
+For deployment, also proxy `/api/recommendations/*` to the Node API process
+started by `node server/matching.mjs`. Run all service/cache tests with
+`node --test tests/*.test.mjs`.

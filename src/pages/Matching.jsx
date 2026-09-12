@@ -1,14 +1,10 @@
 import React, { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useStrategy } from '../contexts/StrategyContext'
 import { useWorkforce } from '../contexts/WorkforceContext'
 import MatchedTeamNetwork from '../components/MatchedTeamNetwork'
 import { matchTeamToGoal } from '../services/matching.mjs'
 import './Matching.css'
-
-const examples = [
-  { label: 'Line automation', goal: 'Roll out automation on Line 4', timeline: '6 months' },
-  { label: 'New plant launch', goal: 'Open a new food manufacturing plant with safe production and cold-chain distribution', timeline: '12 months' },
-  { label: 'Sustainability compliance', goal: 'Implement sustainability reporting and emissions compliance across our plants', timeline: '9 months' },
-]
 
 const money = value => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
 const costRange = option => `${money(option.costMin)} – ${money(option.costMax)}`
@@ -26,6 +22,11 @@ function GapOption({ title, option, employees, training = false }) {
 
 export default function Matching() {
   const { employees, skills, roles, departments } = useWorkforce()
+  const { strategy } = useStrategy()
+  const strategyGoals = [
+    ...(strategy.shortTermGoals || []).map(goal => ({ ...goal, horizon: 'This year' })),
+    ...(strategy.longTermGoals || []).map(goal => ({ ...goal, horizon: '1–3 years' })),
+  ].filter(goal => goal.text?.trim())
   const [goal, setGoal] = useState('')
   const [timeline, setTimeline] = useState('')
   const [result, setResult] = useState(null)
@@ -56,7 +57,17 @@ export default function Matching() {
         <label>Target timeline<input required maxLength="100" value={timeline} onChange={event => setTimeline(event.target.value)} placeholder="6 months" /></label>
         <button className="matching-submit" disabled={busy || !employees.length || !goal.trim() || !timeline.trim()} type="submit">{busy ? 'Finding team…' : 'Find team'}</button>
       </form>
-      <div className="matching-examples"><span className="matching-data">TRY A GOAL</span>{examples.map(example => <button key={example.label} disabled={busy || !employees.length} onClick={() => { setGoal(example.goal); setTimeline(example.timeline); submit(example.goal, example.timeline) }}>{example.label} ↗</button>)}</div>
+      <div className="matching-examples matching-strategy-goals">
+        <div className="matching-strategy-heading"><span className="matching-data">TRY A GOAL · FROM YOUR STRATEGY</span><Link to="/strategy">Manage goals ↗</Link></div>
+        {strategyGoals.length ? strategyGoals.map((strategyGoal, index) => {
+          const hasDate = /^\d{4}-\d{2}-\d{2}$/.test(strategyGoal.targetDate || '') && !Number.isNaN(Date.parse(strategyGoal.targetDate))
+          const target = hasDate ? `By ${strategyGoal.targetDate}` : 'No target date specified'
+          return <button key={`${strategyGoal.horizon}-${index}`} disabled={busy || !employees.length} onClick={() => { setGoal(strategyGoal.text); setTimeline(target); submit(strategyGoal.text, target) }}>
+            <span>{strategyGoal.text} ↗</span>
+            <span className="matching-data">{strategyGoal.horizon} · {hasDate ? strategyGoal.targetDate : 'No deadline set'}</span>
+          </button>
+        }) : <p className="matching-muted matching-footnote">Add a goal on the <Link to="/strategy">Strategy page</Link> to try it here, or describe a project above.</p>}
+      </div>
     </section>
     {status !== 'idle' && <section aria-label="Matching results" aria-busy={busy}>
       <div className="matching-query"><span>{submitted.goal}</span><span className="matching-data">TARGET · {submitted.timeline}</span></div>

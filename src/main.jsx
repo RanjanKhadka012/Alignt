@@ -5,6 +5,7 @@ import App from './App'
 import './index.css'
 import { StrategyProvider } from './contexts/StrategyContext'
 import { WorkforceProvider } from './contexts/WorkforceContext'
+import { RoleBenchmarkProvider } from './contexts/RoleBenchmarkContext'
 import { DerivedDataProvider } from './contexts/DerivedDataContext'
 
 createRoot(document.getElementById('root')).render(
@@ -12,9 +13,11 @@ createRoot(document.getElementById('root')).render(
     <StrategyProvider>
       <WorkforceProvider>
         <DerivedDataProvider>
+          <RoleBenchmarkProvider>
           <BrowserRouter>
             <App />
           </BrowserRouter>
+          </RoleBenchmarkProvider>
         </DerivedDataProvider>
       </WorkforceProvider>
     </StrategyProvider>
