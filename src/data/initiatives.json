@@ -1,0 +1,71 @@
+[
+  {
+    "id": "food_safety",
+    "label": "Food-Safety Certification",
+    "targetDate": "2026-12-31",
+    "relevantRoles": [
+      "Quality Technician",
+      "Quality Inspector",
+      "EHS Manager",
+      "Production Supervisor"
+    ],
+    "qualifyingSkills": [
+      "Food safety recertification (HACCP)",
+      "Allergen control auditing",
+      "USDA regulatory compliance",
+      "Statistical process control"
+    ]
+  },
+  {
+    "id": "cold_chain_automation",
+    "label": "Cold-Chain Automation",
+    "targetDate": "2026-09-30",
+    "relevantRoles": [
+      "Forklift Operator",
+      "Inventory Control Specialist",
+      "Maintenance Technician",
+      "Maintenance Technician (Lead)",
+      "Maintenance Supervisor",
+      "Refrigeration Mechanic"
+    ],
+    "qualifyingSkills": [
+      "Cold-chain logistics",
+      "PLC diagnostics",
+      "Warehouse management systems (WMS)",
+      "Hydraulic systems repair"
+    ]
+  },
+  {
+    "id": "zero_safety_incidents",
+    "label": "Zero-Safety-Incidents",
+    "targetDate": "2029-12-31",
+    "relevantRoles": [
+      "EHS Manager"
+    ],
+    "qualifyingSkills": [
+      "Allergen control auditing",
+      "Statistical process control",
+      "USDA regulatory compliance",
+      "Metal detection calibration"
+    ]
+  },
+  {
+    "id": "digital_supply_chain",
+    "label": "Digital Supply Chain / AI-Automation",
+    "targetDate": "2028-12-31",
+    "relevantRoles": [
+      "Systems Analyst",
+      "IT Support Specialist",
+      "Data Analyst",
+      "Maintenance Supervisor",
+      "Maintenance Technician"
+    ],
+    "qualifyingSkills": [
+      "Business intelligence tooling",
+      "SCADA systems support",
+      "ERP administration (SAP)",
+      "Network security",
+      "PLC diagnostics"
+    ]
+  }
+]

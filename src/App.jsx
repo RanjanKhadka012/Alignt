@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
+import InitiativeDetail from './pages/InitiativeDetail'
 import Overview from './pages/Overview'
 import Strategy from './pages/Strategy'
 import RiskMap from './pages/RiskMap'
@@ -34,6 +35,7 @@ export default function App(){
         <ErrorBoundary>
         <Routes>
           <Route path="/" element={<Navigate to="/overview" replace />} />
+          <Route path="/initiatives/:initiativeId" element={<InitiativeDetail/>} />
           <Route path="/overview" element={<Overview/>} />
           <Route path="/strategy" element={<Strategy/>} />
           <Route path="/departments/:deptId" element={<DepartmentDetail/>} />

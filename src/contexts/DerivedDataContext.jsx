@@ -1,11 +1,12 @@
 import React, { createContext, useContext, useMemo } from 'react'
 import { useWorkforce } from './WorkforceContext'
+import { calculateReadiness, calculateOverallReadiness, talentConcentration } from '../utils/readiness'
 import { useStrategy } from './StrategyContext'
 
 const DerivedDataContext = createContext()
 
 export function DerivedDataProvider({ children }){
-  const { employees, skills, departments } = useWorkforce()
+  const { employees, skills, departments, roles, initiatives } = useWorkforce()
   const { strategy } = useStrategy()
 
   const derived = useMemo(()=>{
@@ -54,8 +55,17 @@ export function DerivedDataProvider({ children }){
     // simple gap analysis placeholder
     const gaps = skillsWithRisk.map(s=>({ skillId: s.skill.id, gapScore: Math.max(0, 1 - s.holderCount/3) }))
 
-    return { skillsWithRisk, criticalCount, gaps, strategySummary: strategy, departmentsWithRisk }
-  },[employees, skills, strategy])
+    const namedEmployees = employees.map(employee => ({ ...employee, skills: (employee.skills || []).map(skill => ({ ...skill, skill: skill.skill || skills.find(item => item.id === skill.skillId)?.name })) }))
+    const initiativeResults = initiatives.map(initiative => calculateReadiness(initiative, namedEmployees))
+    const overallReadiness = calculateOverallReadiness(initiativeResults)
+    const criticalTalent = talentConcentration(namedEmployees)
+    const documentationCoverage = roles.map(role => {
+      const title = role.title || role.role || role.name
+      const holders = namedEmployees.filter(employee => employee.role === title)
+      return { title, total: holders.length, missing: holders.filter(employee => !employee.skills.length).length }
+    })
+    return { initiativeResults, overallReadiness, criticalTalent, documentationCoverage, namedEmployees, skillsWithRisk, criticalCount, gaps, strategySummary: strategy, departmentsWithRisk }
+  },[employees, skills, strategy, departments, roles, initiatives])
 
   return (
     <DerivedDataContext.Provider value={derived}>
