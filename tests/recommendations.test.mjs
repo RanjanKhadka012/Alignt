@@ -37,29 +37,29 @@ async function invoke(path, body) {
   req.url = '/api/recommendations/' + path; req.method = 'POST'
   let status, payload
   const res = { writeHead(code) { status = code; return this }, end(body) { payload = JSON.parse(body) } }
-  await recommendationsHandler({ OLLAMA_API_KEY: 'secret-test', OLLAMA_MODEL: 'test-model' })(req, res)
+  await recommendationsHandler({ OPENAI_API_KEY: 'secret-test', OPENAI_MODEL: 'test-model' })(req, res)
   return { status, payload }
 }
-test('benchmark must search before reasoning; comparison calls only chat', async () => {
+test('benchmark must search before reasoning; comparison calls only reasoning', async () => {
   const original = globalThis.fetch
   const calls = []
   try {
     globalThis.fetch = async (url, options) => {
-      calls.push(url)
+      calls.push(JSON.parse(options.body).tools ? 'search' : 'reason'); assert.equal(url, 'https://api.openai.com/v1/responses')
       assert.equal(options.headers.Authorization, 'Bearer secret-test')
       const body = JSON.parse(options.body)
-      if (url.endsWith('web_search')) return { ok: true, json: async () => ({ results: sources }) }
-      const input = JSON.parse(body.messages[1].content)
+      if (body.tools) { assert.equal(body.tool_choice, 'required'); return { ok: true, json: async () => ({ status: 'completed', output: [{ type: 'web_search_call', status: 'completed' }, { type: 'message', content: [{ type: 'output_text', text: sources[0].content, annotations: [{ type: 'url_citation', title: sources[0].title, url: sources[0].url }] }] }] }) } }
+      const input = JSON.parse(body.input)
       if (input.sources) assert.deepEqual(input.sources, sources)
-      return { ok: true, json: async () => ({ message: { content: JSON.stringify(input.sources ? { skills } : { gaps: [gap] }) } }) }
+      return { ok: true, json: async () => ({ status: 'completed', output: [{ type: 'message', content: [{ type: 'output_text', text: JSON.stringify(input.sources ? { skills } : { gaps: [gap] }) }] }] }) }
     }
     const result = await invoke('benchmark', { roleTitle: 'Operator' })
     assert.equal(result.status, 200)
-    assert.deepEqual(calls, ['https://ollama.com/api/web_search', 'https://ollama.com/api/chat'])
+    assert.deepEqual(calls, ['search', 'reason'])
     calls.length = 0
     assert.equal((await invoke('compare', { employee: { role: 'Operator', skills: [] }, roleBenchmark: benchmark, companyStrategy: {} })).status, 200)
-    assert.deepEqual(calls, ['https://ollama.com/api/chat'])
-    globalThis.fetch = async () => ({ ok: true, json: async () => ({ results: [] }) })
+    assert.deepEqual(calls, ['reason'])
+    globalThis.fetch = async () => ({ ok: true, json: async () => ({ status: 'completed', output: [{ type: 'message', content: [{ type: 'output_text', text: 'No results' }] }] }) })
     const empty = await invoke('benchmark', { roleTitle: 'Operator' })
     assert.equal(empty.status, 502)
     assert.match(empty.payload.error, /No benchmark was generated/)
