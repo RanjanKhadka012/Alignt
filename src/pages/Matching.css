@@ -64,3 +64,7 @@
 .matching-option-cost strong,.matching-budget-row strong{font-family:'JetBrains Mono',monospace;font-size:12px}
 .matching-budget{border-top:1px solid var(--warning);margin-top:10px;padding-top:6px}
 .matching-budget-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin:12px 0;font-size:13px}
+.matching-strategy-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;margin-bottom:3px}
+.matching-strategy-goals a{color:var(--primary);font-size:12px}
+.matching-strategy-goals button{display:flex;flex-direction:column;align-items:flex-start;gap:6px;max-width:100%;text-align:left;line-height:1.5;overflow-wrap:anywhere}
+.matching-strategy-goals button .matching-data{color:var(--muted);font-size:10px}
