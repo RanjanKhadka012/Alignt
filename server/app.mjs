@@ -1,6 +1,7 @@
 import { workforce } from './workforceData.mjs'
 import { matchingHandler } from './matching.mjs'
 import { recommendationsHandler } from './recommendations.mjs'
+import { readWorkforce } from './database.mjs'
 
 
 
@@ -17,7 +18,8 @@ export function createApiHandler(env = process.env) {
     try {
       if (path === '/api/health' || path === '/api/workforce') {
         if (req.method !== 'GET') { res.setHeader('Allow', 'GET'); return send(405, { error: 'Use GET for this endpoint.' }) }
-        return send(200, path === '/api/health' ? { status: 'ok', dataSource: workforce.dataSource, aiConfigured: Boolean(env.OLLAMA_API_KEY && env.OLLAMA_MODEL) } : workforce)
+        const data = env.DATABASE_PATH ? readWorkforce(env.DATABASE_PATH) : workforce
+        return send(200, path === '/api/health' ? { status: 'ok', dataSource: env.DATABASE_PATH ? 'sqlite' : workforce.dataSource, aiConfigured: Boolean(env.OLLAMA_API_KEY && env.OLLAMA_MODEL) } : data)
       }
       await recommendations(req, res, () => matching(req, res, () => send(404, { error: 'API endpoint not found.' })))
     } catch (error) {
