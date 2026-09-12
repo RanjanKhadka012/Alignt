@@ -10,17 +10,21 @@
       // Simple global error reporter to surface runtime errors on the page during dev
       window.addEventListener('error', function(e){
         try{
-          const root = document.getElementById('root')
-          if(root){
-            root.innerHTML = '<div style="padding:24px;color:#f55;background:#111;font-family:Inter">'
-              + '<h2 style="color:#f88">Runtime Error</h2>'
-              + '<pre style="white-space:pre-wrap;color:#f88">' + (e && e.error && e.error.stack ? e.error.stack : (e.message||String(e))) + '</pre>'
-              + '</div>'
-          }
+          // Create or reuse a top-level overlay outside of #root to avoid
+          // interfering with React's reconciliation (which can cause removeChild errors).
+          let overlay = document.getElementById('__dev_error_overlay')
+          if(!overlay){ overlay = document.createElement('div'); overlay.id = '__dev_error_overlay'; overlay.style = 'position:fixed;inset:12px;padding:24px;color:#f55;background:#111;font-family:Inter;z-index:99999;overflow:auto;border-radius:8px'; document.body.appendChild(overlay) }
+          const stack = (e && e.error && e.error.stack) ? e.error.stack : (e.message||String(e))
+          overlay.innerHTML = '<h2 style="color:#f88;margin-top:0">Runtime Error</h2><pre style="white-space:pre-wrap;color:#f88">' + String(stack) + '</pre>'
         }catch(err){ console.error('error reporter failed', err) }
       })
       window.addEventListener('unhandledrejection', function(ev){
-        try{ const root=document.getElementById('root'); if(root){ root.innerHTML = '<div style="padding:24px;color:#f55;background:#111;font-family:Inter"><h2 style="color:#f88">Unhandled Rejection</h2><pre style="white-space:pre-wrap;color:#f88">'+ (ev && ev.reason && ev.reason.stack ? ev.reason.stack : String(ev)) +'</pre></div>' } }catch(err){console.error(err)}
+        try{
+          let overlay = document.getElementById('__dev_error_overlay')
+          if(!overlay){ overlay = document.createElement('div'); overlay.id = '__dev_error_overlay'; overlay.style = 'position:fixed;inset:12px;padding:24px;color:#f55;background:#111;font-family:Inter;z-index:99999;overflow:auto;border-radius:8px'; document.body.appendChild(overlay) }
+          const stack = (ev && ev.reason && ev.reason.stack) ? ev.reason.stack : String(ev)
+          overlay.innerHTML = '<h2 style="color:#f88;margin-top:0">Unhandled Rejection</h2><pre style="white-space:pre-wrap;color:#f88">' + String(stack) + '</pre>'
+        }catch(err){console.error(err)}
       })
     </script>
   </head>
