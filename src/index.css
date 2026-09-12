@@ -26,7 +26,7 @@ body{
 .app-root{display:flex;min-height:100vh}
 .main-area{flex:1;padding:28px}
 
-.sidebar{width:220px;background:var(--surface);border-right:1px solid var(--hairline);padding:20px}
+.sidebar{position:sticky;top:0;align-self:flex-start;height:100vh;height:100dvh;overflow-y:auto;flex-shrink:0;width:220px;background:var(--surface);border-right:1px solid var(--hairline);padding:20px}
 .logo{font-family:'Space Grotesk',sans-serif;font-weight:600;margin-bottom:20px}
 .nav-item{color:var(--muted);display:block;padding:8px 0;text-decoration:none}
 .nav-item.active{color:var(--text);}

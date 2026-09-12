@@ -242,7 +242,7 @@ strategy persistence, and employee editing remain future work. Skills imported
 without a category use `uncategorized`; no strategic weights are inferred.
 
 Run `npm install`, copy `.env.example` to `.env.local`, and configure the two
-Ollama variables. `npm run dev` serves both the UI and API. For a standalone
+OpenAI variables. `npm run dev` serves both the UI and API. For a standalone
 API, run `npm run start:api` (default `127.0.0.1:3001`; configure `HOST` and `PORT`
 for your host). The standalone command loads `.env.local` and gives deployment
 environment variables precedence. It serves the API only; serve `dist` separately.
@@ -257,13 +257,17 @@ environment variables precedence. It serves the API only; serve `dist` separatel
 
 Unknown API routes return JSON 404 responses. Workforce loading shows a loading
 state and a retry action on failure. No database writes are exposed yet.
+The frontend loads employees, departments, roles, and skills through
+`/api/workforce`; browser-side JSON files never override the response. Readiness
+objectives now come from the current strategy goals. Restart the local
+server after changing `DATABASE_PATH`. Strategy edits still remain session-only.
 Run `npm test` for HTTP routing, deployment adapter, and AI service contract tests.
 
 ### Vercel
 
 Use the Vite preset, install command `npm install`, build command `npm run build`,
 and output directory `dist`. `vercel.json` routes API requests to `api/index.mjs`
-and frontend navigation to `index.html`. Set `OLLAMA_API_KEY` and `OLLAMA_MODEL`
+and frontend navigation to `index.html`. Set `OPENAI_API_KEY` and `OPENAI_MODEL`
 in Vercel's environment settings and redeploy. The function duration is 120 seconds
 to accommodate search followed by reasoning; enable Fluid Compute and ensure
 your project's duration settings support this value.
@@ -274,10 +278,10 @@ deployment. The API currently serves demo data without authentication. Real
 employee data requires authentication, authorization, and persistent storage.
 
 Use Node.js 20+ and run `npm install`, then `npm run dev`. Open `/matching`.
-Copy `.env.example` to `.env.local` and set `OLLAMA_API_KEY` and
-`OLLAMA_MODEL` to a model available to your Ollama Cloud account, then restart
+Copy `.env.example` to `.env.local` and set `OPENAI_API_KEY` and
+`OPENAI_MODEL` to `gpt-4.1-mini` (the default), or another compatible model available to your OpenAI project, then restart
 Vite. These values are read only by the server; do not use a `VITE_` prefix.
-The integration uses the [Ollama Cloud API](https://docs.ollama.com/cloud) at `https://ollama.com/api/chat` with server-side Bearer authentication.
+The integration uses the [OpenAI Responses API](https://developers.openai.com/api/docs/guides/text) at `https://api.openai.com/v1/responses` with server-side Bearer authentication.
 
 Vite serves `/api/matching` in development and preview. For deployment, build
 with `npm run build`, serve `dist`, and run `npm run start:api` with the
@@ -305,11 +309,11 @@ for API contract, validation, and failure-path checks.
 
 ## Live role recommendations
 
-`/recommendations` uses the same server-only Ollama configuration as matching.
-Role benchmarking first calls Ollama's actual `web_search` API, then asks the
+`/recommendations` uses the same server-only OpenAI configuration as matching.
+Role benchmarking first calls OpenAI's Responses API with the required `web_search` tool, then asks the
 model to synthesize 5–8 requirements with links to the returned evidence. If
 search fails or returns no usable sources, the page reports an error rather
-than substituting model memory. See [Ollama web search](https://docs.ollama.com/capabilities/web-search).
+than substituting model memory. See [OpenAI web search](https://developers.openai.com/api/docs/guides/tools-web-search).
 
 `RoleBenchmarkContext` caches successful benchmarks in memory for seven days,
 keyed by normalized role title and industry. Concurrent requests share one
@@ -318,11 +322,12 @@ chat call compares each employee's named skill records and strategy with the
 benchmark; no web search runs in that comparison. Employee results are cached
 against the profile and strategy and expire with their benchmark.
 
-The employee list gradually reviews profiles in the background to populate real
-severity badges; it shows “not checked” until reviewed. Background processing
-stops on a service error, and the selected employee can be retried. Prices are
-clearly marked as estimated USD course/certification/exam fees. Expand the role
-benchmark section to inspect its requirements and source links.
+Recommendations run only when “Generate recommendations” or “Try again” is
+clicked for the selected employee. Opening the page, searching, selecting profiles,
+and editing strategy do not trigger AI requests. Successful reviews and role
+benchmarks are reused in the session; stale reviews require another explicit click.
+Comparison requests omit full source excerpts and unrelated employee fields to
+reduce token use. Prices remain estimated USD course/certification/exam fees.
 
 For deployment, also proxy `/api/recommendations/*` to the Node API process
 started by `npm run start:api`. Run all service/cache tests with

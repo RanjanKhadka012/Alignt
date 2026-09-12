@@ -14,6 +14,8 @@ test('HTTP API serves workforce, health, method errors and JSON 404s', async t =
   const workforce = await (await fetch(base + '/api/workforce')).json()
   for (const key of ['employees', 'skills', 'roles', 'departments']) assert.ok(Array.isArray(workforce[key]))
   assert.equal(workforce.employees.length, 150)
+  assert.equal(workforce.dataSource, 'real-seed')
+  assert.equal(workforce.readinessDataComplete, false)
   const invalid = await fetch(base + '/api/workforce', { method: 'POST' })
   assert.equal(invalid.status, 405)
   assert.equal(invalid.headers.get('allow'), 'GET')

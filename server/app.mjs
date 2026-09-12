@@ -19,7 +19,7 @@ export function createApiHandler(env = process.env) {
       if (path === '/api/health' || path === '/api/workforce') {
         if (req.method !== 'GET') { res.setHeader('Allow', 'GET'); return send(405, { error: 'Use GET for this endpoint.' }) }
         const data = env.DATABASE_PATH ? readWorkforce(env.DATABASE_PATH) : workforce
-        return send(200, path === '/api/health' ? { status: 'ok', dataSource: env.DATABASE_PATH ? 'sqlite' : workforce.dataSource, aiConfigured: Boolean(env.OLLAMA_API_KEY && env.OLLAMA_MODEL) } : data)
+        return send(200, path === '/api/health' ? { status: 'ok', dataSource: env.DATABASE_PATH ? 'sqlite' : workforce.dataSource, aiConfigured: Boolean(env.OPENAI_API_KEY) } : { ...data, dataSource: env.DATABASE_PATH ? 'sqlite' : workforce.dataSource, readinessDataComplete: false })
       }
       await recommendations(req, res, () => matching(req, res, () => send(404, { error: 'API endpoint not found.' })))
     } catch (error) {
