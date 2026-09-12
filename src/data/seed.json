@@ -1,0 +1,49 @@
+{
+  "skills": [
+    { "id": "safety-haccp", "name": "HACCP Food Safety", "category": "food-safety", "strategicWeight": 1.0 },
+    { "id": "equipment-maint", "name": "Equipment Maintenance", "category": "plant", "strategicWeight": 0.9 },
+    { "id": "cold-chain", "name": "Cold-Chain Logistics", "category": "logistics", "strategicWeight": 0.85 },
+    { "id": "quality-audit", "name": "Quality Auditing", "category": "food-safety", "strategicWeight": 0.7 },
+    { "id": "plc-programming", "name": "PLC Programming", "category": "plant", "strategicWeight": 0.8 },
+    { "id": "data-analysis", "name": "Data Analysis", "category": "digital", "strategicWeight": 0.6, "criticalityFlag": false },
+    { "id": "supply-chain-it", "name": "Supply Chain IT", "category": "logistics", "strategicWeight": 0.65, "criticalityFlag": false },
+    { "id": "hygiene-training", "name": "Hygiene Training", "category": "food-safety", "strategicWeight": 0.5, "criticalityFlag": false },
+    { "id": "lean-mfg", "name": "Lean Manufacturing", "category": "plant", "strategicWeight": 0.55, "criticalityFlag": false },
+    { "id": "cyber-basics", "name": "Cybersecurity Basics", "category": "digital", "strategicWeight": 0.45, "criticalityFlag": false }
+  ],
+  "departments": [
+    { "id": "manufacturing", "name": "Manufacturing" },
+    { "id": "automation", "name": "Automation & Engineering" },
+    { "id": "it", "name": "IT & Digital" },
+    { "id": "supply-chain", "name": "Supply Chain" },
+    { "id": "facilities", "name": "Facilities" },
+    { "id": "maintenance", "name": "Maintenance" },
+    { "id": "engineering", "name": "Engineering" },
+    { "id": "people", "name": "People & Culture" }
+  ],
+  "roles": [
+    { "id": "r1", "title": "Plant Operator", "idealSkillProfile": [ { "skillId": "safety-haccp", "targetProficiency": 4 }, { "skillId": "hygiene-training", "targetProficiency": 3 } ] },
+    { "id": "r2", "title": "Maintenance Tech", "idealSkillProfile": [ { "skillId": "equipment-maint", "targetProficiency": 4 }, { "skillId": "plc-programming", "targetProficiency": 3 } ] },
+    { "id": "r3", "title": "Logistics Coordinator", "idealSkillProfile": [ { "skillId": "cold-chain", "targetProficiency": 4 }, { "skillId": "supply-chain-it", "targetProficiency": 3 } ] }
+  ],
+  "employees": [
+    { "id": "e1", "name": "Alice Moreno", "departmentId": "manufacturing", "role": "Plant Operator", "tenure": 8, "retirementEligible": false, "responsibilities": "Line oversight, HACCP checks", "skills": [ { "skillId": "safety-haccp", "proficiency": 5, "source": "certified" }, { "skillId": "hygiene-training", "proficiency": 4, "source": "internal" } ] },
+    { "id": "e2", "name": "Randy Cole", "departmentId": "maintenance", "role": "Maintenance Tech", "tenure": 22, "retirementEligible": true, "responsibilities": "Mechanical maintenance, equipment rebuilds", "skills": [ { "skillId": "equipment-maint", "proficiency": 5, "source": "external" }, { "skillId": "plc-programming", "proficiency": 3, "source": "internal" } ] },
+    { "id": "e3", "name": "Priya Nair", "departmentId": "people", "role": "Quality Specialist", "tenure": 5, "retirementEligible": false, "responsibilities": "Audits and corrective actions", "skills": [ { "skillId": "quality-audit", "proficiency": 4, "source": "internal" }, { "skillId": "safety-haccp", "proficiency": 4, "source": "internal" } ] },
+    { "id": "e4", "name": "Carl Benson", "departmentId": "supply-chain", "role": "Logistics Coordinator", "tenure": 10, "retirementEligible": false, "responsibilities": "Cold-chain scheduling", "skills": [ { "skillId": "cold-chain", "proficiency": 5, "source": "certified" }, { "skillId": "supply-chain-it", "proficiency": 3, "source": "internal" } ] },
+    { "id": "e5", "name": "Monica Reyes", "departmentId": "it", "role": "Data Analyst", "tenure": 3, "retirementEligible": false, "responsibilities": "Reporting and dashboards", "skills": [ { "skillId": "data-analysis", "proficiency": 4, "source": "external" }, { "skillId": "cyber-basics", "proficiency": 3, "source": "internal" } ] },
+    { "id": "e6", "name": "Tom Alvarez", "departmentId": "maintenance", "role": "Maintenance Tech", "tenure": 2, "retirementEligible": false, "responsibilities": "PLC support", "skills": [ { "skillId": "plc-programming", "proficiency": 2, "source": "on-the-job" }, { "skillId": "equipment-maint", "proficiency": 3, "source": "on-the-job" } ] },
+    { "id": "e7", "name": "Sandra Lee", "departmentId": "manufacturing", "role": "Senior Operator", "tenure": 15, "retirementEligible": true, "responsibilities": "Shift lead, HACCP", "skills": [ { "skillId": "safety-haccp", "proficiency": 5, "source": "certified" } ] },
+    { "id": "e8", "name": "Victor Shaw", "departmentId": "people", "role": "Auditor", "tenure": 6, "retirementEligible": false, "responsibilities": "Internal audits", "skills": [ { "skillId": "quality-audit", "proficiency": 3, "source": "internal" } ] },
+    { "id": "e9", "name": "Lina Park", "departmentId": "supply-chain", "role": "Scheduler", "tenure": 4, "retirementEligible": false, "responsibilities": "Route planning", "skills": [ { "skillId": "cold-chain", "proficiency": 3, "source": "internal" } ] },
+    { "id": "e10", "name": "George Kim", "departmentId": "it", "role": "Sysadmin", "tenure": 12, "retirementEligible": true, "responsibilities": "Infrastructure, supply chain IT", "skills": [ { "skillId": "supply-chain-it", "proficiency": 4, "source": "external" }, { "skillId": "cyber-basics", "proficiency": 4, "source": "external" } ] },
+    { "id": "e11", "name": "Hannah Fox", "departmentId": "manufacturing", "role": "Operator", "tenure": 1, "retirementEligible": false, "responsibilities": "Line tasks", "skills": [ { "skillId": "hygiene-training", "proficiency": 3, "source": "internal" } ] },
+    { "id": "e12", "name": "Miguel Ortiz", "departmentId": "maintenance", "role": "Maintenance Tech", "tenure": 7, "retirementEligible": false, "responsibilities": "Preventive maintenance", "skills": [ { "skillId": "equipment-maint", "proficiency": 4, "source": "internal" } ] },
+    { "id": "e13", "name": "Olga Petrova", "departmentId": "automation", "role": "Controls Engineer", "tenure": 9, "retirementEligible": false, "responsibilities": "PLC and controls", "skills": [ { "skillId": "plc-programming", "proficiency": 5, "source": "external" } ] },
+    { "id": "e14", "name": "Samir Khan", "departmentId": "supply-chain", "role": "Logistics Analyst", "tenure": 3, "retirementEligible": false, "responsibilities": "Optimization", "skills": [ { "skillId": "data-analysis", "proficiency": 3, "source": "internal" } ] },
+    { "id": "e15", "name": "Ellen Price", "departmentId": "people", "role": "Hygiene Trainer", "tenure": 18, "retirementEligible": true, "responsibilities": "Hygiene training", "skills": [ { "skillId": "hygiene-training", "proficiency": 5, "source": "certified" } ] },
+    { "id": "e16", "name": "Kevin Stone", "departmentId": "manufacturing", "role": "Operator", "tenure": 4, "retirementEligible": false, "responsibilities": "Line tasks", "skills": [ { "skillId": "safety-haccp", "proficiency": 3, "source": "internal" } ] },
+    { "id": "e17", "name": "Yvette Cruz", "departmentId": "it", "role": "Developer", "tenure": 2, "retirementEligible": false, "responsibilities": "Supply chain tooling", "skills": [ { "skillId": "supply-chain-it", "proficiency": 2, "source": "on-the-job" }, { "skillId": "data-analysis", "proficiency": 2, "source": "on-the-job" } ] },
+    { "id": "e18", "name": "Oscar Grant", "departmentId": "maintenance", "role": "Senior Technician", "tenure": 20, "retirementEligible": true, "responsibilities": "Equipment subject matter expert", "skills": [ { "skillId": "equipment-maint", "proficiency": 5, "source": "external" } ] }
+  ]
+}

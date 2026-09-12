@@ -1,13 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alignr</title>
-</head>
-<body>
-    Hello This is our project Alignr. This is a web application that allows users to align text and elements on a webpage easily. You can use various alignment options to customize the layout of your content. Enjoy using Alignr! 
+  <head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh"
+;
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
 
-  
-</body>
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alignt — Strategy-driven workforce skills intelligence</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      // Simple global error reporter to surface runtime errors on the page during dev
+      window.addEventListener('error', function(e){
+        try{
+          const root = document.getElementById('root')
+          if(root){
+            root.innerHTML = '<div style="padding:24px;color:#f55;background:#111;font-family:Inter">'<
+              + '<h2 style="color:#f88">Runtime Error</h2>'
+              + '<pre style="white-space:pre-wrap;color:#f88">' + (e && e.error && e.error.stack ? e.error.stack : (e.message||String(e))) + '</pre>'
+              + '</div>'
+          }
+        }catch(err){ console.error('error reporter failed', err) }
+      })
+      window.addEventListener('unhandledrejection', function(ev){
+        try{ const root=document.getElementById('root'); if(root){ root.innerHTML = '<div style="padding:24px;color:#f55;background:#111;font-family:Inter"><h2 style="color:#f88">Unhandled Rejection</h2><pre style="white-space:pre-wrap;color:#f88">'+ (ev && ev.reason && ev.reason.stack ? ev.reason.stack : String(ev)) +'</pre></div>' } }catch(err){console.error(err)}
+      })
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx?t=1789234538528"></script>
+  </body>
 </html>
