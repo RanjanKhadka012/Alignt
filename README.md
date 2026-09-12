@@ -208,9 +208,43 @@ If time runs short, cut the Employee Profile view or polish depth first. Preserv
 
 ## Status
 
-This repository currently contains the product README and concept brief for Alignt. Implementation details, setup instructions, and deployment notes should be added once the application stack is introduced.
+The React frontend now uses a shared Node API in development, standalone hosting, and Vercel. Workforce reads use the existing seed dataset. Strategy edits and training selections remain client-side; database persistence, authentication, and authorization are not implemented.
 
 ## Running goal-to-project matching
+
+### Backend setup
+
+Run `npm install`, copy `.env.example` to `.env.local`, and configure the two
+Ollama variables. `npm run dev` serves both the UI and API. For a standalone
+API, run `npm run start:api` (default `127.0.0.1:3001`; configure `HOST` and `PORT`
+for your host). The standalone command loads `.env.local` and gives deployment
+environment variables precedence. It serves the API only; serve `dist` separately.
+
+| Endpoint | Method | Purpose |
+| --- | --- | --- |
+| `/api/health` | GET | Service status and whether AI is configured; no credentials |
+| `/api/workforce` | GET | Employees, skills, roles, and departments from seed data |
+| `/api/matching` | POST | Goal matching using the existing frontend request contract |
+| `/api/recommendations/benchmark` | POST | Search-backed role requirements |
+| `/api/recommendations/compare` | POST | Employee gaps and training estimates |
+
+Unknown API routes return JSON 404 responses. Workforce loading shows a loading
+state and a retry action on failure. No database writes are exposed yet.
+Run `npm test` for HTTP routing, deployment adapter, and AI service contract tests.
+
+### Vercel
+
+Use the Vite preset, install command `npm install`, build command `npm run build`,
+and output directory `dist`. `vercel.json` routes API requests to `api/index.mjs`
+and frontend navigation to `index.html`. Set `OLLAMA_API_KEY` and `OLLAMA_MODEL`
+in Vercel's environment settings and redeploy. The function duration is 120 seconds
+to accommodate search followed by reasoning; enable Fluid Compute and ensure
+your project's duration settings support this value.
+See [Vercel configuration](https://vercel.com/docs/project-configuration/vercel-json).
+
+Verify `/api/health`, `/api/workforce`, and a direct visit to `/matching` after
+deployment. The API currently serves demo data without authentication. Real
+employee data requires authentication, authorization, and persistent storage.
 
 Use Node.js 20+ and run `npm install`, then `npm run dev`. Open `/matching`.
 Copy `.env.example` to `.env.local` and set `OLLAMA_API_KEY` and
@@ -219,9 +253,9 @@ Vite. These values are read only by the server; do not use a `VITE_` prefix.
 The integration uses the [Ollama Cloud API](https://docs.ollama.com/cloud) at `https://ollama.com/api/chat` with server-side Bearer authentication.
 
 Vite serves `/api/matching` in development and preview. For deployment, build
-with `npm run build`, serve `dist`, and run `node server/matching.mjs` with the
+with `npm run build`, serve `dist`, and run `npm run start:api` with the
 two environment variables set in your server environment. Reverse-proxy
-`/api/matching` to `127.0.0.1:3001` (override with `MATCHING_PORT`) and configure
+`/api/*` to `127.0.0.1:3001` (override with `PORT` or `MATCHING_PORT`) and configure
 SPA routing for `/matching`. Put this endpoint behind your deployment's
 employee authentication and rate limiting. Static hosting alone does not run
 the API. The submitted workforce data is sent to the configured AI provider.
@@ -238,7 +272,7 @@ Covered skills are green/teal; missing skills are yellow/amber. Each gap compare
 training a named current employee with hiring a skilled paid intern, with estimated
 USD cost ranges, duration, and assumptions. Costs are AI planning estimates, not
 live market quotes. Alternative totals assume one person per gap and may double-count
-shared people or training. The current workforce source is seed-backed WorkforceContext,
+shared people or training. The current workforce source is the seed-backed `/api/workforce` endpoint,
 not a persistent database. Training candidate IDs and cost ranges are validated. Run `node --test tests/matching.test.mjs`
 for API contract, validation, and failure-path checks.
 
@@ -264,5 +298,5 @@ clearly marked as estimated USD course/certification/exam fees. Expand the role
 benchmark section to inspect its requirements and source links.
 
 For deployment, also proxy `/api/recommendations/*` to the Node API process
-started by `node server/matching.mjs`. Run all service/cache tests with
+started by `npm run start:api`. Run all service/cache tests with
 `node --test tests/*.test.mjs`.
