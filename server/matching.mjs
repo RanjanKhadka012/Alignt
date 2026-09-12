@@ -1,3 +1,4 @@
+import { recommendationsHandler } from './recommendations.mjs'
 import { createServer } from 'node:http'
 import { pathToFileURL } from 'node:url'
 
@@ -49,5 +50,5 @@ Use numeric nonnegative costs with costMin <= costMax. Use actual JSON null rath
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  createServer(matchingHandler()).listen(Number(process.env.MATCHING_PORT || 3001), '127.0.0.1', () => console.log('Matching API listening on localhost:' + (process.env.MATCHING_PORT || 3001)))
+  createServer((req, res) => recommendationsHandler()(req, res, () => matchingHandler()(req, res))).listen(Number(process.env.MATCHING_PORT || 3001), '127.0.0.1', () => console.log('Matching API listening on localhost:' + (process.env.MATCHING_PORT || 3001)))
 }

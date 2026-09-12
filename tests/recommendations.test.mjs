@@ -1,0 +1,67 @@
+import test from 'node:test'
+import assert from 'node:assert/strict'
+import { Readable } from 'node:stream'
+import { createRoleCache, BENCHMARK_TTL } from '../src/services/recommendations.mjs'
+import { recommendationsHandler, validateBenchmark, validateComparison } from '../server/recommendations.mjs'
+const sources = [{ title: 'Standards body', url: 'https://example.org/standards', content: 'Current standards evidence' }]
+const skills = Array.from({ length: 5 }, (_, i) => ({ name: `Skill ${i}`, reason: 'Required for the role', sourceUrls: [sources[0].url] }))
+const benchmark = { skills, sources, fetchedAt: Date.now() }
+const gap = { skill: 'Skill 0', reason: 'Supports the safety initiative', priority: 'critical', timeToAcquire: '2 months', estimatedCost: 'USD 500–1000 in exam fees', recommendedPath: 'Complete supervised training and exam', trainingEstimate: { feesUsd: { min: 500, max: 1000 }, trainingHours: { min: 16, max: 24 }, durationWeeks: { min: 2, max: 4 } } }
+
+test('role cache deduplicates concurrent requests and refreshes after seven days', async () => {
+  let now = 1000, calls = 0
+  const cache = createRoleCache(async () => { calls++; return { ...benchmark, fetchedAt: now } }, () => {}, () => now)
+  const [a, b] = await Promise.all([cache.get('Operator'), cache.get(' operator ')])
+  assert.equal(a, b); assert.equal(calls, 1)
+  now += BENCHMARK_TTL - 1
+  await cache.get('Operator'); assert.equal(calls, 1)
+  now++
+  await cache.get('Operator'); assert.equal(calls, 2)
+  await cache.get('Operator', 'pharmaceutical'); assert.equal(calls, 3)
+})
+test('failed role searches are not cached and can be retried', async () => {
+  let calls = 0
+  const cache = createRoleCache(async () => { if (++calls === 1) throw new Error('offline'); return benchmark })
+  await assert.rejects(cache.get('Operator'), /offline/)
+  assert.equal(await cache.get('Operator'), benchmark)
+})
+test('validation rejects invented sources, duplicate gaps and non-benchmark skills', () => {
+  assert.equal(validateBenchmark({ skills }, sources).skills.length, 5)
+  assert.throws(() => validateBenchmark({ skills: [{ ...skills[0], sourceUrls: ['https://invented.org'] }, ...skills.slice(1)] }, sources))
+  assert.deepEqual(validateComparison({ gaps: [] }, benchmark), { gaps: [] })
+  assert.throws(() => validateComparison({ gaps: [gap, gap] }, benchmark))
+  assert.throws(() => validateComparison({ gaps: [{ ...gap, skill: 'Invented' }] }, benchmark))
+})
+async function invoke(path, body) {
+  const req = Readable.from([JSON.stringify(body)])
+  req.url = '/api/recommendations/' + path; req.method = 'POST'
+  let status, payload
+  const res = { writeHead(code) { status = code; return this }, end(body) { payload = JSON.parse(body) } }
+  await recommendationsHandler({ OLLAMA_API_KEY: 'secret-test', OLLAMA_MODEL: 'test-model' })(req, res)
+  return { status, payload }
+}
+test('benchmark must search before reasoning; comparison calls only chat', async () => {
+  const original = globalThis.fetch
+  const calls = []
+  try {
+    globalThis.fetch = async (url, options) => {
+      calls.push(url)
+      assert.equal(options.headers.Authorization, 'Bearer secret-test')
+      const body = JSON.parse(options.body)
+      if (url.endsWith('web_search')) return { ok: true, json: async () => ({ results: sources }) }
+      const input = JSON.parse(body.messages[1].content)
+      if (input.sources) assert.deepEqual(input.sources, sources)
+      return { ok: true, json: async () => ({ message: { content: JSON.stringify(input.sources ? { skills } : { gaps: [gap] }) } }) }
+    }
+    const result = await invoke('benchmark', { roleTitle: 'Operator' })
+    assert.equal(result.status, 200)
+    assert.deepEqual(calls, ['https://ollama.com/api/web_search', 'https://ollama.com/api/chat'])
+    calls.length = 0
+    assert.equal((await invoke('compare', { employee: { role: 'Operator', skills: [] }, roleBenchmark: benchmark, companyStrategy: {} })).status, 200)
+    assert.deepEqual(calls, ['https://ollama.com/api/chat'])
+    globalThis.fetch = async () => ({ ok: true, json: async () => ({ results: [] }) })
+    const empty = await invoke('benchmark', { roleTitle: 'Operator' })
+    assert.equal(empty.status, 502)
+    assert.match(empty.payload.error, /No benchmark was generated/)
+  } finally { globalThis.fetch = original }
+})
