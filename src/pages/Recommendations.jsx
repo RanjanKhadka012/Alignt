@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { useWorkforce } from '../contexts/WorkforceContext'
 import { useStrategy } from '../contexts/StrategyContext'
 import { profileKey, useRoleBenchmarks } from '../contexts/RoleBenchmarkContext'
@@ -14,7 +14,6 @@ export default function Recommendations() {
   const { reviews, getReview } = useRoleBenchmarks()
   const [selectedId, setSelectedId] = useState(null)
   const [search, setSearch] = useState('')
-  const [retry, setRetry] = useState(0)
   const profiles = useMemo(() => employees.map(employee => ({ ...employee, skills: (employee.skills || []).map(skill => ({ ...skill, name: skills.find(s => s.id === skill.skillId)?.name || skill.skillId })) })), [employees, skills])
   const selected = profiles.find(employee => employee.id === selectedId) || profiles[0]
   const reviewFor = employee => {
@@ -22,21 +21,8 @@ export default function Recommendations() {
     return review?.status === 'ready' && !isFresh(review.benchmark) ? undefined : review
   }
   const review = selected && reviewFor(selected)
-  useEffect(() => {
-    if (selected) getReview(selected, strategy).catch(() => {})
-  }, [selected, strategy, getReview, retry])
-  // Gradually populate real severity badges. Stop on service failures to avoid a request storm.
-  useEffect(() => {
-    let cancelled = false
-    async function checkEmployees() {
-      for (const employee of profiles) {
-        if (cancelled) return
-        try { await getReview(employee, strategy) } catch { return }
-      }
-    }
-    checkEmployees()
-    return () => { cancelled = true }
-  }, [profiles, strategy, getReview, retry])
+  const runReview = () => { if (selected) getReview(selected, strategy).catch(() => {}) }
+  const busy = review?.status === 'benchmarking' || review?.status === 'comparing'
 
   const ready = review?.status === 'ready'
   const benchmark = review?.benchmark
@@ -47,16 +33,16 @@ export default function Recommendations() {
       <section className="recommendations-detail recommendations-panel" aria-label="Employee recommendations">
         {!selected ? <p className="recommendations-muted">No employees available to review.</p> : <>
           <header><h2>{selected.name}</h2><p className="recommendations-muted">{selected.role} · {departments.find(department => department.id === selected.departmentId)?.name || selected.departmentId}</p>
-            {benchmark && isFresh(benchmark) ? <div className="benchmark-live"><i aria-hidden="true"/><span>Benchmarked against current role standards · <span className="recommendations-data">Last checked: {new Date(benchmark.fetchedAt).toLocaleString()}</span></span></div> : <div className="recommendations-muted recommendations-data">{review?.status === 'error' ? 'Live benchmark unavailable' : 'Checking current role standards…'}</div>}
+            {benchmark && isFresh(benchmark) ? <div className="benchmark-live"><i aria-hidden="true"/><span>Benchmarked against current role standards · <span className="recommendations-data">Last checked: {new Date(benchmark.fetchedAt).toLocaleString()}</span></span></div> : <div className="recommendations-muted recommendations-data">{review?.status === 'error' ? 'Live benchmark unavailable' : busy ? 'Checking current role standards…' : 'Review on demand · No AI calls while browsing'}</div>}
           </header>
           <section className="employee-current-skills"><h3>Current skills & certifications</h3><div className="employee-skill-pills">{selected.skills.map(skill => <span key={skill.skillId}>{skill.name}<span className="recommendations-data">{proficiency(skill.proficiency)} · {skill.proficiency}/5</span></span>)}{(selected.certifications || []).map((certification, index) => <span key={`cert-${index}`}>{typeof certification === 'string' ? certification : certification.name}<span className="recommendations-data">Certification recorded</span></span>)}</div>{!selected.skills.length && !selected.certifications?.length && <p className="recommendations-muted">No skills or certifications recorded.</p>}</section>
-          <section aria-busy={!ready && review?.status !== 'error'}><h3>Gaps & recommendations</h3>
-            {review?.status === 'error' ? <div className="recommendation-error" role="alert"><strong>Review unavailable</strong><p>{review.error}</p><button onClick={() => setRetry(value => value + 1)}>Try again</button></div> : !ready ? <div role="status"><p className="recommendations-muted">{review?.status === 'comparing' ? 'Comparing recorded skills with the role benchmark…' : 'Searching current role standards and certifications…'}</p><div className="recommendation-skeleton" aria-hidden="true"/><div className="recommendation-skeleton" aria-hidden="true"/></div> : <>
+          <section aria-busy={busy}><h3>Gaps & recommendations</h3>
+            {!review ? <div className="recommendation-on-demand"><h3>Review this employee when you’re ready</h3><p className="recommendations-muted">Browse profiles freely. Generate recommendations only for the person you want to develop. We reuse the role benchmark for seven days and reuse completed reviews while the profile and strategy stay unchanged.</p><button onClick={runReview}>Generate recommendations</button></div> : review?.status === 'error' ? <div className="recommendation-error" role="alert"><strong>Review unavailable</strong><p>{review.error}</p><button onClick={runReview}>Try again</button></div> : !ready ? <div role="status"><p className="recommendations-muted">{review?.status === 'comparing' ? 'Comparing recorded skills with the role benchmark…' : 'Searching current role standards and certifications…'}</p><div className="recommendation-skeleton" aria-hidden="true"/><div className="recommendation-skeleton" aria-hidden="true"/></div> : <>
               {!review.gaps.length ? <div className="recommendation-current"><strong>Fully current for this role — no gaps identified</strong><p>Recorded skills meet the expectations identified in this role review.</p></div> : <EmployeeTrainingPlan key={profileKey(selected, strategy) + benchmark.fetchedAt} employeeName={selected.name} gaps={review.gaps} />}
               {!!review.gaps.length && <p className="recommendations-muted recommendations-note">Time and USD course, certification, and exam fees are planning estimates, not live quotes. Confirm prerequisites and pricing with the provider.</p>}
             </>}
           </section>
-          {benchmark && <details className="benchmark-evidence"><summary>Role benchmark & live sources</summary><p className="recommendations-muted recommendations-note">Role standards are refreshed every seven days. Source evidence is shared across employees in the same role.</p><ul>{benchmark.skills.map(skill => <li key={skill.name}><strong>{skill.name}</strong><p>{skill.reason}</p><div>{skill.sourceUrls.map(url => <a key={url} href={url} target="_blank" rel="noreferrer">{benchmark.sources.find(source => source.url === url)?.title || 'Source'}</a>)}</div></li>)}</ul></details>}
+          {benchmark && <details className="benchmark-evidence"><summary>Role benchmark & live sources</summary><p className="recommendations-muted recommendations-note">Role standards are refreshed on request when more than seven days old. Source evidence is shared across employees in the same role.</p><ul>{benchmark.skills.map(skill => <li key={skill.name}><strong>{skill.name}</strong><p>{skill.reason}</p><div>{skill.sourceUrls.map(url => <a key={url} href={url} target="_blank" rel="noreferrer">{benchmark.sources.find(source => source.url === url)?.title || 'Source'}</a>)}</div></li>)}</ul></details>}
         </>}
       </section>
     </div>

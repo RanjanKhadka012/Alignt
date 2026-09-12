@@ -17,17 +17,21 @@ export async function matchTeamToGoal(goalText, timeline, workforceData) {
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), 65000)
   try {
-    const response = await fetch('/api/matching', {
+    let response
+    try { response = await fetch('/api/matching', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ goalText, timeline, workforceData }), signal: controller.signal,
-    })
+    }) } catch (error) {
+      if (error.name === 'AbortError') throw error
+      throw new Error('Cannot reach the app server. Open the running local app address and try again.')
+    }
     const payload = await response.json().catch(() => null)
     if (!response.ok) throw new Error(payload?.error || `Matching is unavailable (${response.status}). Please try again.`)
     if (typeof payload?.text !== 'string') throw new Error('Matching returned an unreadable response. Please try again.')
     return parseMatchResult(payload.text, workforceData)
   } catch (error) {
     if (error.name === 'AbortError') throw new Error('Matching timed out. Please try again.')
-    if (error instanceof TypeError) throw new Error('Could not connect to matching. Check your connection and try again.')
+    if (error instanceof SyntaxError) throw new Error('The AI returned invalid JSON. Please try again.')
     throw error
   } finally { clearTimeout(timeout) }
 }

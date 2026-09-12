@@ -23,7 +23,7 @@ export function WorkforceProvider({ children }){
       if (!['employees', 'skills', 'roles', 'departments'].every(key => Array.isArray(data[key]))) throw new Error('The workforce service returned invalid data.')
       if (controller.signal.aborted) return
       const normalized = data
-      setEmployees(normalized.employees); setSkills(normalized.skills); setRoles(normalized.roles); setDepartments(data.departments)
+      setEmployees(normalized.employees.map(employee => ({ ...employee, name: employee.name.replace(/^\s*\d+\s+/, '') }))); setSkills(normalized.skills); setRoles(normalized.roles); setDepartments(data.departments)
       setLoading(false)
     }).catch(error => {
       if (!controller.signal.aborted) { setError(error.message); setLoading(false) }

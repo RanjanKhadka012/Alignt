@@ -318,11 +318,12 @@ chat call compares each employee's named skill records and strategy with the
 benchmark; no web search runs in that comparison. Employee results are cached
 against the profile and strategy and expire with their benchmark.
 
-The employee list gradually reviews profiles in the background to populate real
-severity badges; it shows “not checked” until reviewed. Background processing
-stops on a service error, and the selected employee can be retried. Prices are
-clearly marked as estimated USD course/certification/exam fees. Expand the role
-benchmark section to inspect its requirements and source links.
+Recommendations run only when “Generate recommendations” or “Try again” is
+clicked for the selected employee. Opening the page, searching, selecting profiles,
+and editing strategy do not trigger AI requests. Successful reviews and role
+benchmarks are reused in the session; stale reviews require another explicit click.
+Comparison requests omit full source excerpts and unrelated employee fields to
+reduce token use. Prices remain estimated USD course/certification/exam fees.
 
 For deployment, also proxy `/api/recommendations/*` to the Node API process
 started by `npm run start:api`. Run all service/cache tests with
