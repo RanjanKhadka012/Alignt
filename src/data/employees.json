@@ -65,8 +65,15 @@
     "team": "Production",
     "category": "Plant Based",
     "role": "Production Supervisor",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      { "skill": "Sanitation compliance", "rating": 4, "proficiency": "Advanced" },
+      { "skill": "Preventive maintenance scheduling", "rating": 3, "proficiency": "Intermediate" },
+      { "skill": "Statistical process control", "rating": 2, "proficiency": "Developing" }
+    ],
+    "certifications": [
+      { "name": "Supervisor HACCP awareness", "issued": "2024-09-01", "expires": "2027-09-01" }
+    ],
+    "noCertsRecorded": false
   },
   {
     "id": "e005",
@@ -75,16 +82,12 @@
     "category": "Plant Based",
     "role": "Forklift Operator",
     "skills": [
-      {
-        "skill": "Warehouse management systems (WMS)",
-        "rating": 3,
-        "proficiency": "Intermediate"
-      },
-      {
-        "skill": "Forklift operation",
-        "rating": 4,
-        "proficiency": "Expert"
-      }
+      { "skill": "Warehouse management systems (WMS)", "rating": 3, "proficiency": "Intermediate" },
+      { "skill": "Forklift operation", "rating": 4, "proficiency": "Expert" },
+      { "skill": "Inventory reconciliation", "rating": 3, "proficiency": "Intermediate" }
+    ],
+    "certifications": [
+      { "name": "Forklift Operator (OSHA)", "issued": "2025-02-15", "expires": "2028-02-15" }
     ],
     "noCertsRecorded": false
   },
@@ -94,8 +97,12 @@
     "team": "Quality & Food Safety",
     "category": "Plant Based",
     "role": "Quality Inspector",
-    "skills": [],
-    "noCertsRecorded": true
+    "skills": [
+      { "skill": "Sanitation compliance", "rating": 2, "proficiency": "Developing" },
+      { "skill": "Statistical process control", "rating": 2, "proficiency": "Developing" }
+    ],
+    "certifications": [],
+    "noCertsRecorded": false
   },
   {
     "id": "e007",
@@ -104,11 +111,12 @@
     "category": "Plant Based",
     "role": "Quality Technician",
     "skills": [
-      {
-        "skill": "Food safety recertification (HACCP)",
-        "rating": 4,
-        "proficiency": "Expert"
-      }
+      { "skill": "Food safety recertification (HACCP)", "rating": 4, "proficiency": "Expert" },
+      { "skill": "Allergen control auditing", "rating": 4, "proficiency": "Advanced" },
+      { "skill": "Metal detection calibration", "rating": 3, "proficiency": "Intermediate" }
+    ],
+    "certifications": [
+      { "name": "HACCP Level II", "issued": "2023-08-01", "expires": "2026-08-01" }
     ],
     "noCertsRecorded": false
   },
@@ -119,12 +127,10 @@
     "category": "Plant Based",
     "role": "Shipping/Receiving Associate",
     "skills": [
-      {
-        "skill": "Forklift operation",
-        "rating": 3,
-        "proficiency": "Intermediate"
-      }
+      { "skill": "Forklift operation", "rating": 3, "proficiency": "Intermediate" },
+      { "skill": "Pallet automation handling", "rating": 3, "proficiency": "Intermediate" }
     ],
+    "certifications": [],
     "noCertsRecorded": false
   },
   {
@@ -134,12 +140,10 @@
     "category": "Plant Based",
     "role": "Maintenance Technician",
     "skills": [
-      {
-        "skill": "Conveyor belt alignment",
-        "rating": 3,
-        "proficiency": "Intermediate"
-      }
+      { "skill": "Conveyor belt alignment", "rating": 3, "proficiency": "Intermediate" },
+      { "skill": "Hydraulic systems repair", "rating": 2, "proficiency": "Developing" }
     ],
+    "certifications": [],
     "noCertsRecorded": false
   },
   {
@@ -149,11 +153,11 @@
     "category": "Plant Based",
     "role": "Quality Inspector",
     "skills": [
-      {
-        "skill": "Statistical process control",
-        "rating": 5,
-        "proficiency": "Expert"
-      }
+      { "skill": "Statistical process control", "rating": 5, "proficiency": "Expert" },
+      { "skill": "Sanitation compliance", "rating": 4, "proficiency": "Advanced" }
+    ],
+    "certifications": [
+      { "name": "Food Safety Auditor", "issued": "2022-05-10", "expires": "2025-05-10" }
     ],
     "noCertsRecorded": false
   },
