@@ -1,8 +1,8 @@
-# Aliant
+# Alignt
 
-Aliant is a strategy-driven skills intelligence platform that connects a company's goals directly to its workforce capabilities.
+Alignt is a strategy-driven skills intelligence platform that connects a company's goals directly to its workforce capabilities.
 
-Instead of treating workforce skills as a standalone inventory, Aliant anchors every skill gap, risk signal, and recommendation to the business strategy that matters right now. The result is a living view of who is ready, who is at risk, who should be developed, and which people are best suited for upcoming projects.
+Instead of treating workforce skills as a standalone inventory, Alignt anchors every skill gap, risk signal, and recommendation to the business strategy that matters right now. The result is a living view of who is ready, who is at risk, who should be developed, and which people are best suited for upcoming projects.
 
 > We connect your company's strategy directly to your people, showing exactly who's ready, who's at risk, and who to develop, put on which project, and why.
 
@@ -10,7 +10,7 @@ Instead of treating workforce skills as a standalone inventory, Aliant anchors e
 
 Most skills platforms answer, "What skills do our employees have?"
 
-Aliant answers a sharper question:
+Alignt answers a sharper question:
 
 > Given our current strategy, what workforce capabilities matter most, where are we exposed, and what should we do next?
 
@@ -65,7 +65,7 @@ Users can click into a person or role to see actual skills compared against the 
 
 ### 4. Skill Gap & Recommendation Panel
 
-For a selected employee or role, Aliant identifies missing skills and recommends a development path.
+For a selected employee or role, Alignt identifies missing skills and recommends a development path.
 
 Each recommendation can include:
 
@@ -78,7 +78,7 @@ This turns risk analysis into an actionable development plan.
 
 ### 5. Goal-to-Project Matching
 
-Leaders can enter a new goal or project with a target timeline. Aliant then:
+Leaders can enter a new goal or project with a target timeline. Alignt then:
 
 - Derives the skills required
 - Checks current organizational coverage
@@ -135,7 +135,7 @@ Each employee profile includes:
 
 ## AI Responsibilities
 
-Aliant uses AI for three clear jobs:
+Alignt uses AI for three clear jobs:
 
 1. Benchmarking
    Builds ideal skill profiles by combining industry knowledge with patterns from top performers in each role.
@@ -161,10 +161,10 @@ Aliant uses AI for three clear jobs:
    The recommendation panel shows exactly what training or certification would reduce the risk.
 
 5. Match a project.
-   A leader enters a new initiative, and Aliant assembles a recommended project team from existing staff.
+   A leader enters a new initiative, and Alignt assembles a recommended project team from existing staff.
 
 6. Land the message.
-   Aliant is not a static report. It is a living connection between company strategy and people decisions.
+   Alignt is not a static report. It is a living connection between company strategy and people decisions.
 
 ## Seed Data Approach
 
@@ -208,4 +208,4 @@ If time runs short, cut the Employee Profile view or polish depth first. Preserv
 
 ## Status
 
-This repository currently contains the product README and concept brief for Aliant. Implementation details, setup instructions, and deployment notes should be added once the application stack is introduced.
+This repository currently contains the product README and concept brief for Alignt. Implementation details, setup instructions, and deployment notes should be added once the application stack is introduced.
