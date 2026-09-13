@@ -1,10 +1,13 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import aligntWordmark from '../assets/brand/2.png'
 
 export default function Sidebar(){
   return (
     <aside className="sidebar">
-      <div className="logo">Alignt</div>
+      <Link className="logo" to="/overview" aria-label="Alignt home">
+        <img src={aligntWordmark} alt="Alignt" width="1080" height="1080" />
+      </Link>
       <nav>
         <NavLink to="/overview" className="nav-item">Overview</NavLink>
         <NavLink to="/strategy" className="nav-item">Strategy</NavLink>

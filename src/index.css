@@ -27,7 +27,10 @@ body{
 .main-area{flex:1;padding:28px}
 
 .sidebar{position:sticky;top:0;align-self:flex-start;height:100vh;height:100dvh;overflow-y:auto;flex-shrink:0;width:220px;background:var(--surface);border-right:1px solid var(--hairline);padding:20px}
-.logo{font-family:'Space Grotesk',sans-serif;font-weight:600;margin-bottom:20px}
+.logo{display:block;position:relative;width:180px;max-width:100%;height:54px;overflow:hidden;margin-bottom:24px;border-radius:4px}
+/* Frame the supplied square wordmark without its large empty margins. */
+.logo img{position:absolute;width:120%;height:auto;max-width:none;left:-10%;top:-70px}
+.logo:focus-visible{outline:2px solid #97A5F3;outline-offset:4px}
 .nav-item{color:var(--muted);display:block;padding:8px 0;text-decoration:none}
 .nav-item.active{color:var(--text);}
 
