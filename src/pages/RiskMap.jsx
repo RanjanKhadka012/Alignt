@@ -9,6 +9,43 @@ import { proficiencyLabel } from '../utils/goalRisk'
 import './Overview.css'
 import './RiskMap.css'
 
+function CoverageChart({ skillsWithRisk }) {
+  const total = skillsWithRisk.length
+  const noHolders = skillsWithRisk.filter(s => s.holderCount === 0).length
+  const vulnerable = skillsWithRisk.filter(s => s.holderCount > 0 && s.holderCount < 3).length
+  const max = Math.max(total, noHolders, vulnerable)
+  const bars = [
+    { label: 'Total skills tracked', value: total, color: 'var(--primary)' },
+    { label: 'Skills with no holders', value: noHolders, color: 'var(--critical)' },
+    { label: 'Skills with <3 holders (vulnerable)', value: vulnerable, color: 'var(--warning)' }
+  ]
+  const barHeight = 36
+  const chartHeight = bars.length * barHeight + 20
+  const labelWidth = 260
+  const barMaxWidth = 280
+  const chartWidth = labelWidth + barMaxWidth + 60
+
+  return (
+    <div style={{ background: 'var(--surface)', border: '1px solid var(--hairline)', borderRadius: '10px', padding: '24px', marginTop: 8 }}>
+      <svg width={chartWidth} height={chartHeight} style={{ fontFamily: 'JetBrains Mono, monospace', color: 'var(--text)' }}>
+        {bars.map((bar, i) => {
+          const barWidth = max > 0 ? (bar.value / max) * barMaxWidth : 0
+          const y = i * barHeight + 10
+          const barX = labelWidth
+          const valueX = barX + barWidth + 10
+          return (
+            <g key={i}>
+              <text x={8} y={y + barHeight / 2 + 5} fontSize={12} fill="var(--muted)" dominantBaseline="middle" fontWeight={500}>{bar.label}</text>
+              <rect x={barX} y={y + 4} width={Math.max(barWidth, 0)} height={barHeight - 8} fill={bar.color} rx={3} />
+              <text x={valueX} y={y + barHeight / 2 + 5} fontSize={13} fontWeight={700} fill="var(--text)" dominantBaseline="middle">{bar.value}</text>
+            </g>
+          )
+        })}
+      </svg>
+    </div>
+  )
+}
+
 function HolderCount({ holders, retirement = false }) {
   const [position, setPosition] = useState(null)
   const id = useId()
@@ -98,14 +135,10 @@ export default function RiskMap(){
           </ul>
         </div>
 
-        {/* Coverage summary */}
+{/* Coverage summary */}
         <div style={{marginTop:12}}>
           <div style={{fontWeight:700}}>Coverage summary</div>
-          <div style={{marginTop:8}}>
-            <div>Total skills tracked: <strong>{skillsWithRisk.length}</strong></div>
-            <div>Skills with no holders: <strong>{skillsWithRisk.filter(s=>s.holderCount===0).length}</strong></div>
-            <div>Skills with &lt;3 holders (vulnerable): <strong>{skillsWithRisk.filter(s=>s.holderCount>0 && s.holderCount<3).length}</strong></div>
-          </div>
+          <CoverageChart skillsWithRisk={skillsWithRisk} />
         </div>
 
         {/* Next steps */}
