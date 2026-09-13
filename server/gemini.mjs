@@ -14,9 +14,20 @@ export async function geminiResponse(env, body) {
     // keep store false-equivalent behaviour
   }
 
-  const response = await fetch(url, {
+  const headers = { 'Content-Type': 'application/json' }
+  const authType = (env.GEMINI_AUTH_TYPE || '').toLowerCase()
+  let targetUrl = url
+  if (authType === 'api_key') {
+    // append API key as query param
+    const sep = url.includes('?') ? '&' : '?'
+    targetUrl = `${url}${sep}key=${encodeURIComponent(key)}`
+  } else {
+    headers.Authorization = `Bearer ${key}`
+  }
+
+  const response = await fetch(targetUrl, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
+    headers,
     signal: AbortSignal.timeout(60000),
     body: JSON.stringify(payload),
   })
