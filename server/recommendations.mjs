@@ -28,14 +28,14 @@ export function validateComparison(data, benchmark) {
 export function recommendationsHandler(env = process.env) {
   async function reason(system, input) {
     const response = await aiResponse(env, { instructions: system, input: JSON.stringify(input), text: { format: { type: 'json_object' } } })
-    try { return parse(response.text) } catch { throw new Error('OpenAI returned invalid JSON. Please retry.') }
+    try { return parse(response.text) } catch { throw new Error('AI provider returned invalid JSON. Please retry.') }
   }
   return async (req, res, next) => {
     const path = req.url?.split('?')[0]
     if (!['/api/recommendations/benchmark', '/api/recommendations/compare'].includes(path)) return next ? next() : res.writeHead(404).end()
     const send = (status, body) => { res.writeHead(status, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(body)) }
     if (req.method !== 'POST') return send(405, { error: 'Use POST for role reviews.' })
-    if (!env.OPENAI_API_KEY) return send(503, { error: 'Configure the OpenAI API key and model to enable live role reviews.' })
+    if (!env.OPENAI_API_KEY && !env.GEMINI_API_KEY) return send(503, { error: 'Configure an AI provider (OpenAI or Gemini) and model to enable live role reviews.' })
     try {
       let raw = ''
       for await (const chunk of req) { raw += chunk; if (Buffer.byteLength(raw) > 250000) return send(413, { error: 'The review request is too large.' }) }
