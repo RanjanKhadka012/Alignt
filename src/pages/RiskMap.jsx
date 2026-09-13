@@ -1,6 +1,6 @@
 import { retirementStatus } from '../utils/retirement.mjs'
-import RetirementRiskPanel from '../components/RetirementRiskPanel'
-import React from 'react'
+import React, { useId, useState } from 'react'
+import Tooltip from '../components/Tooltip'
 import SkillHolderNetwork from '../components/SkillHolderNetwork'
 import { useWorkforce } from '../contexts/WorkforceContext'
 import { useDerivedData } from '../contexts/DerivedDataContext'
@@ -8,6 +8,18 @@ import { Link } from 'react-router-dom'
 import { proficiencyLabel } from '../utils/goalRisk'
 import './Overview.css'
 import './RiskMap.css'
+
+function HolderCount({ holders, retirement = false }) {
+  const [position, setPosition] = useState(null)
+  const id = useId()
+  function show(event) {
+    const rect = event.currentTarget.getBoundingClientRect()
+    setPosition({ x: Math.max(0, Math.min(rect.left, window.innerWidth - 310)), y: Math.max(0, Math.min(rect.bottom, window.innerHeight - 200)) })
+  }
+  return <><button className="risk-holder-count" onMouseEnter={show} onMouseLeave={() => setPosition(null)} onFocus={show} onBlur={() => setPosition(null)} aria-label={`${holders.length} ${retirement ? 'retirement flags' : 'skill holders'}`} aria-describedby={position ? id : undefined}>{holders.length}</button>
+    {position && <Tooltip x={position.x} y={position.y}><div id={id} role="tooltip" className="risk-holder-tooltip">{holders.length ? holders.map(holder => <div key={holder.id}><strong>{holder.name}</strong>{retirement && <small>{retirementStatus(holder).label}</small>}</div>) : 'No employees'}</div></Tooltip>}
+  </>
+}
 
 export default function RiskMap(){
   const { employees } = useWorkforce()
@@ -18,7 +30,7 @@ export default function RiskMap(){
   const displayedRisks = risks.filter(r => !excluded.has(r.skill.name))
   return (
     <div className="readiness-page">
-      <RetirementRiskPanel/><header className="readiness-heading">
+      <header className="readiness-heading">
         <h1>Skills → Employees relationships</h1>
         <p>Skills with two or fewer recorded holders company-wide. Beginner holders count as recorded coverage, but may still need development before they can replace an expert.</p>
       </header>
@@ -29,7 +41,7 @@ export default function RiskMap(){
 
         {/* Top critical skills */}
         {(() => {
-          const sorted = [...skillsWithRisk].sort((a,b) => Number(b.risk === 'critical') - Number(a.risk === 'critical') || b.retiringSoonCount - a.retiringSoonCount || a.holderCount - b.holderCount || b.retirementCount - a.retirementCount)
+          const sorted = [...skillsWithRisk].sort((a,b) => ({critical: 2, watch: 1, healthy: 0}[b.risk] || 0) - ({critical: 2, watch: 1, healthy: 0}[a.risk] || 0) || a.holderCount - b.holderCount || a.skill.name.localeCompare(b.skill.name))
           const top = sorted.filter(s=>s.holderCount>0).slice(0,6)
           return (
             <div style={{marginTop:8}}>
@@ -55,8 +67,8 @@ export default function RiskMap(){
                     return (
                       <tr key={s.skill.id} style={{borderTop:'1px solid var(--hairline)',background:rowBg}}>
                         <td style={{padding:'8px'}}>{s.skill.name}</td>
-                        <td style={{padding:'8px'}}><strong>{s.holderCount}</strong></td>
-                        <td style={{padding:'8px'}}><strong>{s.retirementCount}</strong>{s.retirementHolders.map(holder => <div key={holder.id} style={{fontSize:11,marginTop:6}}><Link to={`/employees/${holder.id}`}>{holder.name}</Link><div>{retirementStatus(holder).label}{holder.retirementDate && ` · ${holder.retirementDate}`}</div></div>)}</td>
+                        <td style={{padding:'8px'}}><HolderCount holders={s.holders}/></td>
+                        <td style={{padding:'8px'}}><HolderCount holders={s.retirementHolders} retirement/></td>
                         <td style={{padding:'8px',textTransform:'capitalize'}}><span style={{display:'inline-block',padding:'4px 10px',borderRadius:14,background:riskColor,color:'#0b0b0b',fontWeight:600}}>{s.risk}</span></td>
                         <td style={{padding:'8px'}}><span style={{display:'inline-flex',alignItems:'center',gap:8}}><span style={{width:10,height:10,borderRadius:10,background: priority==='High' ? '#ff6b6b' : priority==='Medium' ? '#ffbf69' : '#7bd389'}}></span><strong>{priority}</strong></span></td>
                         <td style={{padding:'8px',fontSize:13,color:'var(--muted)'}}>{action}</td>

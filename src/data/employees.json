@@ -29,10 +29,7 @@
         "issued": "2024-01-01",
         "expires": "2027-01-01"
       }
-    ],
-    "retirementEligible": true,
-    "retirementDate": "2026-12-31",
-    "retirementDemo": true
+    ]
   },
   {
     "id": "e002",
@@ -2387,7 +2384,7 @@
       }
     ],
     "retirementEligible": true,
-    "retirementDate": null,
+    "retirementDate": "2026-12-31",
     "retirementDemo": true
   },
   {
