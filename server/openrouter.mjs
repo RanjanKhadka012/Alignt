@@ -17,7 +17,7 @@ function requestBody(env, body, online = false) {
   const requestedTokens = Number(body.maxTokens || configuredTokens)
   const ceiling = online ? 1024 : 2048
   const maxTokens = Number.isFinite(requestedTokens) ? Math.min(Math.max(requestedTokens, 256), ceiling) : ceiling
-  const payload = { model: model(env, online), messages: messages(body), stream: false, max_tokens: maxTokens }
+  const payload = { model: body.modelOverride || model(env, online), messages: messages(body), stream: false, max_tokens: maxTokens }
   if (body.text?.format?.type === 'json_object') payload.response_format = { type: 'json_object' }
   return payload
 }
@@ -28,6 +28,7 @@ function extractMessage(payload) {
 
 export async function openrouterResponse(env, body) {
   if (!env.OPENROUTER_API_KEY) throw new Error('OpenRouter API key not configured')
+  const online = body.online === true
   const response = await fetch(env.OPENROUTER_API_URL || 'https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -37,8 +38,11 @@ export async function openrouterResponse(env, body) {
       'X-Title': env.OPENROUTER_APP_NAME || 'Alignt',
     },
     signal: AbortSignal.timeout(60000),
-    body: JSON.stringify(requestBody(env, body, body.online === true)),
+    body: JSON.stringify(requestBody(env, body, online)),
   })
+  if (response.status === 402 && !body.modelOverride && env.OPENROUTER_FREE_FALLBACK !== 'false') {
+    return openrouterResponse(env, { ...body, modelOverride: `${env.OPENROUTER_FREE_MODEL || 'nvidia/nemotron-3-super-120b-a12b:free'}${online ? ':online' : ''}` })
+  }
   if (!response.ok) throw new Error(response.status === 401 || response.status === 403
     ? 'OpenRouter authentication failed. Check the server API key and model access.'
     : response.status === 402 ? 'OpenRouter credits are insufficient for this request. Add credits or lower OPENROUTER_MAX_TOKENS.'
