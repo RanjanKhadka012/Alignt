@@ -62,7 +62,8 @@ export async function openrouterSearchSources(env, query) {
     maxTokens: 1024,
   })
   const annotations = result.message.annotations || []
-  const urls = annotations.filter(annotation => annotation.type === 'url_citation' && annotation.url)
+  const urls = annotations.map(annotation => annotation.url_citation || annotation)
+    .filter(annotation => annotation.url)
     .map(annotation => ({ title: annotation.title || annotation.url, url: annotation.url }))
   const fallbackUrls = [...result.text.matchAll(/https?:\/\/[^\s)\]]+/g)].map(match => ({ title: match[0], url: match[0].replace(/[.,;]+$/, '') }))
   return [...new Map([...urls, ...fallbackUrls].map(source => [source.url, {
