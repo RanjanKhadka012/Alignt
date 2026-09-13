@@ -40,7 +40,7 @@ export async function openrouterResponse(env, body) {
     signal: AbortSignal.timeout(60000),
     body: JSON.stringify(requestBody(env, body, online)),
   })
-  if (response.status === 402 && !body.modelOverride && env.OPENROUTER_FREE_FALLBACK !== 'false') {
+  if (response.status === 402 && !body.modelOverride) {
     return openrouterResponse(env, { ...body, modelOverride: `${env.OPENROUTER_FREE_MODEL || 'nvidia/nemotron-3-super-120b-a12b:free'}${online ? ':online' : ''}` })
   }
   if (!response.ok) throw new Error(response.status === 401 || response.status === 403
