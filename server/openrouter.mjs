@@ -13,7 +13,9 @@ function messages(body) {
 }
 
 function requestBody(env, body, online = false) {
-  const payload = { model: model(env, online), messages: messages(body), stream: false, max_tokens: Number(env.OPENROUTER_MAX_TOKENS || 4096) }
+  const configuredTokens = Number(env.OPENROUTER_MAX_TOKENS || 4096)
+  const maxTokens = Number.isFinite(configuredTokens) ? Math.min(Math.max(configuredTokens, 256), 4096) : 4096
+  const payload = { model: model(env, online), messages: messages(body), stream: false, max_tokens: maxTokens }
   if (body.text?.format?.type === 'json_object') payload.response_format = { type: 'json_object' }
   return payload
 }
