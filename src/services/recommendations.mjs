@@ -37,7 +37,7 @@ async function post(path, body) {
 export const benchmarkRole = (roleTitle, industry = 'food manufacturing') => post('/api/recommendations/benchmark', { roleTitle, industry })
 // Comparison needs the standards, not the full web-search excerpts again.
 export const compareToProfile = (employee, roleBenchmark, companyStrategy) => post('/api/recommendations/compare', {
-  employee: { role: employee.role, responsibilities: employee.responsibilities, skills: employee.skills.map(skill => ({ name: skill.name || skill.skill, proficiency: skill.proficiency })), certifications: employee.certifications || [] },
+  employee: { id: employee.id, name: employee.name, role: employee.role },
   roleBenchmark: { skills: roleBenchmark.skills.map(skill => ({ name: skill.name, reason: skill.reason })) },
   companyStrategy: { shortTermGoals: (companyStrategy.shortTermGoals || []).map(goal => ({ text: goal.text })), longTermGoals: (companyStrategy.longTermGoals || []).map(goal => ({ text: goal.text })), initiatives: (companyStrategy.initiatives || []).map(initiative => ({ text: initiative.text })) },
 })

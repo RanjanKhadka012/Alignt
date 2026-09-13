@@ -1,0 +1,6044 @@
+{
+  "dataSource": "real-seed",
+  "employees": [
+    {
+      "id": "e001",
+      "name": "Dana K.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician (Lead)",
+      "skills": [
+        {
+          "skill": "Legacy line-equipment troubleshooting",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-1",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "PLC diagnostics",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e002",
+      "name": "Marcus T.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "Legacy line-equipment troubleshooting",
+          "rating": 1,
+          "proficiency": 1,
+          "skillId": "skill-1",
+          "proficiencyLabel": "Beginner"
+        },
+        {
+          "skill": "Welding to food-safe standards",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-4",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e003",
+      "name": "404 Colin V.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Technician",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e004",
+      "name": "404 Renee F.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Supervisor",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 4,
+          "proficiency": "Advanced",
+          "skillId": "skill-6",
+          "proficiencyLabel": "Advanced"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Statistical process control",
+          "rating": 2,
+          "proficiency": "Developing",
+          "skillId": "skill-5",
+          "proficiencyLabel": "Developing"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Supervisor HACCP awareness",
+          "issued": "2024-09-01",
+          "expires": "2027-09-01"
+        }
+      ],
+      "noCertsRecorded": false,
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e005",
+      "name": "404 Malik C.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Forklift Operator",
+      "skills": [
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Forklift operation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Inventory reconciliation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-9",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2025-02-15",
+          "expires": "2028-02-15"
+        }
+      ],
+      "noCertsRecorded": false,
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e006",
+      "name": "404 Wei H.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Inspector",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 2,
+          "proficiency": "Developing",
+          "skillId": "skill-6",
+          "proficiencyLabel": "Developing"
+        },
+        {
+          "skill": "Statistical process control",
+          "rating": 2,
+          "proficiency": "Developing",
+          "skillId": "skill-5",
+          "proficiencyLabel": "Developing"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "noCertsRecorded": false,
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e007",
+      "name": "404 Priya P.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Technician",
+      "skills": [
+        {
+          "skill": "Food safety recertification (HACCP)",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-10",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Allergen control auditing",
+          "rating": 4,
+          "proficiency": "Advanced",
+          "skillId": "skill-11",
+          "proficiencyLabel": "Advanced"
+        },
+        {
+          "skill": "Metal detection calibration",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-12",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2023-08-01",
+          "expires": "2026-08-01"
+        }
+      ],
+      "noCertsRecorded": false,
+      "retirementEligible": true,
+      "retirementDate": "2027-06-30",
+      "retirementDemo": true,
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e008",
+      "name": "404 Sam K.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Shipping/Receiving Associate",
+      "skills": [
+        {
+          "skill": "Forklift operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Pallet automation handling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "noCertsRecorded": false,
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e009",
+      "name": "404 Wei W.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "Conveyor belt alignment",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-14",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Hydraulic systems repair",
+          "rating": 2,
+          "proficiency": "Developing",
+          "skillId": "skill-15",
+          "proficiencyLabel": "Developing"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "noCertsRecorded": false,
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e010",
+      "name": "404 Wei C.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Inspector",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 4,
+          "proficiency": "Advanced",
+          "skillId": "skill-6",
+          "proficiencyLabel": "Advanced"
+        }
+      ],
+      "certifications": [
+        {
+          "name": "Food Safety Auditor",
+          "issued": "2022-05-10",
+          "expires": "2025-05-10"
+        }
+      ],
+      "noCertsRecorded": false,
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e011",
+      "name": "404 Carlos P.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Refrigeration Mechanic",
+      "skills": [
+        {
+          "skill": "Welding to food-safe standards",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-4",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e012",
+      "name": "404 Lucia D.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Associate",
+      "skills": [
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Batch mixing procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-17",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e013",
+      "name": "404 Sofia B.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Supervisor",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e014",
+      "name": "404 Derek M.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Allergen control auditing",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-11",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e015",
+      "name": "404 Tomas F.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e016",
+      "name": "404 Felix T.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Allergen control auditing",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-11",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e017",
+      "name": "404 Ramona R.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Forklift Operator",
+      "skills": [
+        {
+          "skill": "Cold-chain logistics",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-18",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Inventory reconciliation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-9",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e018",
+      "name": "404 Nadia P.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Associate",
+      "skills": [
+        {
+          "skill": "Pallet automation handling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e019",
+      "name": "404 Tomas V.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "USDA regulatory compliance",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-19",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e020",
+      "name": "404 Tyler M.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Shipping/Receiving Associate",
+      "skills": [
+        {
+          "skill": "Forklift operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e021",
+      "name": "404 Aisha Z.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "USDA regulatory compliance",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-19",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e022",
+      "name": "404 Omar D.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Metal detection calibration",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-12",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e023",
+      "name": "404 Carlos G.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Supervisor",
+      "skills": [
+        {
+          "skill": "Conveyor belt alignment",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-14",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Hydraulic systems repair",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-15",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e024",
+      "name": "404 Andre J.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Supervisor",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e025",
+      "name": "404 Renee T.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Supervisor",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e026",
+      "name": "404 Brandon J.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Inspector",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e027",
+      "name": "404 Yara R.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Supervisor",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e028",
+      "name": "404 Tyler V.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Shipping/Receiving Associate",
+      "skills": [
+        {
+          "skill": "Inventory reconciliation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-9",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Forklift operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e029",
+      "name": "404 Jordan F.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Supervisor",
+      "skills": [
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Batch mixing procedures",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-17",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Pallet automation handling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e030",
+      "name": "404 Fatima C.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e031",
+      "name": "404 Kevin R.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Refrigeration Mechanic",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e032",
+      "name": "404 Priya G.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Forklift Operator",
+      "skills": [
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Inventory reconciliation",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-9",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e033",
+      "name": "404 Felix M.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Allergen control auditing",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-11",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e034",
+      "name": "404 Wei K.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Technician",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e035",
+      "name": "404 Renee S.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e036",
+      "name": "404 Sofia Z.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e037",
+      "name": "404 Jordan M.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Allergen control auditing",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-11",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Metal detection calibration",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-12",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e038",
+      "name": "404 Kevin N.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Inspector",
+      "skills": [
+        {
+          "skill": "Metal detection calibration",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-12",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e039",
+      "name": "404 Kevin L.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Refrigeration Mechanic",
+      "skills": [
+        {
+          "skill": "Welding to food-safe standards",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-4",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e040",
+      "name": "404 Grace D.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Shipping/Receiving Associate",
+      "skills": [
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Forklift operation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Cold-chain logistics",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-18",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e041",
+      "name": "404 Malik B.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Technician",
+      "skills": [
+        {
+          "skill": "Allergen control auditing",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-11",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e042",
+      "name": "404 Mei M.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "Hydraulic systems repair",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-15",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e043",
+      "name": "404 Carlos R.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Line Lead",
+      "skills": [
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e044",
+      "name": "404 Sam M.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Welding to food-safe standards",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-4",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e045",
+      "name": "404 Tyler J.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Supervisor",
+      "skills": [
+        {
+          "skill": "Conveyor belt alignment",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-14",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Welding to food-safe standards",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-4",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e046",
+      "name": "404 Jordan C.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Forklift Operator",
+      "skills": [
+        {
+          "skill": "Forklift operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Inventory reconciliation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-9",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e047",
+      "name": "404 Noor P.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e048",
+      "name": "404 Yara M.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Supervisor",
+      "skills": [
+        {
+          "skill": "Standard line changeover",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-21",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Pallet automation handling",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e049",
+      "name": "404 Andre P.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Supervisor",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e050",
+      "name": "404 Anya K.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Inventory Control Specialist",
+      "skills": [
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Forklift operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e051",
+      "name": "404 Derek V.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Associate",
+      "skills": [
+        {
+          "skill": "Batch mixing procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-17",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e052",
+      "name": "404 Yara F.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Inventory Control Specialist",
+      "skills": [
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Forklift operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e053",
+      "name": "404 Sam L.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Inventory Control Specialist",
+      "skills": [
+        {
+          "skill": "Cold-chain logistics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-18",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Forklift operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e054",
+      "name": "404 Mei L.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Refrigeration Mechanic",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Hydraulic systems repair",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-15",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e055",
+      "name": "404 Carlos C.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Forklift Operator",
+      "skills": [
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Forklift operation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Inventory reconciliation",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-9",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e056",
+      "name": "404 Priya T.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Supervisor",
+      "skills": [
+        {
+          "skill": "Batch mixing procedures",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-17",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e057",
+      "name": "404 Ramona C.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e058",
+      "name": "404 Jordan S.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Refrigeration Mechanic",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e059",
+      "name": "404 Renee N.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Associate",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e060",
+      "name": "404 Brandon W.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e061",
+      "name": "404 Derek N.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Supervisor",
+      "skills": [
+        {
+          "skill": "Pallet automation handling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e062",
+      "name": "404 Ingrid B.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Supervisor",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Conveyor belt alignment",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-14",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Hydraulic systems repair",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-15",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e063",
+      "name": "404 Derek S.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e064",
+      "name": "404 Owen N.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Technician",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e065",
+      "name": "404 Jordan J.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Associate",
+      "skills": [
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Batch mixing procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-17",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Pallet automation handling",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e066",
+      "name": "404 Ingrid H.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Line Lead",
+      "skills": [
+        {
+          "skill": "Batch mixing procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-17",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Pallet automation handling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e067",
+      "name": "404 Elena L.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Line Lead",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e068",
+      "name": "404 Lucia T.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Line Lead",
+      "skills": [
+        {
+          "skill": "Standard line changeover",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-21",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Pallet automation handling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e069",
+      "name": "404 Owen W.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Inventory Control Specialist",
+      "skills": [
+        {
+          "skill": "Cold-chain logistics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-18",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Forklift operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e070",
+      "name": "404 Tomas T.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Metal detection calibration",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-12",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e071",
+      "name": "404 Mei V.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Associate",
+      "skills": [
+        {
+          "skill": "Pallet automation handling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e072",
+      "name": "404 Priya N.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Metal detection calibration",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-12",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e073",
+      "name": "404 Yara H.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "Conveyor belt alignment",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-14",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e074",
+      "name": "404 Ramona S.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Line Lead",
+      "skills": [
+        {
+          "skill": "Standard line changeover",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-21",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e075",
+      "name": "404 Ramona V.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e076",
+      "name": "404 Anya H.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e077",
+      "name": "404 Lucia Z.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Technician",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "USDA regulatory compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-19",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e078",
+      "name": "404 Carlos F.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Inventory Control Specialist",
+      "skills": [
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Forklift operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e079",
+      "name": "404 Kevin C.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e080",
+      "name": "404 Ingrid L.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Refrigeration Mechanic",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e081",
+      "name": "404 Mei R.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e082",
+      "name": "404 Grace S.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Refrigeration Mechanic",
+      "skills": [
+        {
+          "skill": "Conveyor belt alignment",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-14",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Hydraulic systems repair",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-15",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Welding to food-safe standards",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-4",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e083",
+      "name": "404 Anya V.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "USDA regulatory compliance",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-19",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e084",
+      "name": "404 Felix H.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Line Lead",
+      "skills": [
+        {
+          "skill": "Standard line changeover",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-21",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e085",
+      "name": "404 Grace J.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e086",
+      "name": "404 Omar F.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Technician",
+      "skills": [
+        {
+          "skill": "Food safety recertification (HACCP)",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-10",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Metal detection calibration",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-12",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "USDA regulatory compliance",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-19",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "retirementEligible": true,
+      "retirementDate": "2026-12-31",
+      "retirementDemo": true,
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e087",
+      "name": "404 Elena M.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Technician",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e088",
+      "name": "404 Kevin W.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Associate",
+      "skills": [
+        {
+          "skill": "Batch mixing procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-17",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Pallet automation handling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-13",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e089",
+      "name": "404 Tomas K.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Inventory Control Specialist",
+      "skills": [
+        {
+          "skill": "Forklift operation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-8",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e090",
+      "name": "404 Renee C.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Refrigeration Mechanic",
+      "skills": [
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Hydraulic systems repair",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-15",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e091",
+      "name": "404 Noor L.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e092",
+      "name": "404 Malik P.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Supervisor",
+      "skills": [
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Batch mixing procedures",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-17",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e093",
+      "name": "404 Tyler H.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e094",
+      "name": "404 Aisha W.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Supervisor",
+      "skills": [
+        {
+          "skill": "Hydraulic systems repair",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-15",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Welding to food-safe standards",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-4",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e095",
+      "name": "404 Aisha T.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "EHS Manager",
+      "skills": [
+        {
+          "skill": "Statistical process control",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-5",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Metal detection calibration",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-12",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e096",
+      "name": "404 Malik S.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Supervisor",
+      "skills": [
+        {
+          "skill": "Standard line changeover",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-21",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e097",
+      "name": "404 Colin L.",
+      "team": "Warehouse & Logistics",
+      "category": "Plant Based",
+      "role": "Forklift Operator",
+      "skills": [
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-7",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Cold-chain logistics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-18",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Inventory reconciliation",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-9",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Forklift Operator (OSHA)",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Warehouse & Logistics",
+      "departmentId": "department-4"
+    },
+    {
+      "id": "e098",
+      "name": "404 Anya W.",
+      "team": "Quality & Food Safety",
+      "category": "Plant Based",
+      "role": "Quality Inspector",
+      "skills": [
+        {
+          "skill": "Sanitation compliance",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-6",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HACCP procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-20",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Level II",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Quality & Food Safety",
+      "departmentId": "department-2"
+    },
+    {
+      "id": "e099",
+      "name": "404 Brandon H.",
+      "team": "Maintenance",
+      "category": "Plant Based",
+      "role": "Maintenance Technician",
+      "skills": [
+        {
+          "skill": "PLC diagnostics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-2",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-3",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "PLC Technician Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Maintenance",
+      "departmentId": "department-1"
+    },
+    {
+      "id": "e100",
+      "name": "404 Brandon N.",
+      "team": "Production",
+      "category": "Plant Based",
+      "role": "Production Associate",
+      "skills": [
+        {
+          "skill": "High-speed wrapper operation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-16",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Batch mixing procedures",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-17",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HACCP Awareness",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Production",
+      "departmentId": "department-3"
+    },
+    {
+      "id": "e101",
+      "name": "404 Grace Z.",
+      "team": "R&D",
+      "category": "Corporate Function",
+      "role": "Product Development Specialist",
+      "skills": [
+        {
+          "skill": "Product formulation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-22",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Packaging engineering",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-23",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Sensory evaluation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-24",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Regulatory labeling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-25",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Food Tech Certification",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "R&D",
+      "departmentId": "department-5"
+    },
+    {
+      "id": "e102",
+      "name": "404 Lucia V.",
+      "team": "HR & Corporate Affairs",
+      "category": "Corporate Function",
+      "role": "HR Generalist",
+      "skills": [
+        {
+          "skill": "Compensation benchmarking",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-26",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "HRIS administration",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-27",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Labor relations",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-28",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Talent acquisition",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-29",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HR Professional Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "HR & Corporate Affairs",
+      "departmentId": "department-6"
+    },
+    {
+      "id": "e103",
+      "name": "404 Malik R.",
+      "team": "Finance",
+      "category": "Corporate Function",
+      "role": "FP&A Specialist",
+      "skills": [
+        {
+          "skill": "Financial planning & analysis",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-30",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Budget forecasting",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-31",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Regulatory financial reporting",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-32",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Cost accounting",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-33",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Financial Controls Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Finance",
+      "departmentId": "department-7"
+    },
+    {
+      "id": "e104",
+      "name": "404 Lucia M.",
+      "team": "Legal & Compliance",
+      "category": "Corporate Function",
+      "role": "Contracts Coordinator",
+      "skills": [
+        {
+          "skill": "Contract review",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-34",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Regulatory compliance tracking",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-35",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Risk assessment",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-36",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Compliance Fundamentals",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Legal & Compliance",
+      "departmentId": "department-8"
+    },
+    {
+      "id": "e105",
+      "name": "404 Ramona D.",
+      "team": "R&D",
+      "category": "Corporate Function",
+      "role": "Packaging Engineer",
+      "skills": [
+        {
+          "skill": "Product formulation",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-22",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Packaging engineering",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-23",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Food Tech Certification",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "R&D",
+      "departmentId": "department-5"
+    },
+    {
+      "id": "e106",
+      "name": "404 Carlos V.",
+      "team": "Finance",
+      "category": "Corporate Function",
+      "role": "Financial Analyst",
+      "skills": [
+        {
+          "skill": "Financial planning & analysis",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-30",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Budget forecasting",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-31",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Regulatory financial reporting",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-32",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Cost accounting",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-33",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Financial Controls Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Finance",
+      "departmentId": "department-7"
+    },
+    {
+      "id": "e107",
+      "name": "404 Colin P.",
+      "team": "Legal & Compliance",
+      "category": "Corporate Function",
+      "role": "Compliance Specialist",
+      "skills": [
+        {
+          "skill": "Contract review",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-34",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Regulatory compliance tracking",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-35",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Risk assessment",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-36",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Compliance Fundamentals",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Legal & Compliance",
+      "departmentId": "department-8"
+    },
+    {
+      "id": "e108",
+      "name": "404 Colin T.",
+      "team": "HR & Corporate Affairs",
+      "category": "Corporate Function",
+      "role": "Compensation Analyst",
+      "skills": [
+        {
+          "skill": "Compensation benchmarking",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-26",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Labor relations",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-28",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Talent acquisition",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-29",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HR Professional Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "HR & Corporate Affairs",
+      "departmentId": "department-6"
+    },
+    {
+      "id": "e109",
+      "name": "404 Sofia P.",
+      "team": "HR & Corporate Affairs",
+      "category": "Corporate Function",
+      "role": "Talent Coordinator",
+      "skills": [
+        {
+          "skill": "Compensation benchmarking",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-26",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HRIS administration",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-27",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Labor relations",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-28",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HR Professional Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "HR & Corporate Affairs",
+      "departmentId": "department-6"
+    },
+    {
+      "id": "e110",
+      "name": "404 Grace V.",
+      "team": "IT",
+      "category": "Corporate Function",
+      "role": "Systems Analyst",
+      "skills": [
+        {
+          "skill": "ERP administration (SAP)",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-37",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Network security",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-38",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Business intelligence tooling",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-39",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "SCADA systems support",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-40",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "IT Security Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "IT",
+      "departmentId": "department-9"
+    },
+    {
+      "id": "e111",
+      "name": "404 Yara L.",
+      "team": "HR & Corporate Affairs",
+      "category": "Corporate Function",
+      "role": "Talent Coordinator",
+      "skills": [
+        {
+          "skill": "Compensation benchmarking",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-26",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "HRIS administration",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-27",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Labor relations",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-28",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HR Professional Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "HR & Corporate Affairs",
+      "departmentId": "department-6"
+    },
+    {
+      "id": "e112",
+      "name": "404 Anya P.",
+      "team": "Finance",
+      "category": "Corporate Function",
+      "role": "Accountant",
+      "skills": [
+        {
+          "skill": "Financial planning & analysis",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-30",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Budget forecasting",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-31",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Regulatory financial reporting",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-32",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Cost accounting",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-33",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Financial Controls Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Finance",
+      "departmentId": "department-7"
+    },
+    {
+      "id": "e113",
+      "name": "404 Grace K.",
+      "team": "IT",
+      "category": "Corporate Function",
+      "role": "IT Support Specialist",
+      "skills": [
+        {
+          "skill": "Network security",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-38",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Business intelligence tooling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-39",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "SCADA systems support",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-40",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "IT Security Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "IT",
+      "departmentId": "department-9"
+    },
+    {
+      "id": "e114",
+      "name": "404 Ingrid S.",
+      "team": "R&D",
+      "category": "Corporate Function",
+      "role": "Packaging Engineer",
+      "skills": [
+        {
+          "skill": "Product formulation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-22",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Packaging engineering",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-23",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Regulatory labeling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-25",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Food Tech Certification",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "R&D",
+      "departmentId": "department-5"
+    },
+    {
+      "id": "e115",
+      "name": "404 Owen T.",
+      "team": "IT",
+      "category": "Corporate Function",
+      "role": "IT Support Specialist",
+      "skills": [
+        {
+          "skill": "ERP administration (SAP)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-37",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Business intelligence tooling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-39",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "SCADA systems support",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-40",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "IT Security Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "IT",
+      "departmentId": "department-9"
+    },
+    {
+      "id": "e116",
+      "name": "404 Elena D.",
+      "team": "R&D",
+      "category": "Corporate Function",
+      "role": "Product Development Specialist",
+      "skills": [
+        {
+          "skill": "Product formulation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-22",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Packaging engineering",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-23",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Sensory evaluation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-24",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Regulatory labeling",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-25",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Food Tech Certification",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "R&D",
+      "departmentId": "department-5"
+    },
+    {
+      "id": "e117",
+      "name": "404 Derek P.",
+      "team": "IT",
+      "category": "Corporate Function",
+      "role": "Systems Analyst",
+      "skills": [
+        {
+          "skill": "Network security",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-38",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Business intelligence tooling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-39",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "IT Security Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "IT",
+      "departmentId": "department-9"
+    },
+    {
+      "id": "e118",
+      "name": "404 Priya V.",
+      "team": "IT",
+      "category": "Corporate Function",
+      "role": "Systems Analyst",
+      "skills": [
+        {
+          "skill": "Business intelligence tooling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-39",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "ERP administration (SAP)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-37",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "IT Security Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "IT",
+      "departmentId": "department-9"
+    },
+    {
+      "id": "e119",
+      "name": "404 Wei L.",
+      "team": "HR & Corporate Affairs",
+      "category": "Corporate Function",
+      "role": "Talent Coordinator",
+      "skills": [
+        {
+          "skill": "Compensation benchmarking",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-26",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Labor relations",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-28",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Talent acquisition",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-29",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HR Professional Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "HR & Corporate Affairs",
+      "departmentId": "department-6"
+    },
+    {
+      "id": "e120",
+      "name": "404 Felix P.",
+      "team": "Legal & Compliance",
+      "category": "Corporate Function",
+      "role": "Contracts Coordinator",
+      "skills": [
+        {
+          "skill": "Contract review",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-34",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Regulatory compliance tracking",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-35",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Risk assessment",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-36",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Compliance Fundamentals",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Legal & Compliance",
+      "departmentId": "department-8"
+    },
+    {
+      "id": "e121",
+      "name": "404 Grace N.",
+      "team": "HR & Corporate Affairs",
+      "category": "Corporate Function",
+      "role": "Compensation Analyst",
+      "skills": [
+        {
+          "skill": "Compensation benchmarking",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-26",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "HRIS administration",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-27",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Labor relations",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-28",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Talent acquisition",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-29",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HR Professional Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "HR & Corporate Affairs",
+      "departmentId": "department-6"
+    },
+    {
+      "id": "e122",
+      "name": "404 Aisha V.",
+      "team": "IT",
+      "category": "Corporate Function",
+      "role": "Data Analyst",
+      "skills": [
+        {
+          "skill": "ERP administration (SAP)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-37",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Business intelligence tooling",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-39",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "SCADA systems support",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-40",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "IT Security Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "IT",
+      "departmentId": "department-9"
+    },
+    {
+      "id": "e123",
+      "name": "404 Yara P.",
+      "team": "IT",
+      "category": "Corporate Function",
+      "role": "Data Analyst",
+      "skills": [
+        {
+          "skill": "Business intelligence tooling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-39",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "ERP administration (SAP)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-37",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "IT Security Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "IT",
+      "departmentId": "department-9"
+    },
+    {
+      "id": "e124",
+      "name": "404 Elena H.",
+      "team": "HR & Corporate Affairs",
+      "category": "Corporate Function",
+      "role": "Talent Coordinator",
+      "skills": [
+        {
+          "skill": "Compensation benchmarking",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-26",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "HRIS administration",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-27",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Labor relations",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-28",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Talent acquisition",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-29",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "HR Professional Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "HR & Corporate Affairs",
+      "departmentId": "department-6"
+    },
+    {
+      "id": "e125",
+      "name": "404 Colin F.",
+      "team": "IT",
+      "category": "Corporate Function",
+      "role": "Data Analyst",
+      "skills": [
+        {
+          "skill": "Network security",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-38",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Business intelligence tooling",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-39",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "IT Security Certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "IT",
+      "departmentId": "department-9"
+    },
+    {
+      "id": "e126",
+      "name": "404 Andre W.",
+      "team": "R&D",
+      "category": "Corporate Function",
+      "role": "Product Development Specialist",
+      "skills": [
+        {
+          "skill": "Product formulation",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-22",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Packaging engineering",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-23",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sensory evaluation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-24",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Regulatory labeling",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-25",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Food Tech Certification",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "R&D",
+      "departmentId": "department-5"
+    },
+    {
+      "id": "e127",
+      "name": "404 Jordan T.",
+      "team": "R&D",
+      "category": "Corporate Function",
+      "role": "Product Development Specialist",
+      "skills": [
+        {
+          "skill": "Packaging engineering",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-23",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Product formulation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-22",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Food Tech Certification",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "R&D",
+      "departmentId": "department-5"
+    },
+    {
+      "id": "e128",
+      "name": "404 Grace C.",
+      "team": "R&D",
+      "category": "Corporate Function",
+      "role": "Food Technologist",
+      "skills": [
+        {
+          "skill": "Product formulation",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-22",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Packaging engineering",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-23",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Sensory evaluation",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-24",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Food Tech Certification",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "R&D",
+      "departmentId": "department-5"
+    },
+    {
+      "id": "e129",
+      "name": "404 Omar J.",
+      "team": "Legal & Compliance",
+      "category": "Corporate Function",
+      "role": "Contracts Coordinator",
+      "skills": [
+        {
+          "skill": "Contract review",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-34",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Regulatory compliance tracking",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-35",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Risk assessment",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-36",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Compliance Fundamentals",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Legal & Compliance",
+      "departmentId": "department-8"
+    },
+    {
+      "id": "e130",
+      "name": "404 Jordan L.",
+      "team": "Legal & Compliance",
+      "category": "Corporate Function",
+      "role": "Compliance Specialist",
+      "skills": [
+        {
+          "skill": "Contract review",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-34",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Regulatory compliance tracking",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-35",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Risk assessment",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-36",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Compliance Fundamentals",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Legal & Compliance",
+      "departmentId": "department-8"
+    },
+    {
+      "id": "e131",
+      "name": "404 Fatima L.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Brand Marketing Specialist",
+      "skills": [
+        {
+          "skill": "Category marketing strategy",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e132",
+      "name": "404 Ingrid W.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Marketing Coordinator",
+      "skills": [
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Category marketing strategy",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e133",
+      "name": "404 Mei C.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Brand Marketing Specialist",
+      "skills": [
+        {
+          "skill": "Brand campaign management",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-43",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Category marketing strategy",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e134",
+      "name": "404 Fatima B.",
+      "team": "Foodservice Sales",
+      "category": "Commercial Function",
+      "role": "Business Development Rep",
+      "skills": [
+        {
+          "skill": "Foodservice menu consulting",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-44",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Customer relationship management",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-45",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Contract negotiation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-46",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Foodservice Sales Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Foodservice Sales",
+      "departmentId": "department-11"
+    },
+    {
+      "id": "e135",
+      "name": "404 Andre M.",
+      "team": "Foodservice Sales",
+      "category": "Commercial Function",
+      "role": "Business Development Rep",
+      "skills": [
+        {
+          "skill": "Foodservice menu consulting",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-44",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Customer relationship management",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-45",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Contract negotiation",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-46",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Foodservice Sales Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Foodservice Sales",
+      "departmentId": "department-11"
+    },
+    {
+      "id": "e136",
+      "name": "404 Colin N.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Brand Marketing Specialist",
+      "skills": [
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Category marketing strategy",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e137",
+      "name": "404 Sam H.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Brand Marketing Specialist",
+      "skills": [
+        {
+          "skill": "Brand campaign management",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-43",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e138",
+      "name": "404 Brandon K.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Marketing Coordinator",
+      "skills": [
+        {
+          "skill": "Brand campaign management",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-43",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Category marketing strategy",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e139",
+      "name": "404 Felix K.",
+      "team": "Retail Sales",
+      "category": "Commercial Function",
+      "role": "Retail Account Manager",
+      "skills": [
+        {
+          "skill": "Retail account management",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-47",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Trade promotion planning",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-48",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Pricing strategy",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-49",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "General skills certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Retail Sales",
+      "departmentId": "department-12"
+    },
+    {
+      "id": "e140",
+      "name": "404 Elena G.",
+      "team": "Retail Sales",
+      "category": "Commercial Function",
+      "role": "Sales Coordinator",
+      "skills": [
+        {
+          "skill": "Retail account management",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-47",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Trade promotion planning",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-48",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Pricing strategy",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-49",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "General skills certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Retail Sales",
+      "departmentId": "department-12"
+    },
+    {
+      "id": "e141",
+      "name": "404 Nadia M.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Brand Marketing Specialist",
+      "skills": [
+        {
+          "skill": "Category marketing strategy",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e142",
+      "name": "404 Elena F.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Marketing Coordinator",
+      "skills": [
+        {
+          "skill": "Category marketing strategy",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e143",
+      "name": "404 Sam N.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Marketing Coordinator",
+      "skills": [
+        {
+          "skill": "Brand campaign management",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-43",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Category marketing strategy",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e144",
+      "name": "404 Jordan V.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Brand Marketing Specialist",
+      "skills": [
+        {
+          "skill": "Category marketing strategy",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e145",
+      "name": "404 Felix J.",
+      "team": "Marketing",
+      "category": "Commercial Function",
+      "role": "Brand Marketing Specialist",
+      "skills": [
+        {
+          "skill": "Category marketing strategy",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-41",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Digital marketing analytics",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-42",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Digital Marketing Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Marketing",
+      "departmentId": "department-10"
+    },
+    {
+      "id": "e146",
+      "name": "404 Nadia F.",
+      "team": "Foodservice Sales",
+      "category": "Commercial Function",
+      "role": "Business Development Rep",
+      "skills": [
+        {
+          "skill": "Foodservice menu consulting",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-44",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Customer relationship management",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-45",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Contract negotiation",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-46",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Foodservice Sales Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Foodservice Sales",
+      "departmentId": "department-11"
+    },
+    {
+      "id": "e147",
+      "name": "404 Felix S.",
+      "team": "Category & Demand Planning",
+      "category": "Commercial Function",
+      "role": "Reporting & Analytics Specialist",
+      "skills": [
+        {
+          "skill": "Demand forecasting",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-50",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Syndicated data analysis (Circana)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-51",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "S&OP planning",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-52",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Dashboarding (Power BI/Tableau)",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-53",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Demand Planning Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Category & Demand Planning",
+      "departmentId": "department-13"
+    },
+    {
+      "id": "e148",
+      "name": "404 Andre H.",
+      "team": "Retail Sales",
+      "category": "Commercial Function",
+      "role": "Retail Account Manager",
+      "skills": [
+        {
+          "skill": "Retail account management",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-47",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Trade promotion planning",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-48",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Pricing strategy",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-49",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "General skills certificate",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Retail Sales",
+      "departmentId": "department-12"
+    },
+    {
+      "id": "e149",
+      "name": "404 Owen D.",
+      "team": "Category & Demand Planning",
+      "category": "Commercial Function",
+      "role": "Category Analyst",
+      "skills": [
+        {
+          "skill": "Demand forecasting",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-50",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Syndicated data analysis (Circana)",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-51",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "S&OP planning",
+          "rating": 5,
+          "proficiency": 5,
+          "skillId": "skill-52",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Dashboarding (Power BI/Tableau)",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-53",
+          "proficiencyLabel": "Expert"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Demand Planning Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Category & Demand Planning",
+      "departmentId": "department-13"
+    },
+    {
+      "id": "e150",
+      "name": "404 Ramona B.",
+      "team": "Category & Demand Planning",
+      "category": "Commercial Function",
+      "role": "Category Analyst",
+      "skills": [
+        {
+          "skill": "Demand forecasting",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-50",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "Syndicated data analysis (Circana)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-51",
+          "proficiencyLabel": "Intermediate"
+        },
+        {
+          "skill": "S&OP planning",
+          "rating": 4,
+          "proficiency": 5,
+          "skillId": "skill-52",
+          "proficiencyLabel": "Expert"
+        },
+        {
+          "skill": "Dashboarding (Power BI/Tableau)",
+          "rating": 3,
+          "proficiency": 3,
+          "skillId": "skill-53",
+          "proficiencyLabel": "Intermediate"
+        }
+      ],
+      "noCertsRecorded": false,
+      "certifications": [
+        {
+          "name": "Demand Planning Cert",
+          "issued": "2024-01-01",
+          "expires": "2027-01-01"
+        }
+      ],
+      "department": "Category & Demand Planning",
+      "departmentId": "department-13"
+    }
+  ],
+  "roles": [
+    {
+      "id": "r_prod_supervisor",
+      "title": "Production Supervisor",
+      "location": "Plant — Marshall, MN",
+      "summary": "Runs the daily production floor, ensuring food is made safely, on schedule, and to standard.",
+      "idealSkillProfile": [
+        {
+          "skill": "Standard line changeover",
+          "targetProficiency": 5,
+          "skillId": "skill-21"
+        },
+        {
+          "skill": "Sanitation compliance",
+          "targetProficiency": 5,
+          "skillId": "skill-6"
+        },
+        {
+          "skill": "Staff scheduling & performance management",
+          "targetProficiency": 5,
+          "skillId": "skill-54"
+        },
+        {
+          "skill": "Food safety recertification (HACCP)",
+          "targetProficiency": 5,
+          "skillId": "skill-10"
+        },
+        {
+          "skill": "USDA regulatory compliance",
+          "targetProficiency": 3,
+          "skillId": "skill-19"
+        },
+        {
+          "skill": "Batch mixing procedures",
+          "targetProficiency": 3,
+          "skillId": "skill-17"
+        }
+      ]
+    },
+    {
+      "id": "r_ehs_manager",
+      "title": "EHS Manager",
+      "location": "Plant — Marshall, MN",
+      "summary": "Ensures the plant is safe and compliant with government safety/environmental rules; investigates accidents and trains staff.",
+      "idealSkillProfile": [
+        {
+          "skill": "Allergen control auditing",
+          "targetProficiency": 5,
+          "skillId": "skill-11"
+        },
+        {
+          "skill": "Statistical process control",
+          "targetProficiency": 5,
+          "skillId": "skill-5"
+        },
+        {
+          "skill": "USDA regulatory compliance",
+          "targetProficiency": 5,
+          "skillId": "skill-19"
+        },
+        {
+          "skill": "OSHA/EPA audit readiness",
+          "targetProficiency": 5,
+          "skillId": "skill-55"
+        },
+        {
+          "skill": "Metal detection calibration",
+          "targetProficiency": 3,
+          "skillId": "skill-12"
+        },
+        {
+          "skill": "Incident investigation & corrective action documentation",
+          "targetProficiency": 5,
+          "skillId": "skill-56"
+        }
+      ]
+    },
+    {
+      "id": "r_shipping_inventory_mgr",
+      "title": "Shipping Receiving Inventory Manager",
+      "location": "Plant — Marshall, MN, Distribution Center",
+      "jobId": "26-2881",
+      "summary": "Keeps track of everything coming into/out of the warehouse; plans daily loading/unloading; troubleshoots inventory issues.",
+      "idealSkillProfile": [
+        {
+          "skill": "Warehouse management systems (WMS)",
+          "targetProficiency": 5,
+          "skillId": "skill-7"
+        },
+        {
+          "skill": "Forklift operation",
+          "targetProficiency": 5,
+          "skillId": "skill-8"
+        },
+        {
+          "skill": "Inventory reconciliation",
+          "targetProficiency": 5,
+          "skillId": "skill-9"
+        },
+        {
+          "skill": "Cold-chain logistics",
+          "targetProficiency": 3,
+          "skillId": "skill-18"
+        },
+        {
+          "skill": "Vendor/customer order coordination",
+          "targetProficiency": 3,
+          "skillId": "skill-57"
+        }
+      ]
+    },
+    {
+      "id": "r_maintenance_supervisor",
+      "title": "Maintenance Supervisor",
+      "location": "Plant — Marshall, MN",
+      "jobId": "26-1891",
+      "summary": "Runs maintenance day to day; ensures equipment reliability and repairs stay on schedule; manages team and budget.",
+      "idealSkillProfile": [
+        {
+          "skill": "PLC diagnostics",
+          "targetProficiency": 5,
+          "skillId": "skill-2"
+        },
+        {
+          "skill": "Preventive maintenance scheduling",
+          "targetProficiency": 5,
+          "skillId": "skill-3"
+        },
+        {
+          "skill": "Hydraulic systems repair",
+          "targetProficiency": 5,
+          "skillId": "skill-15"
+        },
+        {
+          "skill": "Conveyor belt alignment",
+          "targetProficiency": 3,
+          "skillId": "skill-14"
+        },
+        {
+          "skill": "Welding to food-safe standards",
+          "targetProficiency": 3,
+          "skillId": "skill-4"
+        },
+        {
+          "skill": "Legacy line-equipment troubleshooting",
+          "targetProficiency": 3,
+          "skillId": "skill-1"
+        },
+        {
+          "skill": "Contractor/vendor & outage management",
+          "targetProficiency": 5,
+          "skillId": "skill-58"
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-1",
+      "name": "Legacy line-equipment troubleshooting",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-2",
+      "name": "PLC diagnostics",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-3",
+      "name": "Preventive maintenance scheduling",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-4",
+      "name": "Welding to food-safe standards",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-5",
+      "name": "Statistical process control",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-6",
+      "name": "Sanitation compliance",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-7",
+      "name": "Warehouse management systems (WMS)",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-8",
+      "name": "Forklift operation",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-9",
+      "name": "Inventory reconciliation",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-10",
+      "name": "Food safety recertification (HACCP)",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-11",
+      "name": "Allergen control auditing",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-12",
+      "name": "Metal detection calibration",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-13",
+      "name": "Pallet automation handling",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-14",
+      "name": "Conveyor belt alignment",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-15",
+      "name": "Hydraulic systems repair",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-16",
+      "name": "High-speed wrapper operation",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-17",
+      "name": "Batch mixing procedures",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-18",
+      "name": "Cold-chain logistics",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-19",
+      "name": "USDA regulatory compliance",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-20",
+      "name": "HACCP procedures",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-21",
+      "name": "Standard line changeover",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-22",
+      "name": "Product formulation",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-23",
+      "name": "Packaging engineering",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-24",
+      "name": "Sensory evaluation",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-25",
+      "name": "Regulatory labeling",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-26",
+      "name": "Compensation benchmarking",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-27",
+      "name": "HRIS administration",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-28",
+      "name": "Labor relations",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-29",
+      "name": "Talent acquisition",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-30",
+      "name": "Financial planning & analysis",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-31",
+      "name": "Budget forecasting",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-32",
+      "name": "Regulatory financial reporting",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-33",
+      "name": "Cost accounting",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-34",
+      "name": "Contract review",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-35",
+      "name": "Regulatory compliance tracking",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-36",
+      "name": "Risk assessment",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-37",
+      "name": "ERP administration (SAP)",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-38",
+      "name": "Network security",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-39",
+      "name": "Business intelligence tooling",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-40",
+      "name": "SCADA systems support",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-41",
+      "name": "Category marketing strategy",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-42",
+      "name": "Digital marketing analytics",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-43",
+      "name": "Brand campaign management",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-44",
+      "name": "Foodservice menu consulting",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-45",
+      "name": "Customer relationship management",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-46",
+      "name": "Contract negotiation",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-47",
+      "name": "Retail account management",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-48",
+      "name": "Trade promotion planning",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-49",
+      "name": "Pricing strategy",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-50",
+      "name": "Demand forecasting",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-51",
+      "name": "Syndicated data analysis (Circana)",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-52",
+      "name": "S&OP planning",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-53",
+      "name": "Dashboarding (Power BI/Tableau)",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-54",
+      "name": "Staff scheduling & performance management",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-55",
+      "name": "OSHA/EPA audit readiness",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-56",
+      "name": "Incident investigation & corrective action documentation",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-57",
+      "name": "Vendor/customer order coordination",
+      "category": "workforce",
+      "strategicWeight": 1
+    },
+    {
+      "id": "skill-58",
+      "name": "Contractor/vendor & outage management",
+      "category": "workforce",
+      "strategicWeight": 1
+    }
+  ],
+  "departments": [
+    {
+      "id": "department-1",
+      "name": "Maintenance"
+    },
+    {
+      "id": "department-2",
+      "name": "Quality & Food Safety"
+    },
+    {
+      "id": "department-3",
+      "name": "Production"
+    },
+    {
+      "id": "department-4",
+      "name": "Warehouse & Logistics"
+    },
+    {
+      "id": "department-5",
+      "name": "R&D"
+    },
+    {
+      "id": "department-6",
+      "name": "HR & Corporate Affairs"
+    },
+    {
+      "id": "department-7",
+      "name": "Finance"
+    },
+    {
+      "id": "department-8",
+      "name": "Legal & Compliance"
+    },
+    {
+      "id": "department-9",
+      "name": "IT"
+    },
+    {
+      "id": "department-10",
+      "name": "Marketing"
+    },
+    {
+      "id": "department-11",
+      "name": "Foodservice Sales"
+    },
+    {
+      "id": "department-12",
+      "name": "Retail Sales"
+    },
+    {
+      "id": "department-13",
+      "name": "Category & Demand Planning"
+    }
+  ],
+  "initiatives": [
+    {
+      "id": "haccp_recert",
+      "label": "HACCP Re‑certification (Site)",
+      "targetDate": "2026-12-31",
+      "timeframe": "This year",
+      "relevantRoles": [
+        "Quality Technician",
+        "Quality Inspector",
+        "Production Supervisor",
+        "EHS Manager"
+      ],
+      "qualifyingSkills": [
+        "Food safety recertification (HACCP)",
+        "Sanitation compliance",
+        "Allergen control auditing",
+        "Metal detection calibration"
+      ]
+    },
+    {
+      "id": "packaging_modernization",
+      "label": "Packaging Line Modernization",
+      "targetDate": "2027-06-30",
+      "timeframe": "6-12 months",
+      "relevantRoles": [
+        "Maintenance Technician",
+        "Maintenance Technician (Lead)",
+        "Maintenance Supervisor",
+        "Production Supervisor"
+      ],
+      "qualifyingSkills": [
+        "PLC diagnostics",
+        "Legacy line-equipment troubleshooting",
+        "Conveyor belt alignment",
+        "Preventive maintenance scheduling"
+      ]
+    },
+    {
+      "id": "cold_chain_efficiency",
+      "label": "Cold‑Chain & Logistics Efficiency",
+      "targetDate": "2026-11-30",
+      "timeframe": "This year",
+      "relevantRoles": [
+        "Forklift Operator",
+        "Inventory Control Specialist",
+        "Warehouse & Logistics",
+        "Refrigeration Mechanic"
+      ],
+      "qualifyingSkills": [
+        "Cold-chain logistics",
+        "Warehouse management systems (WMS)",
+        "Forklift operation",
+        "Inventory reconciliation"
+      ]
+    },
+    {
+      "id": "quality_analytics",
+      "label": "Quality Analytics / SPC Expansion",
+      "targetDate": "2027-03-31",
+      "timeframe": "6-12 months",
+      "relevantRoles": [
+        "Quality Technician",
+        "Quality Inspector",
+        "Production Supervisor",
+        "Data Analyst"
+      ],
+      "qualifyingSkills": [
+        "Statistical process control",
+        "USDA regulatory compliance",
+        "Allergen control auditing"
+      ]
+    },
+    {
+      "id": "workforce_resilience",
+      "label": "Workforce Resilience & Succession",
+      "targetDate": "2027-12-31",
+      "timeframe": "1 year",
+      "relevantRoles": [
+        "Maintenance Technician",
+        "Production Supervisor",
+        "Maintenance Technician (Lead)"
+      ],
+      "qualifyingSkills": [
+        "Legacy line-equipment troubleshooting",
+        "PLC diagnostics",
+        "Welding to food-safe standards"
+      ]
+    }
+  ]
+}

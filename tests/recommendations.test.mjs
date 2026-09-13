@@ -3,6 +3,8 @@ import assert from 'node:assert/strict'
 import { Readable } from 'node:stream'
 import { createRoleCache, BENCHMARK_TTL } from '../src/services/recommendations.mjs'
 import { recommendationsHandler, validateBenchmark, validateComparison } from '../server/recommendations.mjs'
+import { geminiResponse, geminiSearchSources } from '../server/gemini.mjs'
+import { loadAiWorkforce } from '../server/aiWorkforceData.mjs'
 const sources = [{ title: 'Standards body', url: 'https://example.org/standards', content: 'Current standards evidence' }]
 const skills = Array.from({ length: 5 }, (_, i) => ({ name: `Skill ${i}`, reason: 'Required for the role', sourceUrls: [sources[0].url] }))
 const benchmark = { skills, sources, fetchedAt: Date.now() }
@@ -57,11 +59,30 @@ test('benchmark must search before reasoning; comparison calls only reasoning', 
     assert.equal(result.status, 200)
     assert.deepEqual(calls, ['search', 'reason'])
     calls.length = 0
-    assert.equal((await invoke('compare', { employee: { role: 'Operator', skills: [] }, roleBenchmark: benchmark, companyStrategy: {} })).status, 200)
+    const aiEmployee = loadAiWorkforce().employees[0]
+    assert.equal((await invoke('compare', { employee: { id: aiEmployee.id, name: aiEmployee.name, role: aiEmployee.role }, roleBenchmark: benchmark, companyStrategy: {} })).status, 200)
     assert.deepEqual(calls, ['reason'])
     globalThis.fetch = async () => ({ ok: true, json: async () => ({ status: 'completed', output: [{ type: 'message', content: [{ type: 'output_text', text: 'No results' }] }] }) })
     const empty = await invoke('benchmark', { roleTitle: 'Operator' })
     assert.equal(empty.status, 502)
     assert.match(empty.payload.error, /No benchmark was generated/)
+  } finally { globalThis.fetch = original }
+})
+
+test('Gemini uses native generateContent requests and returns grounded sources', async () => {
+  const original = globalThis.fetch
+  try {
+    globalThis.fetch = async (url, options) => {
+      assert.match(url, /generativelanguage\.googleapis\.com\/v1beta\/models\/gemini-3\.6-flash:generateContent\?key=test-key/)
+      const body = JSON.parse(options.body)
+      if (body.tools) assert.deepEqual(body.tools, [{ google_search: {} }])
+      else assert.equal(body.generationConfig.responseMimeType, 'application/json')
+      assert.match(body.systemInstruction.parts[0].text, body.generationConfig.responseMimeType ? /^Use sources\.$/ : /Search for current role requirements/)
+      return { ok: true, json: async () => ({ candidates: [{ content: { parts: [{ text: '{"skills":[]}' }] }, groundingMetadata: { groundingChunks: [{ web: { uri: 'https://example.org/standards', title: 'Standards body' } }] } }] }) }
+    }
+    const result = await geminiResponse({ GEMINI_API_KEY: 'test-key', GEMINI_MODEL: 'gemini-3.6-flash' }, { instructions: 'Use sources.', input: 'Operator', text: { format: { type: 'json_object' } }, tools: [{ type: 'web_search' }] })
+    assert.equal(result.text, '{"skills":[]}')
+    const sourcesResult = await geminiSearchSources({ GEMINI_API_KEY: 'test-key', GEMINI_MODEL: 'gemini-3.6-flash' }, 'Operator requirements')
+    assert.deepEqual(sourcesResult, [{ title: 'Standards body', url: 'https://example.org/standards', content: '{"skills":[]}' }])
   } finally { globalThis.fetch = original }
 })

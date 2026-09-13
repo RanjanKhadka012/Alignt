@@ -18,9 +18,10 @@ export function createApiHandler(env = process.env) {
     try {
       if (path === '/api/health' || path === '/api/workforce') {
         if (req.method !== 'GET') { res.setHeader('Allow', 'GET'); return send(405, { error: 'Use GET for this endpoint.' }) }
-          const data = env.DATABASE_PATH ? readWorkforce(env.DATABASE_PATH) : loadWorkforce()
-          const aiConfigured = Boolean(env.OPENAI_API_KEY || env.GEMINI_API_KEY)
-          return send(200, path === '/api/health' ? { status: 'ok', dataSource: env.DATABASE_PATH ? 'sqlite' : workforce.dataSource, aiConfigured } : { ...data, dataSource: env.DATABASE_PATH ? 'sqlite' : workforce.dataSource, readinessDataComplete: false })
+          const useSql = env.WORKFORCE_DATA_SOURCE === 'sql' && env.DATABASE_PATH
+          const data = useSql ? readWorkforce(env.DATABASE_PATH) : loadWorkforce()
+          const aiConfigured = Boolean(env.OPENROUTER_API_KEY || env.OPENAI_API_KEY || env.GEMINI_API_KEY || env.ALLAMA_API_KEY)
+          return send(200, path === '/api/health' ? { status: 'ok', dataSource: useSql ? 'sqlite' : workforce.dataSource, aiConfigured } : { ...data, dataSource: useSql ? 'sqlite' : workforce.dataSource, readinessDataComplete: false })
       }
       await recommendations(req, res, () => matching(req, res, () => send(404, { error: 'API endpoint not found.' })))
     } catch (error) {

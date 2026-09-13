@@ -222,6 +222,13 @@ Set `DATABASE_PATH=.local/workforce.sqlite` in `.env.local` to read workforce
 data from SQLite. If unset, the original demo seed is used. A configured database
 failure returns an error instead of silently replacing records with demo data.
 
+AI requests use the checked-in `server/data/ai-workforce.json` snapshot instead of
+the browser or SQL connection. Refresh that snapshot from the configured SQLite
+database with `npm run generate-ai-workforce -- .local/workforce.sqlite` after an
+import. Without a database argument, the command regenerates it from the demo
+seed. The dashboard and non-AI calculations continue to use the normal SQL or
+seed workforce source.
+
 The supplied workbook was imported locally: 167 records, including 148 marked
 fictional by the `404` prefix. The prefix is removed from display names and stored
 as `isFictional`. Unmarked records are not independently verified as real people.

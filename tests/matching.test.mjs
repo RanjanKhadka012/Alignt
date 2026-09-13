@@ -17,7 +17,7 @@ test('client sends goal, timeline and workforce and surfaces API errors', async 
   try {
     globalThis.fetch = async (url, options) => {
       assert.equal(url, '/api/matching')
-      assert.deepEqual(JSON.parse(options.body), { goalText: 'Automate', timeline: '6 months', workforceData: workforce })
+      assert.deepEqual(JSON.parse(options.body), { goalText: 'Automate', timeline: '6 months' })
       return { ok: true, json: async () => ({ text: JSON.stringify(aiResult) }) }
     }
     assert.deepEqual(await matchTeamToGoal('Automate', '6 months', workforce), result)

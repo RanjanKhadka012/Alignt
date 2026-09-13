@@ -20,7 +20,7 @@ export async function matchTeamToGoal(goalText, timeline, workforceData) {
     let response
     try { response = await fetch('/api/matching', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ goalText, timeline, workforceData }), signal: controller.signal,
+      body: JSON.stringify({ goalText, timeline }), signal: controller.signal,
     }) } catch (error) {
       if (error.name === 'AbortError') throw error
       throw new Error('Cannot reach the app server. Open the running local app address and try again.')
