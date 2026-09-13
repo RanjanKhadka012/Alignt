@@ -1,4 +1,6 @@
+import { retirementStatus } from '../utils/retirement.mjs'
 import React from 'react'
+import RetirementProfile from '../components/RetirementProfile'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useWorkforce } from '../contexts/WorkforceContext'
 import { useDerivedData } from '../contexts/DerivedDataContext'
@@ -75,8 +77,9 @@ export default function EmployeeProfile(){
             <div style={{padding:'6px 8px',background:'var(--panel)',borderRadius:6}}>Role: <strong>{emp.role || '—'}</strong></div>
           </div>
 
+          <RetirementProfile key={emp.id} employee={emp}/>
           <section style={{marginBottom:18}}>
-            <h3>Skills & proficiencies</h3>
+            <h3>Skills & proficiencies</h3>{retirementStatus(emp).flagged && <p style={{color:'var(--warning)',fontSize:13}}>Succession planning: review the skills below for knowledge transfer and backup coverage. {retirementStatus(emp).label}.</p>}
             <div style={{display:'grid',gridTemplateColumns:'1fr 320px',gap:12,alignItems:'start'}}>
               <div>
                 {skills.length ? (

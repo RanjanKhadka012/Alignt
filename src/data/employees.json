@@ -29,7 +29,10 @@
         "issued": "2024-01-01",
         "expires": "2027-01-01"
       }
-    ]
+    ],
+    "retirementEligible": true,
+    "retirementDate": "2026-12-31",
+    "retirementDemo": true
   },
   {
     "id": "e002",
@@ -206,7 +209,10 @@
         "expires": "2026-08-01"
       }
     ],
-    "noCertsRecorded": false
+    "noCertsRecorded": false,
+    "retirementEligible": true,
+    "retirementDate": "2027-06-30",
+    "retirementDemo": true
   },
   {
     "id": "e008",
@@ -2379,7 +2385,10 @@
         "issued": "2024-01-01",
         "expires": "2027-01-01"
       }
-    ]
+    ],
+    "retirementEligible": true,
+    "retirementDate": null,
+    "retirementDemo": true
   },
   {
     "id": "e087",

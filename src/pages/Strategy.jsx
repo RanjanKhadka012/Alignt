@@ -47,17 +47,11 @@ function GoalSection({ title, subtitle, number, goals, onChange }) {
     {adding ? <GoalForm onSave={goal => { onChange([...goals, goal], 'Goal added'); setAdding(false) }} onCancel={() => setAdding(false)} /> : <button className="strategy-add" onClick={() => setAdding(true)}>＋ Add a goal</button>}
   </section>
 }
-function Initiative({ initiative, onSave, onRemove }) {
-  const [editing, setEditing] = useState(false)
-  const [text, setText] = useState(initiative.text)
-  return <div className="strategy-initiative">{editing ? <form onSubmit={event => { event.preventDefault(); if (text.trim()) { onSave({ ...initiative, text: text.trim() }); setEditing(false) } }}><input aria-label="Initiative description" autoFocus required value={text} onChange={event => setText(event.target.value)} /><button className="strategy-primary" disabled={!text.trim()}>Save</button><button type="button" onClick={() => setEditing(false)}>Cancel</button></form> : <><span className="strategy-initiative-mark" aria-hidden="true">↗</span><p>{initiative.text}</p><button onClick={() => { setText(initiative.text); setEditing(true) }} aria-label={`Edit initiative: ${initiative.text}`}>Edit</button><button className="strategy-remove" onClick={onRemove} aria-label={`Remove initiative: ${initiative.text}`}>Remove</button></>}</div>
-}
 export default function Strategy() {
   const { strategy, setStrategy } = useStrategy()
-  const [initiative, setInitiative] = useState('')
   const [notice, setNotice] = useState('')
   const [undo, setUndo] = useState(null)
-  const short = strategy.shortTermGoals || [], long = strategy.longTermGoals || [], initiatives = strategy.initiatives || []
+  const short = strategy.shortTermGoals || [], long = strategy.longTermGoals || []
   const goals = [...short, ...long]
   const dueSoon = goals.filter(goal => ['warning', 'critical'].includes(deadline(goal.targetDate).tone)).length
   function change(key, values, message) {
@@ -67,15 +61,10 @@ export default function Strategy() {
   }
   return <div className="strategy-page">
     <header className="strategy-header"><div><span className="strategy-eyebrow">BUSINESS DIRECTION</span><h1>Set the direction.<br/><span>Align your people.</span></h1><p>Turn business ambitions into clear priorities for your workforce.</p></div><Link to="/overview" className="strategy-next">View strategy readiness <span>↗</span></Link></header>
-    <div className="strategy-stats"><div><span className="strategy-mono">STRATEGIC GOALS</span><strong>{goals.length.toString().padStart(2, '0')}</strong><p>Across both planning horizons</p></div><div><span className="strategy-mono">ACTIVE INITIATIVES</span><strong>{initiatives.length.toString().padStart(2, '0')}</strong><p>Turning strategy into action</p></div><div><span className="strategy-mono">NEEDS ATTENTION</span><strong className={dueSoon ? 'strategy-attention' : ''}>{dueSoon.toString().padStart(2, '0')}</strong><p>Overdue or due within 30 days</p></div></div>
+    <div className="strategy-stats"><div><span className="strategy-mono">STRATEGIC GOALS</span><strong>{goals.length.toString().padStart(2, '0')}</strong><p>Across both planning horizons</p></div><div><span className="strategy-mono">NEEDS ATTENTION</span><strong className={dueSoon ? 'strategy-attention' : ''}>{dueSoon.toString().padStart(2, '0')}</strong><p>Overdue or due within 30 days</p></div></div>
     <div className="strategy-workspace-heading"><h2>Manage your strategy</h2><span>Changes apply immediately · This session only</span></div>
     <div className="strategy-notice" role="status">{notice && <><span>✓ {notice}</span>{undo && <button onClick={() => { setStrategy(previous => ({ ...previous, [undo.key]: undo.values })); setNotice('Change undone'); setUndo(null) }}>Undo</button>}</>}</div>
     <div className="strategy-horizons"><GoalSection number="01" title="This year" subtitle="Near-term outcomes that need focus now." goals={short} onChange={(values, message) => change('shortTermGoals', values, message)} /><GoalSection number="02" title="1–3 years" subtitle="Long-term ambitions to build toward." goals={long} onChange={(values, message) => change('longTermGoals', values, message)} /></div>
-    <section className="strategy-section strategy-initiatives"><header className="strategy-section-heading"><div className="strategy-section-icon">↗</div><div><h2>Strategic initiatives <span>{initiatives.length}</span></h2><p>The concrete programs that help your goals become reality.</p></div></header>
-      {!initiatives.length && <p className="strategy-empty">Add your first initiative, such as cross-training or a new automation program.</p>}
-      {initiatives.map((item, index) => <Initiative key={`${index}-${item.text}`} initiative={item} onSave={updated => change('initiatives', initiatives.map((current, i) => i === index ? updated : current), 'Initiative updated')} onRemove={() => change('initiatives', initiatives.filter((_, i) => i !== index), 'Initiative removed')} />)}
-      <form className="strategy-initiative-add" onSubmit={event => { event.preventDefault(); if (initiative.trim()) { change('initiatives', [...initiatives, { text: initiative.trim() }], 'Initiative added'); setInitiative('') } }}><label htmlFor="new-initiative">Add an initiative</label><div><input id="new-initiative" required maxLength={1000} placeholder="e.g. Cross-train operators on HACCP and equipment maintenance" value={initiative} onChange={event => setInitiative(event.target.value)} /><button className="strategy-primary" disabled={!initiative.trim()}>＋ Add initiative</button></div></form>
-    </section>
-    <div className="strategy-guidance"><span className="strategy-section-icon">◎</span><div><strong>Your strategy informs every recommendation.</strong><p>Goals and initiatives help identify critical skill gaps and shape employee development plans.</p></div><Link to="/recommendations">View recommendations →</Link></div>
+
   </div>
 }

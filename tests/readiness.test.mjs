@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { readFile } from 'node:fs/promises'
-const { calculateReadiness, calculateOverallReadiness, talentConcentration } = await import('data:text/javascript;base64,' + Buffer.from(await readFile(new URL('../src/utils/readiness.js', import.meta.url), 'utf8')).toString('base64'))
+const { calculateReadiness, calculateOverallReadiness, talentConcentration, planDevelopment } = await import('data:text/javascript;base64,' + Buffer.from(await readFile(new URL('../src/utils/readiness.js', import.meta.url), 'utf8')).toString('base64'))
 const initiative = { relevantRoles: ['Operator'], qualifyingSkills: ['Safety'] }
 test('readiness counts each relevant employee once regardless of proficiency', () => {
  const employees = [{ id: 'a', role: 'Operator', skills: [{ skill: 'Safety', proficiency: 1 }, { skill: 'Safety' }] }, { id: 'b', role: 'Operator', skills: [] }, { id: 'c', role: 'Other', skills: [{ skill: 'Safety' }] }]
@@ -30,4 +30,20 @@ test('real workforce reproduces supplied reference counts and talent dependency'
  assert.equal(calculateOverallReadiness(results), 55)
  const holders = workforce.employees.filter(employee => employee.skills.some(skill => skill.skill === 'Legacy line-equipment troubleshooting'))
  assert.deepEqual(holders.map(employee => [employee.name, employee.skills.find(skill => skill.skill === 'Legacy line-equipment troubleshooting').proficiencyLabel]), [['Dana K.', 'Expert'], ['Marcus T.', 'Beginner']])
+})
+
+test('development planning distinguishes skill gaps from vacancies and checks all departments', () => {
+ const objective = { relevantRoles: ['Operator'], qualifyingSkills: ['Safety', 'PLC'] }
+ const employees = [
+  { id: 'review', role: 'Operator', skills: [{ skill: 'Other', proficiency: 3 }] },
+  { id: 'unknown', role: 'Operator', skills: [] },
+  { id: 'covered', role: 'Operator', skills: [{ skill: 'Safety', proficiency: 1 }] },
+  { id: 'mentor', role: 'Engineer', skills: [{ skill: 'Safety', proficiency: 5 }] },
+ ]
+ const plan = planDevelopment(objective, employees)
+ assert.deepEqual(plan.candidateIds, ['review', 'unknown'])
+ assert.equal(plan.undocumentedCount, 1)
+ assert.deepEqual(plan.missingExpertise, ['PLC'])
+ assert.deepEqual(plan.concentrated, ['Safety'])
+ assert.equal(plan.recruitCount, undefined)
 })

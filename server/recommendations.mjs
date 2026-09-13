@@ -35,7 +35,7 @@ export function recommendationsHandler(env = process.env) {
     if (!['/api/recommendations/benchmark', '/api/recommendations/compare'].includes(path)) return next ? next() : res.writeHead(404).end()
     const send = (status, body) => { res.writeHead(status, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(body)) }
     if (req.method !== 'POST') return send(405, { error: 'Use POST for role reviews.' })
-    if (!env.OPENAI_API_KEY && !env.GEMINI_API_KEY) return send(503, { error: 'Configure an AI provider (OpenAI or Gemini) and model to enable live role reviews.' })
+    if (!env.OPENAI_API_KEY && !env.GEMINI_API_KEY && !env.ALLAMA_API_KEY) return send(503, { error: 'Configure an AI provider (OpenAI, Allama, or Gemini) and model to enable live role reviews.' })
     try {
       let raw = ''
       for await (const chunk of req) { raw += chunk; if (Buffer.byteLength(raw) > 250000) return send(413, { error: 'The review request is too large.' }) }

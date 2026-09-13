@@ -26,3 +26,21 @@ export function talentConcentration(employees) {
   }
   return [...skills].map(([name, holders]) => ({ name, holders })).sort((a, b) => a.holders.length - b.holders.length || a.name.localeCompare(b.name))[0] || null
 }
+
+// A recorded skill gap is not a vacant position. Review development first;
+// external support is considered only for capabilities without strong internal coverage.
+export function planDevelopment(initiative, employees) {
+  const relevant = employees.filter(employee => initiative.relevantRoles.includes(employee.role))
+  const candidates = relevant.filter(employee => !(employee.skills || []).some(skill => initiative.qualifyingSkills.includes(skill.skill)))
+  const strong = value => typeof value === 'number' ? value >= 3 : ['Intermediate', 'Advanced', 'Expert'].includes(value)
+  const capabilities = initiative.qualifyingSkills.map(capability => {
+    const holders = employees.filter(employee => (employee.skills || []).some(skill => skill.skill === capability && strong(skill.proficiency)))
+    return { capability, holders }
+  })
+  return {
+    candidateIds: candidates.map(employee => employee.id),
+    undocumentedCount: candidates.filter(employee => !employee.skills?.length).length,
+    missingExpertise: capabilities.filter(item => !item.holders.length).map(item => item.capability),
+    concentrated: capabilities.filter(item => item.holders.length > 0 && item.holders.length <= 2).map(item => item.capability),
+  }
+}

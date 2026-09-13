@@ -1,3 +1,6 @@
+import { Link, useSearchParams } from 'react-router-dom'
+import { useDerivedData } from '../contexts/DerivedDataContext'
+import { planDevelopment } from '../utils/readiness'
 import React, { useMemo, useState } from 'react'
 import { useWorkforce } from '../contexts/WorkforceContext'
 import { useStrategy } from '../contexts/StrategyContext'
@@ -11,11 +14,16 @@ const proficiency = level => ({ 1: 'Beginner', 2: 'Developing', 3: 'Intermediate
 export default function Recommendations() {
   const { employees, skills, departments } = useWorkforce()
   const { strategy } = useStrategy()
+  const [params, setParams] = useSearchParams()
+  const { initiativeResults, namedEmployees } = useDerivedData()
+  const goalScope = initiativeResults.find(item => item.id === params.get('goal'))
+  const candidateIds = goalScope ? planDevelopment(goalScope, namedEmployees).candidateIds : null
   const { reviews, getReview } = useRoleBenchmarks()
   const [selectedId, setSelectedId] = useState(null)
   const [search, setSearch] = useState('')
   const profiles = useMemo(() => employees.map(employee => ({ ...employee, skills: (employee.skills || []).map(skill => ({ ...skill, name: skills.find(s => s.id === skill.skillId)?.name || skill.skillId })) })), [employees, skills])
-  const selected = profiles.find(employee => employee.id === selectedId) || profiles[0]
+  const visibleProfiles = candidateIds ? profiles.filter(employee => candidateIds.includes(employee.id)) : profiles
+  const selected = visibleProfiles.find(employee => employee.id === selectedId) || visibleProfiles[0]
   const reviewFor = employee => {
     const review = reviews[profileKey(employee, strategy)]
     return review?.status === 'ready' && !isFresh(review.benchmark) ? undefined : review
@@ -28,10 +36,11 @@ export default function Recommendations() {
   const benchmark = review?.benchmark
   return <div className="recommendations-page">
     <header className="recommendations-page-header"><span className="recommendations-data recommendations-accent">ROLE READINESS</span><h1>Skills & recommendations</h1><p className="recommendations-muted">Current role expectations. Individual gaps. A concrete path forward.</p></header>
+    {goalScope && <section className="recommendations-panel" style={{marginBottom:20}}><h2>Development review · {goalScope.label}</h2><p className="recommendations-muted">{visibleProfiles.length} employees in relevant roles have no qualifying skill recorded for this goal. Validate their profiles, then generate individual development plans when needed. These are review candidates, not confirmed training assignments.</p><button onClick={() => setParams({})}>Show all employees</button> <Link to={`/matching?goal=${encodeURIComponent(goalScope.id)}`}>Next: analyze readiness and scenarios →</Link></section>}
     <div className="recommendations-layout">
-      <EmployeeGapList employees={profiles} selectedId={selected?.id} onSelect={setSelectedId} search={search} onSearch={setSearch} reviewFor={reviewFor} />
+      <EmployeeGapList employees={visibleProfiles} selectedId={selected?.id} onSelect={setSelectedId} search={search} onSearch={setSearch} reviewFor={reviewFor} />
       <section className="recommendations-detail recommendations-panel" aria-label="Employee recommendations">
-        {!selected ? <p className="recommendations-muted">No employees available to review.</p> : <>
+        {!selected ? <p className="recommendations-muted">No employees in this view need a recorded-skill gap review. Use Show all employees to review proficiency and development opportunities.</p> : <>
           <header><h2>{selected.name}</h2><p className="recommendations-muted">{selected.role} · {departments.find(department => department.id === selected.departmentId)?.name || selected.departmentId}</p>
             {benchmark && isFresh(benchmark) ? <div className="benchmark-live"><i aria-hidden="true"/><span>Benchmarked against current role standards · <span className="recommendations-data">Last checked: {new Date(benchmark.fetchedAt).toLocaleString()}</span></span></div> : <div className="recommendations-muted recommendations-data">{review?.status === 'error' ? 'Live benchmark unavailable' : busy ? 'Checking current role standards…' : null}</div>}
           </header>

@@ -1,3 +1,4 @@
+import { retirementStatus } from '../utils/retirement.mjs'
 import React, { createContext, useContext, useMemo } from 'react'
 import { useWorkforce } from './WorkforceContext'
 import { calculateReadiness, calculateOverallReadiness, talentConcentration } from '../utils/readiness'
@@ -22,11 +23,14 @@ export function DerivedDataProvider({ children }){
 
     const skillsWithRisk = Object.values(skillHolders).map(({skill, holders})=>{
       const holderCount = holders.length
-      const retirementCount = holders.filter(h=>h.retirementEligible).length
+      const retirementHolders = holders.filter(holder => retirementStatus(holder).flagged)
+      const retirementCount = retirementHolders.length
+      const retiringSoonCount = retirementHolders.filter(holder => retirementStatus(holder).soon).length
+      const backupCount = holders.filter(holder => !retirementStatus(holder).flagged && (typeof holder.proficiency === 'number' ? holder.proficiency >= 3 : ['Intermediate', 'Advanced', 'Expert'].includes(holder.proficiency))).length
       let risk = 'healthy'
-      if(holderCount === 1 && retirementCount === 1) risk = 'critical'
+      if(retirementCount > 0 && backupCount === 0) risk = 'critical'
       else if(retirementCount / Math.max(1,holderCount) >= 0.4 || holderCount < 3) risk = 'watch'
-      return { skill, holders, holderCount, retirementCount, risk }
+      return { skill, holders, holderCount, retirementCount, retirementHolders, retiringSoonCount, backupCount, risk }
     })
 
     const criticalCount = skillsWithRisk.filter(s=>s.risk==='critical').length
@@ -41,7 +45,7 @@ export function DerivedDataProvider({ children }){
     })
 
     // map skills risk into departments: if any critical skill holder in dept -> critical, else watch if any watch
-    Object.values(skillHolders).forEach(({skill, holders, risk})=>{
+    skillsWithRisk.forEach(({skill, holders, risk})=>{
       holders.forEach(h=>{
         const d = deptMap[h.departmentId]
         if(!d) return
