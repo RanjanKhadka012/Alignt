@@ -1,7 +1,6 @@
 import { workforce, loadWorkforce } from './workforceData.mjs'
 import { matchingHandler } from './matching.mjs'
 import { recommendationsHandler } from './recommendations.mjs'
-import { readWorkforce } from './database.mjs'
 
 
 
@@ -18,10 +17,9 @@ export function createApiHandler(env = process.env) {
     try {
       if (path === '/api/health' || path === '/api/workforce') {
         if (req.method !== 'GET') { res.setHeader('Allow', 'GET'); return send(405, { error: 'Use GET for this endpoint.' }) }
-          const useSql = env.WORKFORCE_DATA_SOURCE === 'sql' && env.DATABASE_PATH
-          const data = useSql ? readWorkforce(env.DATABASE_PATH) : loadWorkforce()
+          const data = loadWorkforce()
           const aiConfigured = Boolean(env.OPENROUTER_API_KEY || env.OPENAI_API_KEY || env.GEMINI_API_KEY || env.ALLAMA_API_KEY)
-          return send(200, path === '/api/health' ? { status: 'ok', dataSource: useSql ? 'sqlite' : workforce.dataSource, aiConfigured } : { ...data, dataSource: useSql ? 'sqlite' : workforce.dataSource, readinessDataComplete: false })
+          return send(200, path === '/api/health' ? { status: 'ok', dataSource: workforce.dataSource, aiConfigured } : { ...data, dataSource: workforce.dataSource, readinessDataComplete: false })
       }
       await recommendations(req, res, () => matching(req, res, () => send(404, { error: 'API endpoint not found.' })))
     } catch (error) {
